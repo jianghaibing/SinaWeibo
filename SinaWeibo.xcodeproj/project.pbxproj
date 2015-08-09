@@ -7,21 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09481C6C1B771E3700F2006E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09481C6B1B771E3700F2006E /* CustomTabBar.swift */; };
+		094D87041B772DA70039BCF9 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D87031B772DA70039BCF9 /* HomeTableViewController.swift */; };
+		094D87061B772DBA0039BCF9 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D87051B772DBA0039BCF9 /* MessageTableViewController.swift */; };
+		094D87081B772DC80039BCF9 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D87071B772DC80039BCF9 /* DiscoverTableViewController.swift */; };
+		094D870A1B772DD40039BCF9 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D87091B772DD40039BCF9 /* ProfileTableViewController.swift */; };
+		094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */; };
+		094D870F1B7744160039BCF9 /* CustomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D870E1B7744160039BCF9 /* CustomTitleView.swift */; };
+		095DFD131B77610700BE8F1C /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 095DFD121B77610700BE8F1C /* KxMenu.m */; };
 		099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7B731B762D7C0011BF10 /* AppDelegate.swift */; };
-		099C7B761B762D7C0011BF10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7B751B762D7C0011BF10 /* ViewController.swift */; };
 		099C7B791B762D7C0011BF10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099C7B771B762D7C0011BF10 /* Main.storyboard */; };
 		099C7B7B1B762D7C0011BF10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 099C7B7A1B762D7C0011BF10 /* Assets.xcassets */; };
 		099C7B7E1B762D7C0011BF10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099C7B7C1B762D7C0011BF10 /* LaunchScreen.storyboard */; };
+		099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7B871B7646B50011BF10 /* MainTabBarController.swift */; };
+		09D659C01B76F1C200184962 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D659BF1B76F1C200184962 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09481C6B1B771E3700F2006E /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		094D87031B772DA70039BCF9 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		094D87051B772DBA0039BCF9 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		094D87071B772DC80039BCF9 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
+		094D87091B772DD40039BCF9 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionBarButton.swift; sourceTree = "<group>"; };
+		094D870E1B7744160039BCF9 /* CustomTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTitleView.swift; sourceTree = "<group>"; };
+		095DFD0F1B775F5B00BE8F1C /* SinaWeibo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SinaWeibo-Bridging-Header.h"; sourceTree = "<group>"; };
+		095DFD111B77610700BE8F1C /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		095DFD121B77610700BE8F1C /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		099C7B701B762D7C0011BF10 /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099C7B731B762D7C0011BF10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		099C7B751B762D7C0011BF10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		099C7B781B762D7C0011BF10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		099C7B7A1B762D7C0011BF10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		099C7B7D1B762D7C0011BF10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		099C7B7F1B762D7C0011BF10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		099C7B871B7646B50011BF10 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		09D659BF1B76F1C200184962 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +55,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		094D87021B772BE80039BCF9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				099C7B871B7646B50011BF10 /* MainTabBarController.swift */,
+				094D87031B772DA70039BCF9 /* HomeTableViewController.swift */,
+				094D87051B772DBA0039BCF9 /* MessageTableViewController.swift */,
+				094D87071B772DC80039BCF9 /* DiscoverTableViewController.swift */,
+				094D87091B772DD40039BCF9 /* ProfileTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		094D870D1B7741170039BCF9 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				09481C6B1B771E3700F2006E /* CustomTabBar.swift */,
+				094D870E1B7744160039BCF9 /* CustomTitleView.swift */,
+				094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
+		095DFD101B77610600BE8F1C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				095DFD111B77610700BE8F1C /* KxMenu.h */,
+				095DFD121B77610700BE8F1C /* KxMenu.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		099C7B671B762D7C0011BF10 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +105,16 @@
 		099C7B721B762D7C0011BF10 /* SinaWeibo */ = {
 			isa = PBXGroup;
 			children = (
-				099C7B731B762D7C0011BF10 /* AppDelegate.swift */,
-				099C7B751B762D7C0011BF10 /* ViewController.swift */,
+				094D87021B772BE80039BCF9 /* Controllers */,
+				094D870D1B7741170039BCF9 /* CustomView */,
 				099C7B771B762D7C0011BF10 /* Main.storyboard */,
 				099C7B7A1B762D7C0011BF10 /* Assets.xcassets */,
-				099C7B7C1B762D7C0011BF10 /* LaunchScreen.storyboard */,
+				099C7B731B762D7C0011BF10 /* AppDelegate.swift */,
+				09D659BF1B76F1C200184962 /* Constant.swift */,
+				095DFD0F1B775F5B00BE8F1C /* SinaWeibo-Bridging-Header.h */,
+				095DFD101B77610600BE8F1C /* Source */,
 				099C7B7F1B762D7C0011BF10 /* Info.plist */,
+				099C7B7C1B762D7C0011BF10 /* LaunchScreen.storyboard */,
 			);
 			path = SinaWeibo;
 			sourceTree = "<group>";
@@ -90,6 +145,7 @@
 		099C7B681B762D7C0011BF10 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Beijing Gold Finger Education Technology LLC";
 				TargetAttributes = {
@@ -134,8 +190,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				099C7B761B762D7C0011BF10 /* ViewController.swift in Sources */,
+				094D870F1B7744160039BCF9 /* CustomTitleView.swift in Sources */,
+				094D87081B772DC80039BCF9 /* DiscoverTableViewController.swift in Sources */,
+				09481C6C1B771E3700F2006E /* CustomTabBar.swift in Sources */,
+				099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */,
+				095DFD131B77610700BE8F1C /* KxMenu.m in Sources */,
 				099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */,
+				094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */,
+				09D659C01B76F1C200184962 /* Constant.swift in Sources */,
+				094D87061B772DBA0039BCF9 /* MessageTableViewController.swift in Sources */,
+				094D870A1B772DD40039BCF9 /* ProfileTableViewController.swift in Sources */,
+				094D87041B772DA70039BCF9 /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,10 +311,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SinaWeibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibaby.SinaWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SinaWeibo/SinaWeibo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -257,10 +327,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SinaWeibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibaby.SinaWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SinaWeibo/SinaWeibo-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -283,6 +357,7 @@
 				099C7B841B762D7C0011BF10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
