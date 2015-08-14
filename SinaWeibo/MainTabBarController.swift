@@ -16,12 +16,13 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         /// 用自定义的tabbar替换系统的tabbar
-        let customTabBar = CustomTabBar()
-        /**
-        利用KVC修改readonly的属性
-        :param: forKeyPath 需要替换的属性“tabbar”
-        */
-        self.setValue(customTabBar, forKeyPath: "tabBar")
+//        let customTabBar = CustomTabBar()
+//        /**
+//        利用KVC修改readonly的属性
+//        :param: forKeyPath 需要替换的属性“tabbar”
+//        */
+//        self.setValue(customTabBar, forKeyPath: "tabBar")
+        
     }
     
         

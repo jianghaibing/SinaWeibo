@@ -77,7 +77,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="h8S-Fp-pOE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="h8S-Fp-pOE">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h8S-Fp-pOE" id="CSa-SS-Tvh">
@@ -93,16 +93,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Uog-bo-OEV">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="大家都在搜" minimumFontSize="17" background="searchbar_textfield_background" id="k7J-pS-8qn">
-                            <rect key="frame" x="20" y="7" width="560" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                     </navigationItem>
-                    <connections>
-                        <outlet property="searchTextField" destination="k7J-pS-8qn" id="vod-7f-1DJ"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQX-I2-V7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,7 +137,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="maintabbar" id="Jlx-y3-gGp" customClass="MainTabBarController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="tabbar_background" id="VlN-9z-wRT">
+                    <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="tabbar_background" id="VlN-9z-wRT" customClass="CustomTabBar" customModule="SinaWeibo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -160,7 +151,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjM-gS-t0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-906" y="1140"/>
+            <point key="canvasLocation" x="-918" y="1007"/>
         </scene>
         <!--首页-->
         <scene sceneID="hAb-Fc-xYR">
@@ -240,7 +231,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="searchbar_textfield_background" width="9" height="32"/>
         <image name="tabbar_background" width="1" height="44"/>
         <image name="tabbar_discover" width="30" height="30"/>
         <image name="tabbar_discover_selected" width="30" height="30"/>

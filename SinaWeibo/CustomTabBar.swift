@@ -49,6 +49,7 @@ class CustomTabBar: UITabBar {
     */
     func publishWeibo(){
         print("发布微博")
+        
     }
 
         

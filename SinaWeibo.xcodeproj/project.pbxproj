@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		093F63DA1B7B919D009C8660 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F63D91B7B919D009C8660 /* CustomSearchBar.swift */; };
 		09481C6C1B771E3700F2006E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09481C6B1B771E3700F2006E /* CustomTabBar.swift */; };
 		094D87041B772DA70039BCF9 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D87031B772DA70039BCF9 /* HomeTableViewController.swift */; };
 		094D87061B772DBA0039BCF9 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D87051B772DBA0039BCF9 /* MessageTableViewController.swift */; };
@@ -15,6 +16,7 @@
 		094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */; };
 		094D870F1B7744160039BCF9 /* CustomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D870E1B7744160039BCF9 /* CustomTitleView.swift */; };
 		095DFD131B77610700BE8F1C /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 095DFD121B77610700BE8F1C /* KxMenu.m */; };
+		096AAA2D1B7CE80800914AD1 /* CustomBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */; };
 		099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7B731B762D7C0011BF10 /* AppDelegate.swift */; };
 		099C7B791B762D7C0011BF10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099C7B771B762D7C0011BF10 /* Main.storyboard */; };
 		099C7B7B1B762D7C0011BF10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 099C7B7A1B762D7C0011BF10 /* Assets.xcassets */; };
@@ -24,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		093F63D91B7B919D009C8660 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		09481C6B1B771E3700F2006E /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		094D87031B772DA70039BCF9 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		094D87051B772DBA0039BCF9 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		095DFD0F1B775F5B00BE8F1C /* SinaWeibo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SinaWeibo-Bridging-Header.h"; sourceTree = "<group>"; };
 		095DFD111B77610700BE8F1C /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		095DFD121B77610700BE8F1C /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBadgeView.swift; sourceTree = "<group>"; };
 		099C7B701B762D7C0011BF10 /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099C7B731B762D7C0011BF10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		099C7B781B762D7C0011BF10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 			children = (
 				09481C6B1B771E3700F2006E /* CustomTabBar.swift */,
 				094D870E1B7744160039BCF9 /* CustomTitleView.swift */,
+				093F63D91B7B919D009C8660 /* CustomSearchBar.swift */,
+				096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */,
 				094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */,
 			);
 			name = CustomView;
@@ -192,6 +198,8 @@
 			files = (
 				094D870F1B7744160039BCF9 /* CustomTitleView.swift in Sources */,
 				094D87081B772DC80039BCF9 /* DiscoverTableViewController.swift in Sources */,
+				096AAA2D1B7CE80800914AD1 /* CustomBadgeView.swift in Sources */,
+				093F63DA1B7B919D009C8660 /* CustomSearchBar.swift in Sources */,
 				09481C6C1B771E3700F2006E /* CustomTabBar.swift in Sources */,
 				099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */,
 				095DFD131B77610700BE8F1C /* KxMenu.m in Sources */,

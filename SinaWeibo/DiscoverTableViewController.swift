@@ -8,22 +8,28 @@
 
 import UIKit
 
-class DiscoverTableViewController: UITableViewController {
+class DiscoverTableViewController: UITableViewController,UITextFieldDelegate {
 
-    @IBOutlet weak var searchTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchTextField.frame.size.width = kScreenWith - 10
-        let searchIcon = UIImageView(image: UIImage(named: "searchbar_textfield_search_icon"))
-        searchIcon.sizeToFit()
-        searchIcon.frame.origin.x = 10
-        searchTextField.leftView = searchIcon
-        searchTextField.leftViewMode = UITextFieldViewMode.Always
+        
+        /// 在titleView上添加搜索框
+        let searchBar = CustomSearchBar(frame: CGRectMake(0, 0, kScreenWith, 35))
+        searchBar.placeholder = "大家都在搜"
+        navigationItem.titleView = searchBar
+        
+        searchBar.delegate = self
+    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,18 +38,18 @@ class DiscoverTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+/*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 10
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
