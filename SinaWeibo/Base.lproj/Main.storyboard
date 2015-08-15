@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F25a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jlx-y3-gGp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jlx-y3-gGp">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
@@ -137,7 +137,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="maintabbar" id="Jlx-y3-gGp" customClass="MainTabBarController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="tabbar_background" id="VlN-9z-wRT" customClass="CustomTabBar" customModule="SinaWeibo" customModuleProvider="target">
+                    <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="tabbar_background" id="VlN-9z-wRT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -157,7 +157,7 @@
         <scene sceneID="hAb-Fc-xYR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0MY-r7-sIG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="首页" image="tabbar_home" selectedImage="tabbar_home_selected" id="igD-l6-7iP"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="首页" image="tabbar_home" badgeValue="2" selectedImage="tabbar_home_selected" id="igD-l6-7iP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NDZ-E1-pP3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -176,7 +176,7 @@
         <scene sceneID="rrL-IY-YoT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fxW-s3-Hpd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="消息" image="tabbar_message_center" selectedImage="tabbar_message_center_selected" id="74d-2Q-G0E"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="消息" image="tabbar_message_center" badgeValue="200" selectedImage="tabbar_message_center_selected" id="74d-2Q-G0E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KZi-ek-xrn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -214,7 +214,7 @@
         <scene sceneID="lBb-4S-C8a">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nqP-4P-oXn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="4" title="我" image="tabbar_profile" selectedImage="tabbar_profile_selected" id="5gh-zN-2H7"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="我" image="tabbar_profile" badgeValue="点" selectedImage="tabbar_profile_selected" id="5gh-zN-2H7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K8B-R6-JQ9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

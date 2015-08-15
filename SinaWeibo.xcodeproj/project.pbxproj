@@ -23,6 +23,7 @@
 		099C7B7E1B762D7C0011BF10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099C7B7C1B762D7C0011BF10 /* LaunchScreen.storyboard */; };
 		099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7B871B7646B50011BF10 /* MainTabBarController.swift */; };
 		09D659C01B76F1C200184962 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D659BF1B76F1C200184962 /* Constant.swift */; };
+		09EE4D471B7E4AA200B77A1A /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +38,7 @@
 		095DFD0F1B775F5B00BE8F1C /* SinaWeibo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SinaWeibo-Bridging-Header.h"; sourceTree = "<group>"; };
 		095DFD111B77610700BE8F1C /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		095DFD121B77610700BE8F1C /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
-		096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBadgeView.swift; sourceTree = "<group>"; };
+		096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomBadgeView.swift; path = ../CustomBadgeView.swift; sourceTree = "<group>"; };
 		099C7B701B762D7C0011BF10 /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099C7B731B762D7C0011BF10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		099C7B781B762D7C0011BF10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		099C7B7F1B762D7C0011BF10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		099C7B871B7646B50011BF10 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		09D659BF1B76F1C200184962 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,8 @@
 				09481C6B1B771E3700F2006E /* CustomTabBar.swift */,
 				094D870E1B7744160039BCF9 /* CustomTitleView.swift */,
 				093F63D91B7B919D009C8660 /* CustomSearchBar.swift */,
-				096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */,
 				094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */,
+				09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -88,6 +90,7 @@
 			children = (
 				095DFD111B77610700BE8F1C /* KxMenu.h */,
 				095DFD121B77610700BE8F1C /* KxMenu.m */,
+				096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				095DFD131B77610700BE8F1C /* KxMenu.m in Sources */,
 				099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */,
 				094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */,
+				09EE4D471B7E4AA200B77A1A /* ExtensionColor.swift in Sources */,
 				09D659C01B76F1C200184962 /* Constant.swift in Sources */,
 				094D87061B772DBA0039BCF9 /* MessageTableViewController.swift in Sources */,
 				094D870A1B772DD40039BCF9 /* ProfileTableViewController.swift in Sources */,

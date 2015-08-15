@@ -10,7 +10,7 @@ import UIKit
 
 extension UIBarButtonItem {
     
-    /// 创建自定义的UIBarbuttonItem
+    /// 创建自定义的导航栏UIBarbuttonItem
     static func createBarButtonItem(imageName:String,highlightedImageName:String,target:AnyObject?,action:Selector,controllEvent:UIControlEvents) -> UIBarButtonItem{
     
         let button = UIButton(type: UIButtonType.Custom)

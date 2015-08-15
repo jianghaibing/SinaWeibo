@@ -11,8 +11,7 @@ import UIKit
 class CustomSearchBar: UITextField {
 
     /**
-    自定义一个textfield，设置背景图片、left图片
-   
+    自定义一个搜索框textfield，设置背景图片、left图片
     */
     override init(frame: CGRect) {
         super.init(frame: frame)
