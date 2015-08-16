@@ -9,4 +9,4 @@
 import UIKit
 
 let kScreenWith = UIScreen.mainScreen().bounds.width
-
+let kKeyWindow = UIApplication.sharedApplication().keyWindow

@@ -15,6 +15,9 @@
 		094D870A1B772DD40039BCF9 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D87091B772DD40039BCF9 /* ProfileTableViewController.swift */; };
 		094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */; };
 		094D870F1B7744160039BCF9 /* CustomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D870E1B7744160039BCF9 /* CustomTitleView.swift */; };
+		0953E34E1B80B3EC007AF200 /* CustomPopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E34D1B80B3EC007AF200 /* CustomPopMenu.swift */; };
+		0953E3501B80B9F7007AF200 /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E34F1B80B9F7007AF200 /* CustomOverlay.swift */; };
+		0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E3511B80BDF1007AF200 /* PopMenuTableViewController.swift */; };
 		095DFD131B77610700BE8F1C /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 095DFD121B77610700BE8F1C /* KxMenu.m */; };
 		096AAA2D1B7CE80800914AD1 /* CustomBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */; };
 		099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7B731B762D7C0011BF10 /* AppDelegate.swift */; };
@@ -35,6 +38,9 @@
 		094D87091B772DD40039BCF9 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionBarButton.swift; sourceTree = "<group>"; };
 		094D870E1B7744160039BCF9 /* CustomTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTitleView.swift; sourceTree = "<group>"; };
+		0953E34D1B80B3EC007AF200 /* CustomPopMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopMenu.swift; sourceTree = "<group>"; };
+		0953E34F1B80B9F7007AF200 /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
+		0953E3511B80BDF1007AF200 /* PopMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuTableViewController.swift; sourceTree = "<group>"; };
 		095DFD0F1B775F5B00BE8F1C /* SinaWeibo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SinaWeibo-Bridging-Header.h"; sourceTree = "<group>"; };
 		095DFD111B77610700BE8F1C /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		095DFD121B77610700BE8F1C /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
@@ -65,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				099C7B871B7646B50011BF10 /* MainTabBarController.swift */,
-				094D87031B772DA70039BCF9 /* HomeTableViewController.swift */,
+				0953E3531B80BDF9007AF200 /* Home */,
 				094D87051B772DBA0039BCF9 /* MessageTableViewController.swift */,
 				094D87071B772DC80039BCF9 /* DiscoverTableViewController.swift */,
 				094D87091B772DD40039BCF9 /* ProfileTableViewController.swift */,
@@ -77,12 +83,47 @@
 			isa = PBXGroup;
 			children = (
 				09481C6B1B771E3700F2006E /* CustomTabBar.swift */,
-				094D870E1B7744160039BCF9 /* CustomTitleView.swift */,
-				093F63D91B7B919D009C8660 /* CustomSearchBar.swift */,
-				094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */,
-				09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */,
+				094F24921B80CFFF00A28EF6 /* Discover */,
+				094F24901B80CF9100A28EF6 /* Home */,
 			);
 			name = CustomView;
+			sourceTree = "<group>";
+		};
+		094F24901B80CF9100A28EF6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				094D870E1B7744160039BCF9 /* CustomTitleView.swift */,
+				0953E34D1B80B3EC007AF200 /* CustomPopMenu.swift */,
+				0953E34F1B80B9F7007AF200 /* CustomOverlay.swift */,
+				094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		094F24911B80CFD200A28EF6 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				09D659BF1B76F1C200184962 /* Constant.swift */,
+				09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		094F24921B80CFFF00A28EF6 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				093F63D91B7B919D009C8660 /* CustomSearchBar.swift */,
+			);
+			name = Discover;
+			sourceTree = "<group>";
+		};
+		0953E3531B80BDF9007AF200 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				094D87031B772DA70039BCF9 /* HomeTableViewController.swift */,
+				0953E3511B80BDF1007AF200 /* PopMenuTableViewController.swift */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		095DFD101B77610600BE8F1C /* Source */ = {
@@ -116,10 +157,10 @@
 			children = (
 				094D87021B772BE80039BCF9 /* Controllers */,
 				094D870D1B7741170039BCF9 /* CustomView */,
+				094F24911B80CFD200A28EF6 /* Tool */,
 				099C7B771B762D7C0011BF10 /* Main.storyboard */,
 				099C7B7A1B762D7C0011BF10 /* Assets.xcassets */,
 				099C7B731B762D7C0011BF10 /* AppDelegate.swift */,
-				09D659BF1B76F1C200184962 /* Constant.swift */,
 				095DFD0F1B775F5B00BE8F1C /* SinaWeibo-Bridging-Header.h */,
 				095DFD101B77610600BE8F1C /* Source */,
 				099C7B7F1B762D7C0011BF10 /* Info.plist */,
@@ -205,10 +246,13 @@
 				093F63DA1B7B919D009C8660 /* CustomSearchBar.swift in Sources */,
 				09481C6C1B771E3700F2006E /* CustomTabBar.swift in Sources */,
 				099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */,
+				0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */,
 				095DFD131B77610700BE8F1C /* KxMenu.m in Sources */,
 				099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */,
 				094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */,
+				0953E34E1B80B3EC007AF200 /* CustomPopMenu.swift in Sources */,
 				09EE4D471B7E4AA200B77A1A /* ExtensionColor.swift in Sources */,
+				0953E3501B80B9F7007AF200 /* CustomOverlay.swift in Sources */,
 				09D659C01B76F1C200184962 /* Constant.swift in Sources */,
 				094D87061B772DBA0039BCF9 /* MessageTableViewController.swift in Sources */,
 				094D870A1B772DD40039BCF9 /* ProfileTableViewController.swift in Sources */,

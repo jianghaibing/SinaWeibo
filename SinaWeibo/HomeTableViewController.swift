@@ -8,15 +8,18 @@
 
 import UIKit
 
-class HomeTableViewController: UITableViewController,CZCoverDelegate {
+class HomeTableViewController: UITableViewController,OverlayDelegate{
     
     var titleView:CustomTitleView!
+    
+    lazy var popMenuVC:PopMenuTableViewController = PopMenuTableViewController()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavagationBar()
-        
+       
     }
     
     
@@ -40,22 +43,24 @@ class HomeTableViewController: UITableViewController,CZCoverDelegate {
     */
     func showTitlePopmenu(){
         titleView.selected = !titleView.selected
-        let menu1 = KxMenuItem("首页           ", image: nil, target: self, action: nil)
-        let menu2 = KxMenuItem("好友圈         ", image: nil, target: self, action: nil)
-        let menu3 = KxMenuItem("微博群         ", image: nil, target: self, action: nil)
-        let menu4 = KxMenuItem("我的微博        ", image: nil, target: self, action: nil)
-        let frame = CGRectMake(titleView.frame.origin.x, titleView.frame.origin.y + titleView.bounds.height, titleView.bounds.width, titleView.bounds.height)
-        KxMenu.showMenuInView(self.view.window, fromRect:frame, menuItems: [menu1,menu2,menu3,menu4])
-        KxMenu.setTintColor(UIColor(red: 95/255, green: 95/255, blue: 95/255, alpha: 0.3))
-        let overlay = self.view.window?.subviews[1] as? KxMenuOverlay
-        overlay?.delegate = self
+        
+        let overlay = CustomOverlay.show()
+        overlay.delegate = self
+        
+        /// 显示Popmenu并设置大小，同时将popMenuVC的视图设置给contentView
+        let popW:CGFloat = 200
+        let popX:CGFloat = (self.view.bounds.size.width - 200) * 0.5
+        let popH = popW
+        let popY:CGFloat = 55
+        let popMenu = CustomPopMenu.showInRect(CGRectMake(popX, popY, popW, popH))
+        popMenu.contentView = popMenuVC.view
         
     }
-
-    func coverDidClickCover(cover: KxMenuOverlay!) {
-        titleView.selected = !titleView.selected
-    }
     
+    func didClickOverlay(overlay: CustomOverlay) {
+        CustomPopMenu.hide()
+        titleView.selected = false
+    }
     
     /**
     右边按钮动作
