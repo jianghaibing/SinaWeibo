@@ -58,9 +58,9 @@
                             <outlet property="delegate" destination="toj-XB-ndC" id="FYU-nH-8Md"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="消息" id="Iud-O4-kjN">
-                        <barButtonItem key="rightBarButtonItem" title="发起聊天" id="OeU-Ce-a0V">
-                            <color key="tintColor" red="0.92156862745098034" green="0.41960784313725491" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <navigationItem key="navigationItem" title="消息" id="o0P-7h-uBE">
+                        <barButtonItem key="rightBarButtonItem" title="发起聊天" id="1fP-DP-XQ4">
+                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -124,13 +124,47 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="我" id="NDf-yE-PAp">
                         <barButtonItem key="rightBarButtonItem" title="设置" id="GX8-ho-MFi">
-                            <color key="tintColor" red="0.92156862745098034" green="0.41960784313725491" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="JeI-ac-Alt" kind="show" identifier="" id="JUX-TK-fWS"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vog-05-Hb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="556" y="2080"/>
+        </scene>
+        <!--设置-->
+        <scene sceneID="kcd-wC-Ccv">
+            <objects>
+                <tableViewController hidesBottomBarWhenPushed="YES" id="JeI-ac-Alt" customClass="SettingTableViewController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sjJ-4v-u5G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KeU-8G-dRo">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KeU-8G-dRo" id="6MT-GR-png">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JeI-ac-Alt" id="QrD-oh-KCv"/>
+                            <outlet property="delegate" destination="JeI-ac-Alt" id="lzr-hP-AAd"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="设置" id="aiR-z1-1ti"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cz8-KA-pen" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247" y="2080"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="6uC-o9-nfF">
@@ -156,7 +190,7 @@
         <!--首页-->
         <scene sceneID="hAb-Fc-xYR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0MY-r7-sIG" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0MY-r7-sIG" customClass="BaseNavigationController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="首页" image="tabbar_home" badgeValue="2" selectedImage="tabbar_home_selected" id="igD-l6-7iP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NDZ-E1-pP3">
@@ -175,7 +209,7 @@
         <!--消息-->
         <scene sceneID="rrL-IY-YoT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fxW-s3-Hpd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fxW-s3-Hpd" customClass="BaseNavigationController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="2" title="消息" image="tabbar_message_center" badgeValue="200" selectedImage="tabbar_message_center_selected" id="74d-2Q-G0E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KZi-ek-xrn">
@@ -194,7 +228,7 @@
         <!--发现-->
         <scene sceneID="wn6-f3-fSB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ey7-BT-xNy" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ey7-BT-xNy" customClass="BaseNavigationController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="3" title="发现" image="tabbar_discover" selectedImage="tabbar_discover_selected" id="VxQ-Gq-EDq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2ut-yt-8Ud">
@@ -213,7 +247,7 @@
         <!--我-->
         <scene sceneID="lBb-4S-C8a">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nqP-4P-oXn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nqP-4P-oXn" customClass="BaseNavigationController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="4" title="我" image="tabbar_profile" badgeValue="点" selectedImage="tabbar_profile_selected" id="5gh-zN-2H7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K8B-R6-JQ9">
