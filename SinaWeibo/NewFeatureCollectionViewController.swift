@@ -12,6 +12,7 @@ import UIKit
 
 class NewFeatureCollectionViewController: UICollectionViewController {
 
+    var pageControl:UIPageControl?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,25 @@ class NewFeatureCollectionViewController: UICollectionViewController {
         layout.itemSize = UIScreen.mainScreen().bounds.size
         layout.minimumLineSpacing = 0
         
+        addPageControl()
+    }
+    
+    /**
+    添加pagecontrol在当前视图上
+    */
+    func addPageControl(){
+        pageControl = UIPageControl(frame: CGRectMake(kScreenWith/2 - 50, kScreenHeight - 20 - 39, 100, 39))
+        pageControl!.numberOfPages = 4
+        pageControl!.pageIndicatorTintColor = UIColor.blackColor()
+        pageControl!.currentPageIndicatorTintColor = UIColor.redColor()
+        self.view.addSubview(pageControl!)
+
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        /// 计算当在第几页
+        let page:Int = Int(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5)
+        pageControl!.currentPage = page
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,11 +79,9 @@ class NewFeatureCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
-    
-        // Configure the cell
+        /// 用tag拿到imageView，设置图片
         let imageView = cell.viewWithTag(100) as! UIImageView
         imageView.image = UIImage(named: "new_feature_\(indexPath.row + 1)")
-        
         return cell
     }
 
