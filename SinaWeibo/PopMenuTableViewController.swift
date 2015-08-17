@@ -16,7 +16,7 @@ class PopMenuTableViewController: UITableViewController {
         tableView的分割线为空，注册tableViewCell
         */
         tableView.separatorStyle = .None
-        tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "reuseIdentifier")
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
     }
 
     override func didReceiveMemoryWarning() {

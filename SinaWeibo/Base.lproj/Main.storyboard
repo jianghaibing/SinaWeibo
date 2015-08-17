@@ -187,6 +187,51 @@
             </objects>
             <point key="canvasLocation" x="-918" y="1007"/>
         </scene>
+        <!--New Feature Collection View Controller-->
+        <scene sceneID="Qmw-ul-psw">
+            <objects>
+                <collectionViewController storyboardIdentifier="newfeature" id="ase-9g-9g5" customClass="NewFeatureCollectionViewController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="Hu1-Fj-3bw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="duC-oS-BEz">
+                            <size key="itemSize" width="344" height="320"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="2eK-Bp-GYK">
+                                <rect key="frame" x="0.0" y="140" width="344" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="344" height="320"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pWR-P8-9ZY">
+                                            <rect key="frame" x="0.0" y="0.0" width="344" height="320"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pWR-P8-9ZY" secondAttribute="bottom" id="AV0-GL-GCe"/>
+                                    <constraint firstItem="pWR-P8-9ZY" firstAttribute="leading" secondItem="2eK-Bp-GYK" secondAttribute="leading" id="VSq-EB-8jB"/>
+                                    <constraint firstItem="pWR-P8-9ZY" firstAttribute="top" secondItem="2eK-Bp-GYK" secondAttribute="top" id="bcL-3v-4PC"/>
+                                    <constraint firstAttribute="trailing" secondItem="pWR-P8-9ZY" secondAttribute="trailing" id="eyk-6U-Yw8"/>
+                                </constraints>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="ase-9g-9g5" id="Z0V-Id-Dbh"/>
+                            <outlet property="delegate" destination="ase-9g-9g5" id="6Ev-NX-Pxp"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MA5-nR-083" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-967" y="-92"/>
+        </scene>
         <!--首页-->
         <scene sceneID="hAb-Fc-xYR">
             <objects>

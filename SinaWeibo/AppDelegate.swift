@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        
+        let new:Bool = true
+    
+        if new {
+            let vc1 = story.instantiateViewControllerWithIdentifier("newfeature")
+            window?.rootViewController = vc1
+        }else{
+            let vc2 = story.instantiateViewControllerWithIdentifier("maintabbar")
+            window?.rootViewController = vc2
+        }
+        
         return true
     }
 

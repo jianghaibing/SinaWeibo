@@ -19,6 +19,7 @@
 		0953E3501B80B9F7007AF200 /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E34F1B80B9F7007AF200 /* CustomOverlay.swift */; };
 		0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E3511B80BDF1007AF200 /* PopMenuTableViewController.swift */; };
 		095DFD131B77610700BE8F1C /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 095DFD121B77610700BE8F1C /* KxMenu.m */; };
+		09643A251B81F0EF003643A8 /* NewFeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09643A241B81F0EF003643A8 /* NewFeatureCollectionViewController.swift */; };
 		096AAA2D1B7CE80800914AD1 /* CustomBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */; };
 		099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7B731B762D7C0011BF10 /* AppDelegate.swift */; };
 		099C7B791B762D7C0011BF10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099C7B771B762D7C0011BF10 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		095DFD0F1B775F5B00BE8F1C /* SinaWeibo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SinaWeibo-Bridging-Header.h"; sourceTree = "<group>"; };
 		095DFD111B77610700BE8F1C /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		095DFD121B77610700BE8F1C /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		09643A241B81F0EF003643A8 /* NewFeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureCollectionViewController.swift; sourceTree = "<group>"; };
 		096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomBadgeView.swift; path = ../CustomBadgeView.swift; sourceTree = "<group>"; };
 		099C7B701B762D7C0011BF10 /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099C7B731B762D7C0011BF10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,8 +76,7 @@
 		094D87021B772BE80039BCF9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				099C7B871B7646B50011BF10 /* MainTabBarController.swift */,
-				09DEC9051B80F995007B440C /* BaseNavigationController.swift */,
+				09516A5B1B81AB560008BD3A /* PublicVC */,
 				0953E3531B80BDF9007AF200 /* Home */,
 				094D87051B772DBA0039BCF9 /* MessageTableViewController.swift */,
 				094D87071B772DC80039BCF9 /* DiscoverTableViewController.swift */,
@@ -87,9 +88,9 @@
 		094D870D1B7741170039BCF9 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				09481C6B1B771E3700F2006E /* CustomTabBar.swift */,
 				094F24921B80CFFF00A28EF6 /* Discover */,
 				094F24901B80CF9100A28EF6 /* Home */,
+				09516A5A1B81AB2A0008BD3A /* PublicView */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -100,7 +101,6 @@
 				094D870E1B7744160039BCF9 /* CustomTitleView.swift */,
 				0953E34D1B80B3EC007AF200 /* CustomPopMenu.swift */,
 				0953E34F1B80B9F7007AF200 /* CustomOverlay.swift */,
-				094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -120,6 +120,25 @@
 				093F63D91B7B919D009C8660 /* CustomSearchBar.swift */,
 			);
 			name = Discover;
+			sourceTree = "<group>";
+		};
+		09516A5A1B81AB2A0008BD3A /* PublicView */ = {
+			isa = PBXGroup;
+			children = (
+				09481C6B1B771E3700F2006E /* CustomTabBar.swift */,
+				094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */,
+			);
+			name = PublicView;
+			sourceTree = "<group>";
+		};
+		09516A5B1B81AB560008BD3A /* PublicVC */ = {
+			isa = PBXGroup;
+			children = (
+				099C7B871B7646B50011BF10 /* MainTabBarController.swift */,
+				09DEC9051B80F995007B440C /* BaseNavigationController.swift */,
+				09643A241B81F0EF003643A8 /* NewFeatureCollectionViewController.swift */,
+			);
+			name = PublicVC;
 			sourceTree = "<group>";
 		};
 		0953E3531B80BDF9007AF200 /* Home */ = {
@@ -262,6 +281,7 @@
 				099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */,
 				09DEC9061B80F995007B440C /* BaseNavigationController.swift in Sources */,
 				09DEC9031B80EDC1007B440C /* SettingTableViewController.swift in Sources */,
+				09643A251B81F0EF003643A8 /* NewFeatureCollectionViewController.swift in Sources */,
 				0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */,
 				095DFD131B77610700BE8F1C /* KxMenu.m in Sources */,
 				099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */,
