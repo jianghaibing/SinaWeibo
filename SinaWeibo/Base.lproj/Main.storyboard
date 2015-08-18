@@ -227,6 +227,9 @@
                             <outlet property="delegate" destination="ase-9g-9g5" id="6Ev-NX-Pxp"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <segue destination="Jlx-y3-gGp" kind="show" identifier="showMain" animates="NO" id="38G-Si-ENq"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MA5-nR-083" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

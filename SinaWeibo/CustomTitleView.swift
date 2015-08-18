@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
     
-    /// 图片拉伸的方法，可使用Assets的slicing来拉升,已经使用了slicing
+    /// 图片拉伸的方法，可使用Assets的slicing来拉伸,已经使用了slicing
     /*
     class func imageWithStretchableName(imageName:String) -> UIImage {
         let image = UIImage(named: imageName)

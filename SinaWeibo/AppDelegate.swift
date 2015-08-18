@@ -17,16 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let story = UIStoryboard(name: "Main", bundle: nil)
+        /// 取得当前版本号和上一次保存的版本号
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as! String
+        let lastVersion = (NSUserDefaults.standardUserDefaults().objectForKey("Version") as? String) ?? "1.0.0"
         
-        let new:Bool = true
-    
-        if new {
+        /**
+        *  当版本号不相等时进入引导页，否则进入主界面
+        */
+        if currentVersion != lastVersion {
             let vc1 = story.instantiateViewControllerWithIdentifier("newfeature")
             window?.rootViewController = vc1
         }else{
             let vc2 = story.instantiateViewControllerWithIdentifier("maintabbar")
             window?.rootViewController = vc2
         }
+        /**
+        保存当前的版本号
+        */
+        NSUserDefaults.standardUserDefaults().setObject(currentVersion, forKey: "Version")
         
         return true
     }

@@ -20,7 +20,7 @@ class CustomPopMenu: UIImageView {
         }
     }
     
-    /// 显示popMenu,让popMenu显示在主wind上面
+    /// 显示popMenu,让popMenu显示在主window上面
     class func showInRect(rect:CGRect) -> CustomPopMenu {
         let menu = CustomPopMenu(frame: rect)
         menu.userInteractionEnabled = true
