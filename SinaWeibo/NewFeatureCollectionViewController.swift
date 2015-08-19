@@ -12,11 +12,11 @@ import UIKit
 
 class NewFeatureCollectionViewController: UICollectionViewController {
 
-    var pageControl:UIPageControl?
-    lazy var startButton = UIButton()
-    lazy var shareLabble = UILabel()
-    lazy var shareButton = UIButton()
-    let pageCount = 4
+    private var pageControl:UIPageControl?
+    private lazy var startButton = UIButton()
+    private lazy var shareLabble = UILabel()
+    private lazy var shareButton = UIButton()
+    private let pageCount = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class NewFeatureCollectionViewController: UICollectionViewController {
     /**
     添加pagecontrol在当前视图上
     */
-    func addPageControl(){
+    private func addPageControl(){
         pageControl = UIPageControl(frame: CGRectMake(kScreenWith/2 - 50, kScreenHeight - 20 - 39, 100, 39))
         pageControl!.numberOfPages = pageCount
         pageControl!.pageIndicatorTintColor = UIColor.blackColor()
@@ -87,7 +87,7 @@ class NewFeatureCollectionViewController: UICollectionViewController {
         }else{
             imageView.image = UIImage(named: "new_feature_\(indexPath.row + 1)-568h")
         }
-        if indexPath.row == pageCount - 1 && pageCount > 0 {
+        if indexPath.row == pageCount - 1 {
             startButton.setTitle("开始微博", forState: UIControlState.Normal)
             startButton.setBackgroundImage(UIImage(named: "new_feature_finish_button"), forState: UIControlState.Normal)
             startButton.setBackgroundImage(UIImage(named: "new_feature_finish_button_highlighted"), forState: UIControlState.Highlighted)
@@ -106,7 +106,7 @@ class NewFeatureCollectionViewController: UICollectionViewController {
             shareLabble.frame = CGRectMake(kScreenWith / 2 - 52.5 + 23, kScreenHeight - 160, 100, 30)
             cell.addSubview(shareLabble)
             
-        }else if indexPath.row != pageCount - 2 && pageCount > 1 {//不等于相邻的界面时移除界面元素
+        }else if indexPath.row != pageCount - 2 {//不等于相邻的界面时移除界面元素
             startButton.removeFromSuperview()
             shareLabble.removeFromSuperview()
             shareButton.removeFromSuperview()

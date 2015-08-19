@@ -10,7 +10,7 @@ import UIKit
 
 class HomeTableViewController: UITableViewController,OverlayDelegate{
     
-    var titleView:CustomTitleView!
+    private var titleView:CustomTitleView!
     
     lazy var popMenuVC:PopMenuTableViewController = PopMenuTableViewController()
     
@@ -26,7 +26,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
     /**
     配置导航栏按钮和title
     */
-    func setupNavagationBar(){
+    private func setupNavagationBar(){
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", highlightedImageName: "navigationbar_pop_highlighted", target: self, action: "pop", controllEvent: UIControlEvents.TouchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_friendsearch", highlightedImageName: "navigationbar_friendsearch_highlighted", target: self, action: "friendSearch", controllEvent: UIControlEvents.TouchUpInside)
         titleView = CustomTitleView(type: UIButtonType.Custom)
