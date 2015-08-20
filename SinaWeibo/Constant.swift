@@ -11,3 +11,7 @@ import UIKit
 let kScreenWith = UIScreen.mainScreen().bounds.width
 let kScreenHeight = UIScreen.mainScreen().bounds.height
 let kKeyWindow = UIApplication.sharedApplication().keyWindow
+let kAuthorizeBaseURL = "https://api.weibo.com/oauth2/authorize"
+let kAppKey = "2409286304"
+let kRedirectURL = "http://www.okjiaoyu.cn"
+let kAppSecret = "e39a055eb049d78f29112ae55db4ec90"
