@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import MBProgressHUD
+import Alamofire
+import SwiftyJSON
 
 class OauthViewController: UIViewController , UIWebViewDelegate {
 
@@ -63,15 +66,21 @@ class OauthViewController: UIViewController , UIWebViewDelegate {
     private func postForAccessToken(code:String){
         /// 参数
         let params = ["client_id":kAppKey,"client_secret":kAppSecret,"grant_type":"authorization_code","code":code,"redirect_uri":kRedirectURL]
-        /// 用AFHTTP请求发起一个post请求
-        let manager = AFHTTPRequestOperationManager()
-        manager.POST("https://api.weibo.com/oauth2/access_token", parameters: params, success: { (operation:AFHTTPRequestOperation, responseObject:AnyObject) -> Void in
-              print(responseObject)
-            }) { (operation:AFHTTPRequestOperation, error:NSError) -> Void in
-              print(error)
-        }
-        
+        /// 用Alamofire请求发起一个post请求
+        Alamofire.request(.POST, "https://api.weibo.com/oauth2/access_token", parameters: params)
+            .response { request, response, data, error in
+                if error != nil {
+                    print(request)
+                    print(response)
+                    print(error)
+                }else{
+                    let json = JSON(data: data!)
+                    let token = json["access_token"]
+                    print(token)
 
+                }
+        }
+     
         
     }
 

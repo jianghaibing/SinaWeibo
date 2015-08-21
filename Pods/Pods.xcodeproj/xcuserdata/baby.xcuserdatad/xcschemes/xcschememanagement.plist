@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
+		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -14,7 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-SinaWeibo.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>10EB34D07DAB16B797363624B8B1D09C</key>
+		<key>3F9E2C9B2D0E6D6C9E59BE557B797387</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C3071B04B661A956DF1C8D21C30D75D</key>
+		<key>5DF1F8C05DA0F5CCAC9B84739EEB1529</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>84115665AC0A9822D62F0423DF4FC766</key>
+		<key>AD1D23C926DD57B8C3DDC5CD7A7E3D35</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE8DAA8918F6258B0369FDFDC93276E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
