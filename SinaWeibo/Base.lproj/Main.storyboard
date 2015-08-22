@@ -238,7 +238,7 @@
         <!--Oauth View Controller-->
         <scene sceneID="XLo-Cp-hLk">
             <objects>
-                <viewController id="Vgo-4S-wzg" customClass="OauthViewController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="oauth" id="Vgo-4S-wzg" customClass="OauthViewController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <webView key="view" contentMode="scaleToFill" id="bzA-Al-KSx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -249,6 +249,7 @@
                     </webView>
                     <connections>
                         <outlet property="webView" destination="bzA-Al-KSx" id="ddF-SN-7N3"/>
+                        <segue destination="Jlx-y3-gGp" kind="show" identifier="login" animates="NO" id="OwL-45-qZT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9xU-hG-NS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -343,4 +344,7 @@
         <image name="tabbar_profile" width="30" height="30"/>
         <image name="tabbar_profile_selected" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="OwL-45-qZT"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -10,3 +10,4 @@
 #import <WeiboSDK/WeiboSDK.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <AFNetworking/AFNetworking.h>
+#import <NyaruDB/NyaruDB.h>

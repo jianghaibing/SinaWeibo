@@ -66,10 +66,34 @@ class OauthViewController: UIViewController , UIWebViewDelegate {
         /// 用AFHTTP请求发起一个post请求
         let manager = AFHTTPRequestOperationManager()
         manager.POST("https://api.weibo.com/oauth2/access_token", parameters: params, success: { (operation:AFHTTPRequestOperation, responseObject:AnyObject) -> Void in
-              print(responseObject)
+            
+            /// 添加当前时间到字典
+            let dict = NSMutableDictionary(dictionary: responseObject as! [NSObject : AnyObject])
+              dict["date"] = NSDate()
+            
+            let db = NyaruDB.instance()
+            let collection = db.collection("User")
+            collection.createIndex("uid")//创建uid作为数据库索引
+            let documents = collection.all().fetch()//查询所有数据
+            /**
+            *  当数据库已有用户数据时，清除数据
+            */
+            if documents.count > 0 {
+                collection.removeAll()
+            }
+            /**
+            *  添加最新数据到数据库
+            */
+            collection.put(dict as [NSObject : AnyObject])
+            /**
+            *  成功登录时跳转界面
+            */
+            self.performSegueWithIdentifier("login", sender: self)
+            
             }) { (operation:AFHTTPRequestOperation, error:NSError) -> Void in
               print(error)
         }
+        
         
 
         

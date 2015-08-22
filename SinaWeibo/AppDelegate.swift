@@ -16,24 +16,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        
-        
-        
-        
+        chooseRootViewController()
         
         return true
     }
     
     private func chooseRootViewController(){
+        
         let story = UIStoryboard(name: "Main", bundle: nil)
         /// 取得当前版本号和上一次保存的版本号
         let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as! String
         let lastVersion = (NSUserDefaults.standardUserDefaults().objectForKey("Version") as? String) ?? "1.0.0"
         
+        /// 从数据库取用户数据
+        let db = NyaruDB.instance()
+        let collection = db.collection("User")
+        let documents = collection.all().fetch()
+        var expireDate:NSDate?
+        if documents.count > 0 {
+            /// 获取过期时间
+            expireDate = NSDate(timeInterval: documents[0]["expires_in"] as! NSTimeInterval , sinceDate: documents[0]["date"] as! NSDate)
+        }else{
+            expireDate = NSDate(timeIntervalSinceNow: -100)
+        }
         /**
-        *  当版本号不相等时进入引导页，否则进入主界面
+        * 如果token过期了或第一次使用，进入认证界面
+        * 如果当前版本号不等于上次保存的版本号进入新特性界面
+        * 否则进入主界面
         */
-        if currentVersion != lastVersion {
+        if NSDate().compare(expireDate!) != NSComparisonResult.OrderedAscending || documents.count == 0 {
+            let vc3 = story.instantiateViewControllerWithIdentifier("oauth")
+            window?.rootViewController = vc3
+        }else if currentVersion != lastVersion {
             let vc1 = story.instantiateViewControllerWithIdentifier("newfeature")
             window?.rootViewController = vc1
         }else{

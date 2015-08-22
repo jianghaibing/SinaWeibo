@@ -21,11 +21,13 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - MBProgressHUD (0.9.1)
+  - NyaruDB (1.4.2)
   - WeiboSDK (3.1.1)
 
 DEPENDENCIES:
   - AFNetworking
   - MBProgressHUD
+  - NyaruDB
   - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk`)
 
 EXTERNAL SOURCES:
@@ -40,6 +42,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  NyaruDB: 2abbcd1fb90e91e324a81b2b504a409224671ea0
   WeiboSDK: 5925fdb6199b44d504d62628a52186efa095a747
 
 COCOAPODS: 0.38.2
