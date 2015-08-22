@@ -15,7 +15,7 @@ import NyaruDB
 class OauthViewController: UIViewController , UIWebViewDelegate {
 
     @IBOutlet var webView: UIWebView!
-    lazy var db = NyaruDB.instance()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,23 +78,23 @@ class OauthViewController: UIViewController , UIWebViewDelegate {
                 }else{
                     let dict = JSON(data: data!).dictionaryObject
 //                    let model = Account(dict:json!)
-                    
-                    
-                    let table = self.db.collection("account")
-                
+                    //获取数据库单例
+                    let db = NyaruDB.instance()
+                    //创建account表
+                    let table = db.collection("account")
+                    //添加UID作为索引条件
                     table.createIndex("uid")
-                    let doucuments = table.all().fetch()
-
+                    
+                    //数据库中的UID等于网上取得的数据时，返回数据
+                    let doucuments = table.wheres("uid", equal: dict!["uid"]).fetch()
+                    
+                    //当返回的数据为空时插入数据，即数据库没有这个用户
                     if doucuments.count == 0 {
                         table.put(dict)
                     }
-                    
-
-
-                    
-                    //        table.where("uid", equal: "2810154272").fetch
                     print(doucuments)
                 }
+                
         }
         
 
