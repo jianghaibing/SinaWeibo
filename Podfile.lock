@@ -1,12 +1,14 @@
 PODS:
   - Alamofire (2.0.0-beta.1)
   - MBProgressHUD (0.9.1)
+  - NyaruDB (1.4.2)
   - SwiftyJSON (2.2.1)
   - WeiboSDK (3.1.1)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift-2.0`)
   - MBProgressHUD
+  - NyaruDB
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`, branch `xcode7`)
   - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk`)
 
@@ -34,6 +36,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 96feccc1e48a735edb92395cf023ba4ed52bdb45
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  NyaruDB: 2abbcd1fb90e91e324a81b2b504a409224671ea0
   SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
   WeiboSDK: 5925fdb6199b44d504d62628a52186efa095a747
 

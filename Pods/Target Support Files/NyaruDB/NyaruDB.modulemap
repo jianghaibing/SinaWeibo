@@ -1,0 +1,6 @@
+framework module NyaruDB {
+  umbrella header "NyaruDB-umbrella.h"
+
+  export *
+  module * { export * }
+}

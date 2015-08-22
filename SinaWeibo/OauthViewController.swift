@@ -10,10 +10,12 @@ import UIKit
 import MBProgressHUD
 import Alamofire
 import SwiftyJSON
+import NyaruDB
 
 class OauthViewController: UIViewController , UIWebViewDelegate {
 
     @IBOutlet var webView: UIWebView!
+    lazy var db = NyaruDB.instance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,13 +76,28 @@ class OauthViewController: UIViewController , UIWebViewDelegate {
                     print(response)
                     print(error)
                 }else{
-                    let json = JSON(data: data!)
-                    let token = json["access_token"]
-                    print(token)
+                    let dict = JSON(data: data!).dictionaryObject
+//                    let model = Account(dict:json!)
+                    
+                    
+                    let table = self.db.collection("account")
+                
+                    table.createIndex("uid")
+                    let doucuments = table.all().fetch()
 
+                    if doucuments.count == 0 {
+                        table.put(dict)
+                    }
+                    
+
+
+                    
+                    //        table.where("uid", equal: "2810154272").fetch
+                    print(doucuments)
                 }
         }
-     
+        
+
         
     }
 

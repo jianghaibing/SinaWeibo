@@ -54,10 +54,12 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-SinaWeibo/Alamofire.framework'
   install_framework 'Pods-SinaWeibo/MBProgressHUD.framework'
+  install_framework 'Pods-SinaWeibo/NyaruDB.framework'
   install_framework 'Pods-SinaWeibo/SwiftyJSON.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-SinaWeibo/Alamofire.framework'
   install_framework 'Pods-SinaWeibo/MBProgressHUD.framework'
+  install_framework 'Pods-SinaWeibo/NyaruDB.framework'
   install_framework 'Pods-SinaWeibo/SwiftyJSON.framework'
 fi

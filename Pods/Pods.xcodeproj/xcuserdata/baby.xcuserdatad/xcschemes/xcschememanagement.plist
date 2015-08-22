@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NyaruDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SinaWeibo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3F9E2C9B2D0E6D6C9E59BE557B797387</key>
+		<key>449BCBE6DB7369AF05007D9AD76CDFDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5DF1F8C05DA0F5CCAC9B84739EEB1529</key>
+		<key>5109A439BEF0AD7456F41FF247D49BF4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD1D23C926DD57B8C3DDC5CD7A7E3D35</key>
+		<key>796A22111A0F222F7CC766EEC34F3F1C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>92297C09E717E7B2AF454CBD68EDF4DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A372C0C7AE4FECC1D5AA8080EB4C9611</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BE8DAA8918F6258B0369FDFDC93276E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

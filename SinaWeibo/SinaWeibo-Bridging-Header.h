@@ -8,4 +8,4 @@
 
 #import "KxMenu.h"
 #import <WeiboSDK/WeiboSDK.h>
-#import <MBProgressHUD/MBProgressHUD.h>
+#import <NyaruDB/NyaruDB.h>
