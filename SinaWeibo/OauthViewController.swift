@@ -86,7 +86,7 @@ class OauthViewController: UIViewController , UIWebViewDelegate {
             */
             collection.put(dict as [NSObject : AnyObject])
             /**
-            *  成功登录时跳转界面
+            *  成功登录时获取万数据跳转界面
             */
             self.performSegueWithIdentifier("login", sender: self)
             

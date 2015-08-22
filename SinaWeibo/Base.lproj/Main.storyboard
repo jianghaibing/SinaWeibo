@@ -229,6 +229,7 @@
                     </collectionView>
                     <connections>
                         <segue destination="Jlx-y3-gGp" kind="show" identifier="showMain" animates="NO" id="38G-Si-ENq"/>
+                        <segue destination="Vgo-4S-wzg" kind="show" identifier="showOauth" animates="NO" id="fCG-J0-GJM"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MA5-nR-083" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -345,6 +346,6 @@
         <image name="tabbar_profile_selected" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OwL-45-qZT"/>
+        <segue reference="38G-Si-ENq"/>
     </inferredMetricsTieBreakers>
 </document>

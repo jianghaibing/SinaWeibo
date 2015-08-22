@@ -37,17 +37,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             /// 获取过期时间
             expireDate = NSDate(timeInterval: documents[0]["expires_in"] as! NSTimeInterval , sinceDate: documents[0]["date"] as! NSDate)
         }else{
-            expireDate = NSDate(timeIntervalSinceNow: -100)
+            expireDate = NSDate(timeIntervalSinceNow: 100)
         }
         /**
-        * 如果token过期了或第一次使用，进入认证界面
-        * 如果当前版本号不等于上次保存的版本号进入新特性界面
+        * 如果token过期了，进入认证界面
+        * 如果当前版本号不等于上次保存的版本号或者第一次使用进入新特性界面
         * 否则进入主界面
         */
-        if NSDate().compare(expireDate!) != NSComparisonResult.OrderedAscending || documents.count == 0 {
+        if NSDate().compare(expireDate!) != NSComparisonResult.OrderedAscending {
             let vc3 = story.instantiateViewControllerWithIdentifier("oauth")
             window?.rootViewController = vc3
-        }else if currentVersion != lastVersion {
+        }else if currentVersion != lastVersion || documents.count == 0 {
             let vc1 = story.instantiateViewControllerWithIdentifier("newfeature")
             window?.rootViewController = vc1
         }else{
