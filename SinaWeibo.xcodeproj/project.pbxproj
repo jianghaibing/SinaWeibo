@@ -21,6 +21,8 @@
 		095DFD131B77610700BE8F1C /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 095DFD121B77610700BE8F1C /* KxMenu.m */; };
 		09643A251B81F0EF003643A8 /* NewFeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09643A241B81F0EF003643A8 /* NewFeatureCollectionViewController.swift */; };
 		096AAA2D1B7CE80800914AD1 /* CustomBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */; };
+		09858F901B89883600C445FB /* OauthTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F8F1B89883600C445FB /* OauthTool.swift */; };
+		09858F941B89960900C445FB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F931B89960900C445FB /* Account.swift */; };
 		099392CF1B84D2670086116B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 099392CE1B84D2670086116B /* Podfile */; };
 		099392D11B84DCB30086116B /* OauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099392D01B84DCB20086116B /* OauthViewController.swift */; };
 		099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7B731B762D7C0011BF10 /* AppDelegate.swift */; };
@@ -52,6 +54,8 @@
 		095DFD121B77610700BE8F1C /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		09643A241B81F0EF003643A8 /* NewFeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureCollectionViewController.swift; sourceTree = "<group>"; };
 		096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomBadgeView.swift; path = ../CustomBadgeView.swift; sourceTree = "<group>"; };
+		09858F8F1B89883600C445FB /* OauthTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OauthTool.swift; sourceTree = "<group>"; };
+		09858F931B89960900C445FB /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		099392CE1B84D2670086116B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		099392D01B84DCB20086116B /* OauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OauthViewController.swift; sourceTree = "<group>"; };
 		099C7B701B762D7C0011BF10 /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				09D659BF1B76F1C200184962 /* Constant.swift */,
+				09858F8F1B89883600C445FB /* OauthTool.swift */,
 				09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */,
 			);
 			name = Tool;
@@ -186,6 +191,22 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		09858F911B8995D800C445FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09858F921B8995F000C445FB /* Public */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		09858F921B8995F000C445FB /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				09858F931B89960900C445FB /* Account.swift */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
 		099C7B671B762D7C0011BF10 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +231,7 @@
 			children = (
 				094D87021B772BE80039BCF9 /* Controllers */,
 				094D870D1B7741170039BCF9 /* CustomView */,
+				09858F911B8995D800C445FB /* Model */,
 				094F24911B80CFD200A28EF6 /* Tool */,
 				099C7B771B762D7C0011BF10 /* Main.storyboard */,
 				099C7B7A1B762D7C0011BF10 /* Assets.xcassets */,
@@ -363,6 +385,7 @@
 				099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */,
 				09DEC9061B80F995007B440C /* BaseNavigationController.swift in Sources */,
 				09DEC9031B80EDC1007B440C /* SettingTableViewController.swift in Sources */,
+				09858F941B89960900C445FB /* Account.swift in Sources */,
 				09643A251B81F0EF003643A8 /* NewFeatureCollectionViewController.swift in Sources */,
 				0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */,
 				095DFD131B77610700BE8F1C /* KxMenu.m in Sources */,
@@ -370,6 +393,7 @@
 				094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */,
 				099392D11B84DCB30086116B /* OauthViewController.swift in Sources */,
 				0953E34E1B80B3EC007AF200 /* CustomPopMenu.swift in Sources */,
+				09858F901B89883600C445FB /* OauthTool.swift in Sources */,
 				09EE4D471B7E4AA200B77A1A /* ExtensionColor.swift in Sources */,
 				0953E3501B80B9F7007AF200 /* CustomOverlay.swift in Sources */,
 				09D659C01B76F1C200184962 /* Constant.swift in Sources */,

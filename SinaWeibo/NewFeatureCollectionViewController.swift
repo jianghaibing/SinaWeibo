@@ -118,22 +118,12 @@ class NewFeatureCollectionViewController: UICollectionViewController {
     进入主界面
     */
     func openWeibo(){
-        /// 从数据库取用户数据
-        let db = NyaruDB.instance()
-        let collection = db.collection("User")
-        let documents = collection.all().fetch()
-        var expireDate:NSDate?
-        if documents.count > 0 {
-            /// 获取过期时间
-            expireDate = NSDate(timeInterval: documents[0]["expires_in"] as! NSTimeInterval , sinceDate: documents[0]["date"] as! NSDate)
-        }else{
-            expireDate = NSDate(timeIntervalSinceNow: 100)
-        }
+       
         /**
         * 如果token过期了或第一次使用，进入认证界面
         * 否则进入主界面
         */
-        if NSDate().compare(expireDate!) != NSComparisonResult.OrderedAscending || documents.count == 0 {
+        if OauthTool.tokenIsExpire() || OauthTool.tokenIsNotExist() {
             performSegueWithIdentifier("showOauth", sender: self)
         }else{
             performSegueWithIdentifier("showMain", sender: self)

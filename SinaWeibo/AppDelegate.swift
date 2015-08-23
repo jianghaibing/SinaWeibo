@@ -28,26 +28,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as! String
         let lastVersion = (NSUserDefaults.standardUserDefaults().objectForKey("Version") as? String) ?? "1.0.0"
         
-        /// 从数据库取用户数据
-        let db = NyaruDB.instance()
-        let collection = db.collection("User")
-        let documents = collection.all().fetch()
-        var expireDate:NSDate?
-        if documents.count > 0 {
-            /// 获取过期时间
-            expireDate = NSDate(timeInterval: documents[0]["expires_in"] as! NSTimeInterval , sinceDate: documents[0]["date"] as! NSDate)
-        }else{
-            expireDate = NSDate(timeIntervalSinceNow: 100)
-        }
         /**
         * 如果token过期了，进入认证界面
         * 如果当前版本号不等于上次保存的版本号或者第一次使用进入新特性界面
         * 否则进入主界面
         */
-        if NSDate().compare(expireDate!) != NSComparisonResult.OrderedAscending {
+        if OauthTool.tokenIsExpire() {
             let vc3 = story.instantiateViewControllerWithIdentifier("oauth")
             window?.rootViewController = vc3
-        }else if currentVersion != lastVersion || documents.count == 0 {
+        }else if currentVersion != lastVersion || OauthTool.tokenIsNotExist() {
             let vc1 = story.instantiateViewControllerWithIdentifier("newfeature")
             window?.rootViewController = vc1
         }else{
