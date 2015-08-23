@@ -23,6 +23,9 @@
 		096AAA2D1B7CE80800914AD1 /* CustomBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */; };
 		09858F901B89883600C445FB /* OauthTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F8F1B89883600C445FB /* OauthTool.swift */; };
 		09858F941B89960900C445FB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F931B89960900C445FB /* Account.swift */; };
+		09858F971B89A94100C445FB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F961B89A94100C445FB /* Status.swift */; };
+		09858F991B89A95400C445FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F981B89A95400C445FB /* User.swift */; };
+		09858F9B1B89A96800C445FB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F9A1B89A96800C445FB /* Photo.swift */; };
 		099392CF1B84D2670086116B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 099392CE1B84D2670086116B /* Podfile */; };
 		099392D11B84DCB30086116B /* OauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099392D01B84DCB20086116B /* OauthViewController.swift */; };
 		099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7B731B762D7C0011BF10 /* AppDelegate.swift */; };
@@ -56,6 +59,9 @@
 		096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomBadgeView.swift; path = ../CustomBadgeView.swift; sourceTree = "<group>"; };
 		09858F8F1B89883600C445FB /* OauthTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OauthTool.swift; sourceTree = "<group>"; };
 		09858F931B89960900C445FB /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		09858F961B89A94100C445FB /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		09858F981B89A95400C445FB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		09858F9A1B89A96800C445FB /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		099392CE1B84D2670086116B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		099392D01B84DCB20086116B /* OauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OauthViewController.swift; sourceTree = "<group>"; };
 		099C7B701B762D7C0011BF10 /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +200,7 @@
 		09858F911B8995D800C445FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				09858F951B89A8FF00C445FB /* Home */,
 				09858F921B8995F000C445FB /* Public */,
 			);
 			name = Model;
@@ -205,6 +212,16 @@
 				09858F931B89960900C445FB /* Account.swift */,
 			);
 			name = Public;
+			sourceTree = "<group>";
+		};
+		09858F951B89A8FF00C445FB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				09858F961B89A94100C445FB /* Status.swift */,
+				09858F981B89A95400C445FB /* User.swift */,
+				09858F9A1B89A96800C445FB /* Photo.swift */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		099C7B671B762D7C0011BF10 = {
@@ -380,14 +397,17 @@
 				094D870F1B7744160039BCF9 /* CustomTitleView.swift in Sources */,
 				094D87081B772DC80039BCF9 /* DiscoverTableViewController.swift in Sources */,
 				096AAA2D1B7CE80800914AD1 /* CustomBadgeView.swift in Sources */,
+				09858F991B89A95400C445FB /* User.swift in Sources */,
 				093F63DA1B7B919D009C8660 /* CustomSearchBar.swift in Sources */,
 				09481C6C1B771E3700F2006E /* CustomTabBar.swift in Sources */,
+				09858F9B1B89A96800C445FB /* Photo.swift in Sources */,
 				099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */,
 				09DEC9061B80F995007B440C /* BaseNavigationController.swift in Sources */,
 				09DEC9031B80EDC1007B440C /* SettingTableViewController.swift in Sources */,
 				09858F941B89960900C445FB /* Account.swift in Sources */,
 				09643A251B81F0EF003643A8 /* NewFeatureCollectionViewController.swift in Sources */,
 				0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */,
+				09858F971B89A94100C445FB /* Status.swift in Sources */,
 				095DFD131B77610700BE8F1C /* KxMenu.m in Sources */,
 				099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */,
 				094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */,

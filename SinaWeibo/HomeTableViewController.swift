@@ -14,14 +14,80 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
     
     lazy var popMenuVC:PopMenuTableViewController = PopMenuTableViewController()
     
+    var statuses:NSMutableArray!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavagationBar()
-       
+        /**
+        *  下拉刷新取最新微博
+        */
+        self.tableView.header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
+            self.getNewestWeibo()
+        })
+        self.tableView.header.beginRefreshing()//自动刷新
+        /**
+        *  获取更多微博
+        */
+        self.tableView.footer = MJRefreshAutoFooter(refreshingBlock: { () -> Void in
+            self.getMoreWeibo()
+        })
+        
     }
     
+    /**
+    获取最新微博
+    */
+    private func getNewestWeibo(){
+        let manger = AFHTTPRequestOperationManager()
+        var params = ["access_token":Account.shareInstance.token!]
+        if (statuses != nil){
+            params["since_id"] = (statuses[0] as! Status).idstr
+        }
+        manger.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params, success: { (request:AFHTTPRequestOperation, result:AnyObject) -> Void in
+            self.tableView.header.endRefreshing()//结束刷新
+            let dictArry = result["statuses"]//取到最新微博数组
+            let newStatus:NSMutableArray = Status.objectArrayWithKeyValuesArray(dictArry)//数组字典转模型
+            let indexSet = NSIndexSet(indexesInRange: NSRange(location: 0, length: newStatus.count))//插入的数量
+            if self.statuses == nil {
+                self.statuses = newStatus
+            }else{
+                self.statuses.insertObjects(newStatus as [AnyObject], atIndexes: indexSet)//插入新微博在第0个位置
+            }
+        
+            self.tableView.reloadData()
+            }) { (request:AFHTTPRequestOperation, error:NSError) -> Void in
+                print(error)
+        }
+    }
+    
+    /**
+    获取更多微博
+    */
+    
+    private func getMoreWeibo(){
+        
+            if (statuses != nil){
+            let manger = AFHTTPRequestOperationManager()
+            var params = ["access_token":Account.shareInstance.token!]
+            let maxID = UInt64((statuses.lastObject as! Status).idstr!)! - UInt64(1)//最大的微博ID转化成UINT64后减1
+            params["max_id"] = String(maxID)
+            
+            manger.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params, success: { (request:AFHTTPRequestOperation, result:AnyObject) -> Void in
+                self.tableView.footer.endRefreshing()//结束刷新
+                let dictArry = result["statuses"]//取到更多微博数组
+                let moreStatuses:NSMutableArray = Status.objectArrayWithKeyValuesArray(dictArry)//数组字典转模型
+                
+                self.statuses.addObjectsFromArray(moreStatuses as [AnyObject])
+                
+                self.tableView.reloadData()
+                }) { (request:AFHTTPRequestOperation, error:NSError) -> Void in
+                    print(error)
+            }
+
+        }
+    }
     
     /**
     配置导航栏按钮和title
@@ -83,26 +149,33 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
     }
 
     // MARK: - Table view data source
-//
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
 
-    /*
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if statuses == nil {
+            return 0
+        }else{
+            return statuses.count
+        }
+    }
+
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let status = statuses[indexPath.row] as? Status
+        cell.textLabel?.text = status?.user?.name
+        //用SDwebimage加载图片
+        cell.imageView?.sd_setImageWithURL(status?.user?.profile_image_url, placeholderImage: UIImage(named: "timeline_image_placeholder"))
+        cell.detailTextLabel?.text = status?.text
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

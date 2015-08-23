@@ -16,7 +16,7 @@ class OauthViewController: UIViewController , UIWebViewDelegate {
         super.viewDidLoad()
         
         /// 建立一个URL请求，需要完整的URL地址，通过拼接完成
-        let request = NSURLRequest(URL: NSURL(string:kAuthorizeBaseURL  + "?client_id=" + kAppKey + "&redirect_uri=" + kRedirectURL)!)
+        let request = NSURLRequest(URL: NSURL(string:"https://api.weibo.com/oauth2/authorize"  + "?client_id=" + kAppKey + "&redirect_uri=" + kRedirectURL)!)
     
         webView.loadRequest(request)
         
@@ -67,7 +67,7 @@ class OauthViewController: UIViewController , UIWebViewDelegate {
         let manager = AFHTTPRequestOperationManager()
         manager.POST("https://api.weibo.com/oauth2/access_token", parameters: params, success: { (operation:AFHTTPRequestOperation, responseObject:AnyObject) -> Void in
             
-            /// 添加当前时间到字典
+            /// 添加当前时间到字典，即在数据库写入创建时间
             let dict = NSMutableDictionary(dictionary: responseObject as! [NSObject : AnyObject])
               dict["date"] = NSDate()
             

@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJExtension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NyaruDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,25 +34,45 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2E55A7A3C14B22722EE4A4F318AD7D72</key>
+		<key>3B3A718C504D9492922E9F82686C02D4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>388DDD34E41881228B491E2F19CE034F</key>
+		<key>5352D432641F0656C90741034E32F31E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>94AC0D6FF59DE8A76A7B9CF809313345</key>
+		<key>6C22D6264E4F03F80171BC3ECF3F29F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F2F65B66D0E06591BC4E92B0B8ADA2AC</key>
+		<key>81BD2EC045BFD923C44C766B2FD7AC09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96AF7DBC45B93C3A00C569ECABD7AE6A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ADF76134A5FD24211681A735447283A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE92D70CE8237DE9CC0D64F95290A0D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

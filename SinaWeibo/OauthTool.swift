@@ -15,7 +15,7 @@ class OauthTool: NSObject {
     class func tokenIsExpire() -> Bool{
         
         var expireDate:NSDate?
-        if Account.shareInstance.token != nil {
+        if Account.shareInstance.expiresIn != nil {
             /// 获取过期时间
             expireDate = NSDate(timeInterval: Account.shareInstance.expiresIn! , sinceDate: Account.shareInstance.date!)
         }else{

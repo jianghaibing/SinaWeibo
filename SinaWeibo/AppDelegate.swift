@@ -50,6 +50,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
     
+    
+    func applicationDidReceiveMemoryWarning(application: UIApplication) {
+        /**
+        内存警告时停止下载并清除内存
+        */
+        SDWebImageManager.sharedManager().cancelAll()
+        SDWebImageManager.sharedManager().imageCache.clearMemory()
+    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
