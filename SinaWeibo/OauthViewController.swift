@@ -63,13 +63,15 @@ class OauthViewController: UIViewController , UIWebViewDelegate {
     private func postForAccessToken(code:String){
         /// 参数
         let params = ["client_id":kAppKey,"client_secret":kAppSecret,"grant_type":"authorization_code","code":code,"redirect_uri":kRedirectURL]
-        /// 用AFHTTP请求发起一个post请求
-        let manager = AFHTTPRequestOperationManager()
-        manager.POST("https://api.weibo.com/oauth2/access_token", parameters: params, success: { (operation:AFHTTPRequestOperation, responseObject:AnyObject) -> Void in
+        
+        HTTPRequestTool.POST("https://api.weibo.com/oauth2/access_token", parameters: params, success: { (responseObject) -> Void in
             
             /// 添加当前时间到字典，即在数据库写入创建时间
             let dict = NSMutableDictionary(dictionary: responseObject as! [NSObject : AnyObject])
-              dict["date"] = NSDate()
+            dict["date"] = NSDate()
+            let account = Account.shareInstance
+            account.access_token = dict["access_token"] as? String
+            
             
             let db = NyaruDB.instance()
             let collection = db.collection("User")
@@ -89,13 +91,12 @@ class OauthViewController: UIViewController , UIWebViewDelegate {
             *  成功登录时获取万数据跳转界面
             */
             self.performSegueWithIdentifier("login", sender: self)
+
             
-            }) { (operation:AFHTTPRequestOperation, error:NSError) -> Void in
-              print(error)
+            }) { (error) -> Void in
+                print(error)
         }
         
-        
-
         
     }
 

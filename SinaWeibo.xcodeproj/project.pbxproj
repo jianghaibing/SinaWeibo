@@ -33,6 +33,7 @@
 		099C7B7B1B762D7C0011BF10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 099C7B7A1B762D7C0011BF10 /* Assets.xcassets */; };
 		099C7B7E1B762D7C0011BF10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099C7B7C1B762D7C0011BF10 /* LaunchScreen.storyboard */; };
 		099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7B871B7646B50011BF10 /* MainTabBarController.swift */; };
+		09CA542A1B8F4C0300D38B28 /* HTTPRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CA54291B8F4C0300D38B28 /* HTTPRequestTool.swift */; settings = {ASSET_TAGS = (); }; };
 		09D659C01B76F1C200184962 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D659BF1B76F1C200184962 /* Constant.swift */; };
 		09DEC9031B80EDC1007B440C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEC9021B80EDC1007B440C /* SettingTableViewController.swift */; };
 		09DEC9061B80F995007B440C /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEC9051B80F995007B440C /* BaseNavigationController.swift */; };
@@ -71,6 +72,7 @@
 		099C7B7D1B762D7C0011BF10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		099C7B7F1B762D7C0011BF10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		099C7B871B7646B50011BF10 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		09CA54291B8F4C0300D38B28 /* HTTPRequestTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestTool.swift; sourceTree = "<group>"; };
 		09D659BF1B76F1C200184962 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		09DEC9021B80EDC1007B440C /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		09DEC9051B80F995007B440C /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				09D659BF1B76F1C200184962 /* Constant.swift */,
 				09858F8F1B89883600C445FB /* OauthTool.swift */,
 				09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */,
+				09CA54291B8F4C0300D38B28 /* HTTPRequestTool.swift */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */,
 				09858F971B89A94100C445FB /* Status.swift in Sources */,
 				095DFD131B77610700BE8F1C /* KxMenu.m in Sources */,
+				09CA542A1B8F4C0300D38B28 /* HTTPRequestTool.swift in Sources */,
 				099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */,
 				094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */,
 				099392D11B84DCB30086116B /* OauthViewController.swift in Sources */,

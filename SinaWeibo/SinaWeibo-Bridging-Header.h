@@ -6,8 +6,7 @@
 //  Copyright © 2015年 Beijing Gold Finger Education Technology LLC. All rights reserved.
 //
 
-#import "KxMenu.h"
-#import <WeiboSDK/WeiboSDK.h>
+
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <AFNetworking/AFNetworking.h>
 #import <NyaruDB/NyaruDB.h>

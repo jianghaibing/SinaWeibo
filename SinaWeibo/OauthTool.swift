@@ -15,9 +15,9 @@ class OauthTool: NSObject {
     class func tokenIsExpire() -> Bool{
         
         var expireDate:NSDate?
-        if Account.shareInstance.expiresIn != nil {
+        if Account.fetchData().expires_in != nil {
             /// 获取过期时间
-            expireDate = NSDate(timeInterval: Account.shareInstance.expiresIn! , sinceDate: Account.shareInstance.date!)
+            expireDate = NSDate(timeInterval: Account.fetchData().expires_in! , sinceDate: Account.fetchData().date!)
         }else{
             expireDate = NSDate(timeIntervalSinceNow: 100)
         }
@@ -31,7 +31,7 @@ class OauthTool: NSObject {
     
     /// 验证token是否存在，是表示不存在，否表示存在
     class func tokenIsNotExist() -> Bool {
-        if Account.shareInstance.token == nil {
+        if Account.fetchData().access_token == nil {
             return true
         }else{
             return false

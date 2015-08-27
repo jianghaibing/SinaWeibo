@@ -32,7 +32,7 @@ class CustomTabBar: UITabBar {
                 for badgeView in tabbarButton.subviews{
                     if badgeView.isKindOfClass(NSClassFromString("_UIBadgeView")!){
                         let lable = badgeView.subviews[1] as! UILabel
-                        lable.font = UIFont.systemFontOfSize(11)
+                        lable.font = UIFont.systemFontOfSize(10)
                         let backgoundView = badgeView.subviews[0] as UIView
                         backgoundView.tintColor = UIColor.colorWithRGB(208, green: 87, blue: 55, alpha: 1)
                         /**

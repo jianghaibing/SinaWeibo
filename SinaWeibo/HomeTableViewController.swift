@@ -40,12 +40,12 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
     获取最新微博
     */
     private func getNewestWeibo(){
-        let manger = AFHTTPRequestOperationManager()
-        var params = ["access_token":Account.shareInstance.token!]
+        var params = ["access_token":Account.shareInstance.access_token!]
         if (statuses != nil){
             params["since_id"] = (statuses[0] as! Status).idstr
         }
-        manger.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params, success: { (request:AFHTTPRequestOperation, result:AnyObject) -> Void in
+        
+        HTTPRequestTool.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params, success: { (result) -> Void in
             self.tableView.header.endRefreshing()//结束刷新
             let dictArry = result["statuses"]//取到最新微博数组
             let newStatus:NSMutableArray = Status.objectArrayWithKeyValuesArray(dictArry)//数组字典转模型
@@ -55,9 +55,9 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
             }else{
                 self.statuses.insertObjects(newStatus as [AnyObject], atIndexes: indexSet)//插入新微博在第0个位置
             }
-        
+            
             self.tableView.reloadData()
-            }) { (request:AFHTTPRequestOperation, error:NSError) -> Void in
+            }) { (error) -> Void in
                 print(error)
         }
     }
@@ -68,13 +68,13 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
     
     private func getMoreWeibo(){
         
-            if (statuses != nil){
-            let manger = AFHTTPRequestOperationManager()
-            var params = ["access_token":Account.shareInstance.token!]
+        if (statuses != nil){
+            
+            var params = ["access_token":Account.shareInstance.access_token!]
             let maxID = UInt64((statuses.lastObject as! Status).idstr!)! - UInt64(1)//最大的微博ID转化成UINT64后减1
             params["max_id"] = String(maxID)
             
-            manger.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params, success: { (request:AFHTTPRequestOperation, result:AnyObject) -> Void in
+            HTTPRequestTool.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params, success: { (result) -> Void in
                 self.tableView.footer.endRefreshing()//结束刷新
                 let dictArry = result["statuses"]//取到更多微博数组
                 let moreStatuses:NSMutableArray = Status.objectArrayWithKeyValuesArray(dictArry)//数组字典转模型
@@ -82,10 +82,10 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
                 self.statuses.addObjectsFromArray(moreStatuses as [AnyObject])
                 
                 self.tableView.reloadData()
-                }) { (request:AFHTTPRequestOperation, error:NSError) -> Void in
-                    print(error)
-            }
 
+                }, failure: { (error) -> Void in
+                    print(error)
+            })
         }
     }
     
