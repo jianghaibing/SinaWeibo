@@ -39,6 +39,7 @@
 		09DEC9061B80F995007B440C /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEC9051B80F995007B440C /* BaseNavigationController.swift */; };
 		09EE4D471B7E4AA200B77A1A /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */; };
 		09F6FCA21B9098FC00B51E5E /* StatusTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCA11B9098FC00B51E5E /* StatusTool.swift */; settings = {ASSET_TAGS = (); }; };
+		09F6FCA41B90B70700B51E5E /* StatusParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCA31B90B70700B51E5E /* StatusParam.swift */; settings = {ASSET_TAGS = (); }; };
 		6B3148E91AD123E220151F1F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12810358413F15C271008DBF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		09DEC9051B80F995007B440C /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
 		09F6FCA11B9098FC00B51E5E /* StatusTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTool.swift; sourceTree = "<group>"; };
+		09F6FCA31B90B70700B51E5E /* StatusParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusParam.swift; sourceTree = "<group>"; };
 		12810358413F15C271008DBF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A1DF4856983FF6AFED51DF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EAF1DA7EB8D47EB400577B86 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				09858F961B89A94100C445FB /* Status.swift */,
 				09858F981B89A95400C445FB /* User.swift */,
 				09858F9A1B89A96800C445FB /* Photo.swift */,
+				09F6FCA31B90B70700B51E5E /* StatusParam.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */,
 				09DEC9061B80F995007B440C /* BaseNavigationController.swift in Sources */,
 				09DEC9031B80EDC1007B440C /* SettingTableViewController.swift in Sources */,
+				09F6FCA41B90B70700B51E5E /* StatusParam.swift in Sources */,
 				09858F941B89960900C445FB /* Account.swift in Sources */,
 				09643A251B81F0EF003643A8 /* NewFeatureCollectionViewController.swift in Sources */,
 				0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */,
