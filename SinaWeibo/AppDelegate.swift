@@ -30,6 +30,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         chooseRootViewController()
         
+        //开启音频会话,使应用在真机上后台播放
+        let avSession = AVAudioSession.sharedInstance()
+        do {
+            try avSession.setCategory(AVAudioSessionCategoryPlayback)
+        }catch{
+            print("session设置错误")
+        }
+        
+        do {
+            try avSession.setActive(true)
+        }catch{
+            print("激活错误")
+        }
+        
         return true
     }
     
