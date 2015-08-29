@@ -48,9 +48,13 @@ class OauthViewController: UIViewController , UIWebViewDelegate {
             /// 通过rang的最后一位index来截取code=后面的内容
             let code = urlStr?.substringFromIndex((range?.endIndex)!)
             /**
-            通过code来获取accessToken等数据
+            通过code来获取accessToken等数据,然受登录
             */
-            self.postForAccessToken(code!)
+            OauthTool.accessWithCode(code!, sucess: { () -> Void in
+                self.performSegueWithIdentifier("login", sender: self)
+                }) { (error) -> Void in
+                    print(error)
+            }
             /**
             不载入回调的网页（okjiaoyu.cn）
             */
@@ -59,47 +63,7 @@ class OauthViewController: UIViewController , UIWebViewDelegate {
         
         return true
     }
-    
-    private func postForAccessToken(code:String){
-        /// 参数
-        let params = ["client_id":kAppKey,"client_secret":kAppSecret,"grant_type":"authorization_code","code":code,"redirect_uri":kRedirectURL]
-        
-        HTTPRequestTool.POST("https://api.weibo.com/oauth2/access_token", parameters: params, success: { (responseObject) -> Void in
-            
-            /// 添加当前时间到字典，即在数据库写入创建时间
-            let dict = NSMutableDictionary(dictionary: responseObject as! [NSObject : AnyObject])
-            dict["date"] = NSDate()
-            let account = Account.shareInstance
-            account.access_token = dict["access_token"] as? String
-            
-            
-            let db = NyaruDB.instance()
-            let collection = db.collection("User")
-            collection.createIndex("uid")//创建uid作为数据库索引
-            let documents = collection.all().fetch()//查询所有数据
-            /**
-            *  当数据库已有用户数据时，清除数据
-            */
-            if documents.count > 0 {
-                collection.removeAll()
-            }
-            /**
-            *  添加最新数据到数据库
-            */
-            collection.put(dict as [NSObject : AnyObject])
-            /**
-            *  成功登录时获取万数据跳转界面
-            */
-            self.performSegueWithIdentifier("login", sender: self)
-
-            
-            }) { (error) -> Void in
-                print(error)
-        }
-        
-        
-    }
-
+   
     /*
     // MARK: - Navigation
 

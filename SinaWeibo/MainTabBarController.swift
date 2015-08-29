@@ -25,6 +25,7 @@ class MainTabBarController: UITabBarController {
         */
         self.setValue(customTabBar, forKeyPath: "tabBar")
         
+        
         /// 创建发布按钮
         let publishButton = customTabBar.createAddButton()
         publishButton.addTarget(self, action: "publishWeibo", forControlEvents: UIControlEvents.TouchUpInside)
