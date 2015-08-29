@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vgo-4S-wzg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vgo-4S-wzg">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
     </dependencies>
     <scenes>
         <!--首页-->
@@ -277,7 +277,7 @@
         <scene sceneID="hAb-Fc-xYR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0MY-r7-sIG" customClass="BaseNavigationController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="首页" image="tabbar_home" badgeValue="2" selectedImage="tabbar_home_selected" id="igD-l6-7iP"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="首页" image="tabbar_home" selectedImage="tabbar_home_selected" id="igD-l6-7iP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NDZ-E1-pP3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -296,7 +296,7 @@
         <scene sceneID="rrL-IY-YoT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fxW-s3-Hpd" customClass="BaseNavigationController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="消息" image="tabbar_message_center" badgeValue="200" selectedImage="tabbar_message_center_selected" id="74d-2Q-G0E"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="消息" image="tabbar_message_center" selectedImage="tabbar_message_center_selected" id="74d-2Q-G0E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KZi-ek-xrn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -334,7 +334,7 @@
         <scene sceneID="lBb-4S-C8a">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nqP-4P-oXn" customClass="BaseNavigationController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="4" title="我" image="tabbar_profile" badgeValue="点" selectedImage="tabbar_profile_selected" id="5gh-zN-2H7"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="我" image="tabbar_profile" selectedImage="tabbar_profile_selected" id="5gh-zN-2H7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K8B-R6-JQ9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

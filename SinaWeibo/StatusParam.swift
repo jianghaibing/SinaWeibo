@@ -16,11 +16,5 @@ class StatusParam: NSObject {
     var since_id:String?
     var max_id:String?
     
-    class var shareInstance:StatusParam {
-        struct Intance {
-            static let statusParam = StatusParam()
-        }
-        return Intance.statusParam
-    }
 
 }

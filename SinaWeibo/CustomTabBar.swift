@@ -55,6 +55,12 @@ class CustomTabBar: UITabBar {
                             backgoundView.hidden = false
                         }
                         
+                        if lable.text == "0" {
+                            badgeView.alpha = 0
+                        }else{
+                            badgeView.alpha = 1
+                        }
+                        
                     }
                 }
             }

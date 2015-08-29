@@ -41,6 +41,9 @@
 		09F6FCA21B9098FC00B51E5E /* StatusTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCA11B9098FC00B51E5E /* StatusTool.swift */; settings = {ASSET_TAGS = (); }; };
 		09F6FCA41B90B70700B51E5E /* StatusParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCA31B90B70700B51E5E /* StatusParam.swift */; settings = {ASSET_TAGS = (); }; };
 		09F6FCA91B9181B600B51E5E /* AccountParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCA81B9181B600B51E5E /* AccountParam.swift */; settings = {ASSET_TAGS = (); }; };
+		09F6FCAB1B918B1600B51E5E /* UnreadParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCAA1B918B1600B51E5E /* UnreadParam.swift */; settings = {ASSET_TAGS = (); }; };
+		09F6FCAD1B919E3600B51E5E /* UnreadResultParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCAC1B919E3600B51E5E /* UnreadResultParam.swift */; settings = {ASSET_TAGS = (); }; };
+		09F6FCB11B91A01A00B51E5E /* UnreadTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCB01B91A01A00B51E5E /* UnreadTool.swift */; settings = {ASSET_TAGS = (); }; };
 		6B3148E91AD123E220151F1F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12810358413F15C271008DBF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +86,9 @@
 		09F6FCA11B9098FC00B51E5E /* StatusTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTool.swift; sourceTree = "<group>"; };
 		09F6FCA31B90B70700B51E5E /* StatusParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusParam.swift; sourceTree = "<group>"; };
 		09F6FCA81B9181B600B51E5E /* AccountParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountParam.swift; sourceTree = "<group>"; };
+		09F6FCAA1B918B1600B51E5E /* UnreadParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadParam.swift; sourceTree = "<group>"; };
+		09F6FCAC1B919E3600B51E5E /* UnreadResultParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadResultParam.swift; sourceTree = "<group>"; };
+		09F6FCB01B91A01A00B51E5E /* UnreadTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadTool.swift; sourceTree = "<group>"; };
 		12810358413F15C271008DBF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A1DF4856983FF6AFED51DF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EAF1DA7EB8D47EB400577B86 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,11 +141,8 @@
 		094F24911B80CFD200A28EF6 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				09D659BF1B76F1C200184962 /* Constant.swift */,
-				09858F8F1B89883600C445FB /* OauthTool.swift */,
-				09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */,
-				09CA54291B8F4C0300D38B28 /* HTTPRequestTool.swift */,
-				09F6FCA11B9098FC00B51E5E /* StatusTool.swift */,
+				09F6FCAE1B919FD700B51E5E /* Home */,
+				09F6FCAF1B919FEF00B51E5E /* Public */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -221,6 +224,8 @@
 			children = (
 				09858F931B89960900C445FB /* Account.swift */,
 				09F6FCA81B9181B600B51E5E /* AccountParam.swift */,
+				09F6FCAA1B918B1600B51E5E /* UnreadParam.swift */,
+				09F6FCAC1B919E3600B51E5E /* UnreadResultParam.swift */,
 			);
 			name = Public;
 			sourceTree = "<group>";
@@ -280,6 +285,26 @@
 				09DEC9021B80EDC1007B440C /* SettingTableViewController.swift */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		09F6FCAE1B919FD700B51E5E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				09F6FCA11B9098FC00B51E5E /* StatusTool.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		09F6FCAF1B919FEF00B51E5E /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				09D659BF1B76F1C200184962 /* Constant.swift */,
+				09F6FCB01B91A01A00B51E5E /* UnreadTool.swift */,
+				09858F8F1B89883600C445FB /* OauthTool.swift */,
+				09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */,
+				09CA54291B8F4C0300D38B28 /* HTTPRequestTool.swift */,
+			);
+			name = Public;
 			sourceTree = "<group>";
 		};
 		B1CA98E79DF061953A59F02B /* Pods */ = {
@@ -407,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				094D870F1B7744160039BCF9 /* CustomTitleView.swift in Sources */,
+				09F6FCAD1B919E3600B51E5E /* UnreadResultParam.swift in Sources */,
 				094D87081B772DC80039BCF9 /* DiscoverTableViewController.swift in Sources */,
 				096AAA2D1B7CE80800914AD1 /* CustomBadgeView.swift in Sources */,
 				09F6FCA91B9181B600B51E5E /* AccountParam.swift in Sources */,
@@ -416,6 +442,7 @@
 				09858F9B1B89A96800C445FB /* Photo.swift in Sources */,
 				099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */,
 				09DEC9061B80F995007B440C /* BaseNavigationController.swift in Sources */,
+				09F6FCAB1B918B1600B51E5E /* UnreadParam.swift in Sources */,
 				09DEC9031B80EDC1007B440C /* SettingTableViewController.swift in Sources */,
 				09F6FCA41B90B70700B51E5E /* StatusParam.swift in Sources */,
 				09858F941B89960900C445FB /* Account.swift in Sources */,
@@ -433,6 +460,7 @@
 				09EE4D471B7E4AA200B77A1A /* ExtensionColor.swift in Sources */,
 				0953E3501B80B9F7007AF200 /* CustomOverlay.swift in Sources */,
 				09D659C01B76F1C200184962 /* Constant.swift in Sources */,
+				09F6FCB11B91A01A00B51E5E /* UnreadTool.swift in Sources */,
 				094D87061B772DBA0039BCF9 /* MessageTableViewController.swift in Sources */,
 				094D870A1B772DD40039BCF9 /* ProfileTableViewController.swift in Sources */,
 				094D87041B772DA70039BCF9 /* HomeTableViewController.swift in Sources */,

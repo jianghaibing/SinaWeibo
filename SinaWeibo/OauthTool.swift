@@ -55,6 +55,9 @@ class OauthTool: NSObject {
             dict["date"] = NSDate()
             let account = Account.shareInstance
             account.access_token = dict["access_token"] as? String
+            account.uid = dict["uid"] as? String
+            account.expires_in = dict["expires_in"] as? NSTimeInterval
+            account.date = dict["date"] as? NSDate
             
             // 存储数据
             let db = NyaruDB.instance()
@@ -79,7 +82,6 @@ class OauthTool: NSObject {
             }) { (error) -> Void in
                 failure(error)
         }
-        
         
     }
 

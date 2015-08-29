@@ -17,13 +17,14 @@ class StatusTool: NSObject {
     /// 请求新微博数据
     class func newStatuses(sinceID:String?, sucess:(NSMutableArray) -> Void, failure:(NSError) ->Void ){
         
-        let params = StatusParam.shareInstance
+        let params = StatusParam()
         
-        params.access_token = Account.shareInstance.access_token!
+        params.access_token = Account.shareInstance.access_token ?? Account.fetchData().access_token
 
         if ((sinceID) != nil){
             params.since_id = sinceID
         }
+        
         
         HTTPRequestTool.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params.keyValues(), success: { (result) -> Void in
             
@@ -42,9 +43,9 @@ class StatusTool: NSObject {
     /// 请求更多微博数据
     class func moreStatuses(maxID:String?, sucess:(NSMutableArray) -> Void, failure:(NSError) ->Void ){
         
-        let params = StatusParam.shareInstance
+        let params = StatusParam()
         
-        params.access_token = Account.shareInstance.access_token!
+        params.access_token = Account.shareInstance.access_token ?? Account.fetchData().access_token
 
         if ((maxID) != nil){
             params.max_id = maxID

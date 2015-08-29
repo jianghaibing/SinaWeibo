@@ -25,6 +25,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         */
         self.tableView.header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
             self.getNewestWeibo()
+            
         })
         self.tableView.header.beginRefreshing()//自动刷新
         /**
@@ -34,6 +35,11 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
             self.getMoreWeibo()
         })
         
+    }
+    
+    func refresh(){
+        self.tableView.header.beginRefreshing()
+        (self.tabBarController as! MainTabBarController).requestUnreadCount()
     }
     
     /**
@@ -49,11 +55,10 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         
         StatusTool.newStatuses(sinceID, sucess: { (statuses) -> Void in
             self.tableView.header.endRefreshing()//结束刷新
-
-            let indexSet = NSIndexSet(indexesInRange: NSRange(location: 0, length: statuses.count))//插入的数量
             if self.statuses == nil {
                 self.statuses = statuses
-            }else{
+            }else if statuses.count != 0{
+                let indexSet = NSIndexSet(indexesInRange: NSRange(location: 0, length: statuses.count))//插入的数量
                 self.statuses.insertObjects(statuses as [AnyObject], atIndexes: indexSet)//插入新微博在第0个位置
             }
             

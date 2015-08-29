@@ -10,8 +10,9 @@ import UIKit
 
 
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
+    var lastSelectVC:UIViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,45 @@ class MainTabBarController: UITabBarController {
         */
         self.setValue(customTabBar, forKeyPath: "tabBar")
         
-        
         /// 创建发布按钮
         let publishButton = customTabBar.createAddButton()
         publishButton.addTarget(self, action: "publishWeibo", forControlEvents: UIControlEvents.TouchUpInside)
         
+        delegate = self
+        lastSelectVC = self.childViewControllers[0] as? BaseNavigationController//记录上次选中的控制器
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        requestUnreadCount()
+    }
+    
+    func requestUnreadCount(){
+        /**
+        *  设置tabbarItem的未读数
+        */
+        UnreadTool.getUnreadCount({ (result:UnreadResultParam) -> Void in
+            
+            for (index,VC) in self.childViewControllers.enumerate() {
+                switch index{
+                case 0:
+                    VC.tabBarItem.badgeValue = String(result.status!)
+                case 1:
+                    VC.tabBarItem.badgeValue = String(result.getUnreadMessageCount())
+                case 3:
+                    VC.tabBarItem.badgeValue = String(result.follower!)
+                default:
+                    self.tabBar.layoutSubviews()//更新数值后重新layout一下tabbar
+                }
+            }
+            
+            UIApplication.sharedApplication().applicationIconBadgeNumber = result.getTotalUnreadCount()
+            
+            }) { (error) -> Void in
+                print(error)
+        }
+
     }
     
     
@@ -37,8 +72,16 @@ class MainTabBarController: UITabBarController {
         print("发布微博")
     }
     
+    
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
         
-
+        
+        if lastSelectVC == viewController && viewController == self.childViewControllers[0] as? BaseNavigationController {
+            (self.childViewControllers[0].childViewControllers[0] as? HomeTableViewController)!.refresh()
+        }
+        lastSelectVC = viewController
+    }
+    
     /*
     // MARK: - Navigation
 

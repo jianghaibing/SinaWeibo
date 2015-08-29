@@ -1,0 +1,36 @@
+//
+//  UnreadTool.swift
+//  SinaWeibo
+//
+//  Created by baby on 15/8/29.
+//  Copyright © 2015年 Beijing Gold Finger Education Technology LLC. All rights reserved.
+//  处理未读数据的工具类
+
+import UIKit
+
+class UnreadTool: NSObject {
+    
+    class func getUnreadCount(sucess:(UnreadResultParam) -> Void, failure:(NSError) -> Void){
+        
+        let params = UnreadParam()
+        params.access_token = Account.shareInstance.access_token ?? Account.fetchData().access_token
+        params.uid = Account.shareInstance.uid ?? Account.fetchData().uid
+        
+        HTTPRequestTool.GET("https://rm.api.weibo.com/2/remind/unread_count.json", parameters: params.keyValues(), success: { (result) -> Void in
+        
+            let unreadResult = UnreadResultParam()
+            unreadResult.status = result["status"] as? Int
+            unreadResult.follower = result["follower"] as? Int
+            unreadResult.cmt = result["cmt"] as? Int
+            unreadResult.dm = result["dm"] as? Int
+            unreadResult.mention_status = result["mention_status"] as? Int
+            unreadResult.mention_cmt = result["mention_cmt"] as? Int
+            
+            sucess(unreadResult)
+            }) { (error) -> Void in
+                failure(error)
+        }
+    }
+    
+    
+}

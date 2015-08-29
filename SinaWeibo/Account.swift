@@ -24,7 +24,7 @@ class Account: NSObject {
         return Static.instance
     }
     
-    
+    /// 从数据库取数据
     class func fetchData() -> Account {
         
         let account = self.shareInstance
