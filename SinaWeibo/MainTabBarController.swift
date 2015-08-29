@@ -32,13 +32,10 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         delegate = self
         lastSelectVC = self.childViewControllers[0] as? BaseNavigationController//记录上次选中的控制器
+        NSTimer.scheduledTimerWithTimeInterval(300, target: self, selector: "requestUnreadCount", userInfo: nil, repeats: true)
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        requestUnreadCount()
-    }
     
     func requestUnreadCount(){
         /**
@@ -75,7 +72,9 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
         
-        
+        /**
+        *  如果选中的控制器是第一个控制器并且上次选中的控制器和本次选中一样是，调用刷新方法
+        */
         if lastSelectVC == viewController && viewController == self.childViewControllers[0] as? BaseNavigationController {
             (self.childViewControllers[0].childViewControllers[0] as? HomeTableViewController)!.refresh()
         }

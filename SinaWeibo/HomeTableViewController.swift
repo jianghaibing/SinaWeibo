@@ -25,6 +25,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         */
         self.tableView.header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
             self.getNewestWeibo()
+            (self.tabBarController as! MainTabBarController).requestUnreadCount()
             
         })
         self.tableView.header.beginRefreshing()//自动刷新
@@ -39,7 +40,6 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
     
     func refresh(){
         self.tableView.header.beginRefreshing()
-        (self.tabBarController as! MainTabBarController).requestUnreadCount()
     }
     
     /**

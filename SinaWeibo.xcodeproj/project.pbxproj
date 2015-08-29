@@ -18,9 +18,7 @@
 		0953E34E1B80B3EC007AF200 /* CustomPopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E34D1B80B3EC007AF200 /* CustomPopMenu.swift */; };
 		0953E3501B80B9F7007AF200 /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E34F1B80B9F7007AF200 /* CustomOverlay.swift */; };
 		0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E3511B80BDF1007AF200 /* PopMenuTableViewController.swift */; };
-		095DFD131B77610700BE8F1C /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 095DFD121B77610700BE8F1C /* KxMenu.m */; };
 		09643A251B81F0EF003643A8 /* NewFeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09643A241B81F0EF003643A8 /* NewFeatureCollectionViewController.swift */; };
-		096AAA2D1B7CE80800914AD1 /* CustomBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */; };
 		09858F901B89883600C445FB /* OauthTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F8F1B89883600C445FB /* OauthTool.swift */; };
 		09858F941B89960900C445FB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F931B89960900C445FB /* Account.swift */; };
 		09858F971B89A94100C445FB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F961B89A94100C445FB /* Status.swift */; };
@@ -44,6 +42,8 @@
 		09F6FCAB1B918B1600B51E5E /* UnreadParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCAA1B918B1600B51E5E /* UnreadParam.swift */; settings = {ASSET_TAGS = (); }; };
 		09F6FCAD1B919E3600B51E5E /* UnreadResultParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCAC1B919E3600B51E5E /* UnreadResultParam.swift */; settings = {ASSET_TAGS = (); }; };
 		09F6FCB11B91A01A00B51E5E /* UnreadTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCB01B91A01A00B51E5E /* UnreadTool.swift */; settings = {ASSET_TAGS = (); }; };
+		09F6FCB31B91FAB200B51E5E /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09F6FCB21B91FAB200B51E5E /* silence.mp3 */; settings = {ASSET_TAGS = (); }; };
+		09F6FCB51B91FEA300B51E5E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F6FCB41B91FEA300B51E5E /* AVFoundation.framework */; };
 		6B3148E91AD123E220151F1F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12810358413F15C271008DBF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,10 +60,7 @@
 		0953E34F1B80B9F7007AF200 /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
 		0953E3511B80BDF1007AF200 /* PopMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuTableViewController.swift; sourceTree = "<group>"; };
 		095DFD0F1B775F5B00BE8F1C /* SinaWeibo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SinaWeibo-Bridging-Header.h"; sourceTree = "<group>"; };
-		095DFD111B77610700BE8F1C /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
-		095DFD121B77610700BE8F1C /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		09643A241B81F0EF003643A8 /* NewFeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureCollectionViewController.swift; sourceTree = "<group>"; };
-		096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomBadgeView.swift; path = ../CustomBadgeView.swift; sourceTree = "<group>"; };
 		09858F8F1B89883600C445FB /* OauthTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OauthTool.swift; sourceTree = "<group>"; };
 		09858F931B89960900C445FB /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		09858F961B89A94100C445FB /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
@@ -89,6 +86,8 @@
 		09F6FCAA1B918B1600B51E5E /* UnreadParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadParam.swift; sourceTree = "<group>"; };
 		09F6FCAC1B919E3600B51E5E /* UnreadResultParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadResultParam.swift; sourceTree = "<group>"; };
 		09F6FCB01B91A01A00B51E5E /* UnreadTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadTool.swift; sourceTree = "<group>"; };
+		09F6FCB21B91FAB200B51E5E /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
+		09F6FCB41B91FEA300B51E5E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		12810358413F15C271008DBF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A1DF4856983FF6AFED51DF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EAF1DA7EB8D47EB400577B86 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F6FCB51B91FEA300B51E5E /* AVFoundation.framework in Frameworks */,
 				6B3148E91AD123E220151F1F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,9 +203,7 @@
 		095DFD101B77610600BE8F1C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				095DFD111B77610700BE8F1C /* KxMenu.h */,
-				095DFD121B77610700BE8F1C /* KxMenu.m */,
-				096AAA2C1B7CE80800914AD1 /* CustomBadgeView.swift */,
+				09F6FCB21B91FAB200B51E5E /* silence.mp3 */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -319,6 +317,7 @@
 		B45519BAA8B665607B643149 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09F6FCB41B91FEA300B51E5E /* AVFoundation.framework */,
 				12810358413F15C271008DBF /* libPods.a */,
 			);
 			name = Frameworks;
@@ -358,6 +357,11 @@
 				TargetAttributes = {
 					099C7B6F1B762D7C0011BF10 = {
 						CreatedOnToolsVersion = 7.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -384,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F6FCB31B91FAB200B51E5E /* silence.mp3 in Resources */,
 				099C7B7E1B762D7C0011BF10 /* LaunchScreen.storyboard in Resources */,
 				099C7B7B1B762D7C0011BF10 /* Assets.xcassets in Resources */,
 				099392CF1B84D2670086116B /* Podfile in Resources */,
@@ -434,7 +439,6 @@
 				094D870F1B7744160039BCF9 /* CustomTitleView.swift in Sources */,
 				09F6FCAD1B919E3600B51E5E /* UnreadResultParam.swift in Sources */,
 				094D87081B772DC80039BCF9 /* DiscoverTableViewController.swift in Sources */,
-				096AAA2D1B7CE80800914AD1 /* CustomBadgeView.swift in Sources */,
 				09F6FCA91B9181B600B51E5E /* AccountParam.swift in Sources */,
 				09858F991B89A95400C445FB /* User.swift in Sources */,
 				093F63DA1B7B919D009C8660 /* CustomSearchBar.swift in Sources */,
@@ -449,7 +453,6 @@
 				09643A251B81F0EF003643A8 /* NewFeatureCollectionViewController.swift in Sources */,
 				0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */,
 				09858F971B89A94100C445FB /* Status.swift in Sources */,
-				095DFD131B77610700BE8F1C /* KxMenu.m in Sources */,
 				09CA542A1B8F4C0300D38B28 /* HTTPRequestTool.swift in Sources */,
 				099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */,
 				094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */,
