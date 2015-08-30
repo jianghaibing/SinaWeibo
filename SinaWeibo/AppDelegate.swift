@@ -32,17 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //开启音频会话,使应用在真机上后台播放
         let avSession = AVAudioSession.sharedInstance()
-        do {
-            try avSession.setCategory(AVAudioSessionCategoryPlayback)
-        }catch{
-            print("session设置错误")
-        }
         
-        do {
-            try avSession.setActive(true)
-        }catch{
-            print("激活错误")
-        }
+        try! avSession.setCategory(AVAudioSessionCategoryPlayback)
+        
+        try! avSession.setActive(true)
+       
         
         return true
     }
@@ -90,11 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //用后台播放音乐的方法使app一直在后台运行
         let URL = NSBundle.mainBundle().URLForResource("silence.mp3", withExtension: nil)
         
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOfURL: URL!)
-        }catch {
-            fatalError("播放错误")
-        }
+        audioPlayer = try! AVAudioPlayer(contentsOfURL: URL!)
         audioPlayer.prepareToPlay()
         audioPlayer.numberOfLoops = -1
         audioPlayer.play()

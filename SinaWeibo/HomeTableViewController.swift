@@ -42,6 +42,19 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         self.tableView.header.beginRefreshing()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UserTool.getUserName({ (user:User) -> Void in
+            
+        self.titleView.setTitle(user.name!, forState: UIControlState.Normal)
+            
+            }) { (error) -> Void in
+                fatalError()
+        }
+    }
+    
+    
     /**
     获取最新微博
     */
@@ -49,8 +62,8 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         
         var sinceID:String?
         
-        if (statuses != nil){
-           sinceID  = (statuses[0] as! Status).idstr!
+        if (statuses != nil) {
+            sinceID  = (statuses[0] as! Status).idstr!
         }
         
         StatusTool.newStatuses(sinceID, sucess: { (statuses) -> Void in
@@ -61,7 +74,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
                 let indexSet = NSIndexSet(indexesInRange: NSRange(location: 0, length: statuses.count))//插入的数量
                 self.statuses.insertObjects(statuses as [AnyObject], atIndexes: indexSet)//插入新微博在第0个位置
             }
-            
+            self.showNewCountLable(statuses.count)
             self.tableView.reloadData()
             
             }) { (error) -> Void in
@@ -75,19 +88,56 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
     */
     private func getMoreWeibo(){
         
-        if (statuses != nil){
-            
-            let maxID = UInt64((statuses.lastObject as! Status).idstr!)! - UInt64(1)//最大的微博ID转化成UINT64后减1
-            let maxIDStr = String(maxID)
-            
-            StatusTool.moreStatuses(maxIDStr, sucess: { (Statuses) -> Void in
-                self.tableView.footer.endRefreshing()//结束刷新
-                self.statuses.addObjectsFromArray(Statuses as [AnyObject])
-                self.tableView.reloadData()
-                }, failure: { (error) -> Void in
-                    print(error)
-            })
+        guard (statuses != nil) else{
+            fatalError()
         }
+        
+        let maxID = UInt64((statuses.lastObject as! Status).idstr!)! - UInt64(1)//最大的微博ID转化成UINT64后减1
+        let maxIDStr = String(maxID)
+        
+        StatusTool.moreStatuses(maxIDStr, sucess: { (Statuses) -> Void in
+            self.tableView.footer.endRefreshing()//结束刷新
+            self.statuses.addObjectsFromArray(Statuses as [AnyObject])
+            self.tableView.reloadData()
+            }, failure: { (error) -> Void in
+                print(error)
+        })
+        
+    }
+    
+    
+    /**
+    获取最新微博时浮窗提醒
+    :param: count 获取的最新微博数
+    */
+    private func showNewCountLable(count:Int){
+        
+        if count == 0 {
+            return
+        }
+        
+        let h:CGFloat = 35
+        let w = self.view.bounds.width
+        let y = CGRectGetMaxY((self.navigationController?.navigationBar.frame)!) - CGFloat(35)
+        
+        let lable = UILabel(frame: CGRectMake(0, y, w, h))
+        lable.text = "最新微博数\(count)条"
+        lable.textAlignment = .Center
+        lable.textColor = UIColor.whiteColor()
+        lable.backgroundColor = UIColor(patternImage: UIImage(named: "timeline_new_status_background")!)
+        
+        self.navigationController?.view.insertSubview(lable, belowSubview: (self.navigationController?.navigationBar)!)
+        
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            lable.transform = CGAffineTransformMakeTranslation(0, h)
+            }) { (_) -> Void in
+                UIView.animateWithDuration(0.25, delay: 2, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
+                    lable.transform = CGAffineTransformIdentity
+                    }, completion: { (_) -> Void in
+                        lable.removeFromSuperview()
+                })
+        }
+        
     }
     
     /**
@@ -97,7 +147,10 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", highlightedImageName: "navigationbar_pop_highlighted", target: self, action: "pop", controllEvent: UIControlEvents.TouchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_friendsearch", highlightedImageName: "navigationbar_friendsearch_highlighted", target: self, action: "friendSearch", controllEvent: UIControlEvents.TouchUpInside)
         titleView = CustomTitleView(type: UIButtonType.Custom)
-        titleView.setTitle("首页", forState: UIControlState.Normal)
+        
+        let name = NSUserDefaults.standardUserDefaults().objectForKey("name") as? String ?? "首页"
+        
+        titleView.setTitle(name, forState: UIControlState.Normal)
         titleView.setImage(UIImage(named: "navigationbar_arrow_down"), forState: UIControlState.Normal)
         titleView.setImage(UIImage(named: "navigationbar_arrow_up"), forState: UIControlState.Selected)
         titleView.adjustsImageWhenHighlighted = false

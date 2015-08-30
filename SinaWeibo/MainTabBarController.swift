@@ -41,7 +41,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         /**
         *  设置tabbarItem的未读数
         */
-        UnreadTool.getUnreadCount({ (result:UnreadResultParam) -> Void in
+        UserTool.getUnreadCount({ (result:UnreadResultParam) -> Void in
             
             for (index,VC) in self.childViewControllers.enumerate() {
                 switch index{

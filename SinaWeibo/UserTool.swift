@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UnreadTool: NSObject {
+class UserTool: NSObject {
     
     class func getUnreadCount(sucess:(UnreadResultParam) -> Void, failure:(NSError) -> Void){
         
@@ -31,6 +31,28 @@ class UnreadTool: NSObject {
                 failure(error)
         }
     }
+    
+    
+    class func getUserName(sucess:(User) -> Void, failure:(NSError) -> Void){
+        
+        let params = UnreadParam()
+        params.access_token = Account.shareInstance.access_token ?? Account.fetchData().access_token
+        params.uid = Account.shareInstance.uid ?? Account.fetchData().uid
+        
+        HTTPRequestTool.GET("https://api.weibo.com/2/users/show.json", parameters: params.keyValues(), success: { (result) -> Void in
+            
+            let user = User()
+            user.name = result["name"] as? String
+            
+            NSUserDefaults.standardUserDefaults().setObject(user.name, forKey: "name")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+            sucess(user)
+            }) { (error) -> Void in
+                failure(error)
+        }
+    }
+
     
     
 }

@@ -41,7 +41,7 @@
 		09F6FCA91B9181B600B51E5E /* AccountParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCA81B9181B600B51E5E /* AccountParam.swift */; settings = {ASSET_TAGS = (); }; };
 		09F6FCAB1B918B1600B51E5E /* UnreadParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCAA1B918B1600B51E5E /* UnreadParam.swift */; settings = {ASSET_TAGS = (); }; };
 		09F6FCAD1B919E3600B51E5E /* UnreadResultParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCAC1B919E3600B51E5E /* UnreadResultParam.swift */; settings = {ASSET_TAGS = (); }; };
-		09F6FCB11B91A01A00B51E5E /* UnreadTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCB01B91A01A00B51E5E /* UnreadTool.swift */; settings = {ASSET_TAGS = (); }; };
+		09F6FCB11B91A01A00B51E5E /* UserTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCB01B91A01A00B51E5E /* UserTool.swift */; settings = {ASSET_TAGS = (); }; };
 		09F6FCB31B91FAB200B51E5E /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09F6FCB21B91FAB200B51E5E /* silence.mp3 */; settings = {ASSET_TAGS = (); }; };
 		09F6FCB51B91FEA300B51E5E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F6FCB41B91FEA300B51E5E /* AVFoundation.framework */; };
 		6B3148E91AD123E220151F1F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12810358413F15C271008DBF /* libPods.a */; };
@@ -85,7 +85,7 @@
 		09F6FCA81B9181B600B51E5E /* AccountParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountParam.swift; sourceTree = "<group>"; };
 		09F6FCAA1B918B1600B51E5E /* UnreadParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadParam.swift; sourceTree = "<group>"; };
 		09F6FCAC1B919E3600B51E5E /* UnreadResultParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadResultParam.swift; sourceTree = "<group>"; };
-		09F6FCB01B91A01A00B51E5E /* UnreadTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadTool.swift; sourceTree = "<group>"; };
+		09F6FCB01B91A01A00B51E5E /* UserTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTool.swift; sourceTree = "<group>"; };
 		09F6FCB21B91FAB200B51E5E /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
 		09F6FCB41B91FEA300B51E5E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		12810358413F15C271008DBF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -297,7 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				09D659BF1B76F1C200184962 /* Constant.swift */,
-				09F6FCB01B91A01A00B51E5E /* UnreadTool.swift */,
+				09F6FCB01B91A01A00B51E5E /* UserTool.swift */,
 				09858F8F1B89883600C445FB /* OauthTool.swift */,
 				09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */,
 				09CA54291B8F4C0300D38B28 /* HTTPRequestTool.swift */,
@@ -463,7 +463,7 @@
 				09EE4D471B7E4AA200B77A1A /* ExtensionColor.swift in Sources */,
 				0953E3501B80B9F7007AF200 /* CustomOverlay.swift in Sources */,
 				09D659C01B76F1C200184962 /* Constant.swift in Sources */,
-				09F6FCB11B91A01A00B51E5E /* UnreadTool.swift in Sources */,
+				09F6FCB11B91A01A00B51E5E /* UserTool.swift in Sources */,
 				094D87061B772DBA0039BCF9 /* MessageTableViewController.swift in Sources */,
 				094D870A1B772DD40039BCF9 /* ProfileTableViewController.swift in Sources */,
 				094D87041B772DA70039BCF9 /* HomeTableViewController.swift in Sources */,
