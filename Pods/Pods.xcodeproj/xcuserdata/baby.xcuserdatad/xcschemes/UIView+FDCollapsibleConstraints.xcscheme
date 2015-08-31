@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2141D55B47A808A39B78C293"
-               BuildableName = "libNyaruDB.a"
-               BlueprintName = "NyaruDB"
+               BlueprintIdentifier = "FAAF3059E9D0CF00E541C4ED"
+               BuildableName = "libUIView+FDCollapsibleConstraints.a"
+               BlueprintName = "UIView+FDCollapsibleConstraints"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
