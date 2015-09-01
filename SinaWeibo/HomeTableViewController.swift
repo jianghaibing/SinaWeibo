@@ -234,14 +234,18 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         let text = cell.viewWithTag(52) as! UITextView
         let retweet = cell.viewWithTag(53) as! UILabel
         let timeLable = cell.viewWithTag(54) as! UILabel
+        let sourceLable = cell.viewWithTag(56) as! UILabel
 //        let view = cell.viewWithTag(63)
                 
         name.text = status?.user?.name
         //用SDwebimage加载图片
         imageView.sd_setImageWithURL(status?.user?.profile_image_url, placeholderImage: UIImage(named: "timeline_image_placeholder"))
+                
         text.text = status?.text
         retweet.text = status?.retweeted_status?.text
         timeLable.text = status?.created_at
+        sourceLable.text = status?.source
+        
 
         return cell
     }

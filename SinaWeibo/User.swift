@@ -19,4 +19,21 @@ class User: NSObject {
     *  微博头像
     */
     var profile_image_url:NSURL?
+    
+ /// 会员类型 >2表示是会员
+    var mbtype:Int?
+    
+ /// 会员等级
+    var mbrank:Int?
+  
+    /// 是否是vip
+    var isVip:Bool{
+        get{
+            if mbtype > 2 {
+                return true
+            }else{
+                return false
+            }
+        }
+    }
 }
