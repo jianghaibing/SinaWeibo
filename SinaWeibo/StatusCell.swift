@@ -16,10 +16,15 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var statusText: UILabel!
     
     @IBOutlet weak var retweetText: UILabel!
-
+  
+    @IBOutlet weak var lineLeading: NSLayoutConstraint!
+    @IBOutlet weak var lineLeading1: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        lineLeading.constant = kScreenWith / 3
+        lineLeading1.constant = kScreenWith / 3
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

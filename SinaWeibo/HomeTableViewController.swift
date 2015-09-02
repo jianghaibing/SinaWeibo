@@ -238,8 +238,9 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
                 
         cell.statusText.text = status.text
         if status.retweeted_status != nil {
-        let retweetName = status.retweeted_status?.user?.name
-        cell.retweetText.text = "@" + retweetName! + "：" + (status.retweeted_status?.text)!
+            if let retweetName = status.retweeted_status?.user?.name {
+                cell.retweetText.text = "@" + retweetName + "：" + (status.retweeted_status!.text)!
+            }
         }
         let createdDate = StringConvertTool.dateStringConverter(status.created_at!)
         cell.createdDate.text = createdDate
