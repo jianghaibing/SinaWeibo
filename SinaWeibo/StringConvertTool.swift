@@ -39,11 +39,15 @@ class StringConvertTool: NSObject {
     }
     
     class func sourceStringConverter(oldSouce:String) -> String {
-        let range = oldSouce.rangeOfString(">")
-        let subStr1 = oldSouce.substringFromIndex(range!.endIndex)
-        let range1 = subStr1.rangeOfString("<")
-        let subStr = subStr1.substringToIndex(range1!.startIndex)
-        return "来自 " + subStr
+        if let range = oldSouce.rangeOfString(">") {
+            let subStr1 = oldSouce.substringFromIndex(range.endIndex)
+            let range1 = subStr1.rangeOfString("<")
+            let subStr = subStr1.substringToIndex(range1!.startIndex)
+            return "来自 " + subStr
+        }else{
+            return oldSouce
+        }
+        
     }
 
 }

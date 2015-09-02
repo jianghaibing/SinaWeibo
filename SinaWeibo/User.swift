@@ -21,19 +21,17 @@ class User: NSObject {
     var profile_image_url:NSURL?
     
  /// 会员类型 >2表示是会员
-    var mbtype:Int?
+    var mbtype:String?
     
  /// 会员等级
-    var mbrank:Int?
+    var mbrank:String?
   
     /// 是否是vip
-    var isVip:Bool{
-        get{
-            if mbtype > 2 {
+    func isVip() -> Bool {
+        if Int(mbtype!) > 2 {
                 return true
             }else{
                 return false
             }
-        }
     }
 }

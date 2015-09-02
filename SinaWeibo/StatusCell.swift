@@ -14,11 +14,15 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var createdDate: UILabel!
     @IBOutlet weak var source: UILabel!
     @IBOutlet weak var statusText: UILabel!
+    @IBOutlet weak var vipIcon: UIImageView!
     
     @IBOutlet weak var retweetText: UILabel!
   
     @IBOutlet weak var lineLeading: NSLayoutConstraint!
     @IBOutlet weak var lineLeading1: NSLayoutConstraint!
+    @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

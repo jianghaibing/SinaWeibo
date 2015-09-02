@@ -242,10 +242,33 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
                 cell.retweetText.text = "@" + retweetName + "：" + (status.retweeted_status!.text)!
             }
         }
-        let createdDate = StringConvertTool.dateStringConverter(status.created_at!)
-        cell.createdDate.text = createdDate
-        let sourceString = StringConvertTool.sourceStringConverter(status.source!)
-        cell.source.text = sourceString
+        if let created_at = status.created_at {
+            let createdDate = StringConvertTool.dateStringConverter(created_at)
+            cell.createdDate.text = createdDate
+        }
+        
+        if let source = status.source {
+            let sourceString = StringConvertTool.sourceStringConverter(source)
+            cell.source.text = sourceString
+        }
+        if let reposts_count = status.reposts_count where reposts_count != "0"{
+            cell.retweetButton.setTitle(reposts_count, forState: UIControlState.Normal)
+        }
+        
+        if let comments_count = status.comments_count where comments_count != "0"{
+            cell.commentButton.setTitle(comments_count, forState: UIControlState.Normal)
+        }
+        if let attitudes_count = status.attitudes_count where attitudes_count != "0"{
+            cell.likeButton.setTitle(attitudes_count, forState: UIControlState.Normal)
+        }
+        
+        if status.user!.isVip() {
+            cell.vipIcon.image = UIImage(named: "common_icon_membership")
+            cell.name.textColor = UIColor.orangeColor()
+        }else{
+            cell.vipIcon.image = nil
+            cell.name.textColor = UIColor.blackColor()
+        }
         
         return cell
     }

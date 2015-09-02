@@ -64,12 +64,15 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" tag="55" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_icon_membership" translatesAutoresizingMaskIntoConstraints="NO" id="IfW-HL-AfR">
+                                                <imageView userInteractionEnabled="NO" tag="55" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IfW-HL-AfR">
                                                     <rect key="frame" x="105" y="10" width="14" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="gWG-dh-v0N"/>
                                                         <constraint firstAttribute="width" constant="14" id="jXY-kn-wBY"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <outletCollection property="fd_collapsibleConstraints" destination="jXY-kn-wBY" id="xKd-g5-B9w"/>
+                                                    </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="56" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8X-NR-yXw">
                                                     <rect key="frame" x="100" y="31" width="31" height="15"/>
@@ -202,13 +205,17 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="avatar" destination="trT-L7-iGF" id="yuh-De-MQV"/>
+                                    <outlet property="commentButton" destination="fN7-Hm-V5O" id="ppi-Ck-652"/>
                                     <outlet property="createdDate" destination="gyF-dM-38V" id="V7t-uE-Ams"/>
+                                    <outlet property="likeButton" destination="7gP-R9-0w8" id="z8E-zm-XQg"/>
                                     <outlet property="lineLeading" destination="JJW-Qm-3NE" id="1p4-Kh-erG"/>
                                     <outlet property="lineLeading1" destination="jwI-KH-7sg" id="Jat-hk-KBw"/>
                                     <outlet property="name" destination="usW-MF-SFm" id="DCQ-nA-mul"/>
+                                    <outlet property="retweetButton" destination="f6t-Kw-Xc3" id="HBY-Uf-Edi"/>
                                     <outlet property="retweetText" destination="4Mk-ff-4rd" id="CwX-Dg-yve"/>
                                     <outlet property="source" destination="C8X-NR-yXw" id="voK-RY-A9S"/>
                                     <outlet property="statusText" destination="JI6-7z-oxC" id="H7G-Xk-tYp"/>
+                                    <outlet property="vipIcon" destination="IfW-HL-AfR" id="R9z-BZ-Nqs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -525,7 +532,6 @@
     </scenes>
     <resources>
         <image name="avatar_default" width="50" height="50"/>
-        <image name="common_icon_membership" width="14" height="14"/>
         <image name="tabbar_background" width="1" height="44"/>
         <image name="tabbar_discover" width="30" height="30"/>
         <image name="tabbar_discover_selected" width="30" height="30"/>

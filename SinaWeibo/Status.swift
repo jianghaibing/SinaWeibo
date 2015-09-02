@@ -23,11 +23,11 @@ class Status: NSObject {
     /// 转发的原微博信息字段，当该微博为转发微博时返回 详细
     var retweeted_status:Status?
     /// 转发数
-    var reposts_count:Int?
+    var reposts_count:String?
     /// 评论数
-    var comments_count:Int?
+    var comments_count:String?
     /// 表态数
-    var attitudes_count:Int?
+    var attitudes_count:String?
     /// 微博配图url数组
     var pic_urls:[Photo]?
 
