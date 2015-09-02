@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092878441B9736F50068A41B /* StringConvertTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092878431B9736F50068A41B /* StringConvertTool.swift */; settings = {ASSET_TAGS = (); }; };
+		092878461B973FDE0068A41B /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092878451B973FDE0068A41B /* StatusCell.swift */; settings = {ASSET_TAGS = (); }; };
 		093F63DA1B7B919D009C8660 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F63D91B7B919D009C8660 /* CustomSearchBar.swift */; };
 		09481C6C1B771E3700F2006E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09481C6B1B771E3700F2006E /* CustomTabBar.swift */; };
 		094D87041B772DA70039BCF9 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D87031B772DA70039BCF9 /* HomeTableViewController.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		092878431B9736F50068A41B /* StringConvertTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConvertTool.swift; sourceTree = "<group>"; };
+		092878451B973FDE0068A41B /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		093F63D91B7B919D009C8660 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		09481C6B1B771E3700F2006E /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		094D87031B772DA70039BCF9 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				094D870E1B7744160039BCF9 /* CustomTitleView.swift */,
 				0953E34D1B80B3EC007AF200 /* CustomPopMenu.swift */,
 				0953E34F1B80B9F7007AF200 /* CustomOverlay.swift */,
+				092878451B973FDE0068A41B /* StatusCell.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				09858F931B89960900C445FB /* Account.swift */,
+				092878431B9736F50068A41B /* StringConvertTool.swift */,
 				09F6FCA81B9181B600B51E5E /* AccountParam.swift */,
 				09F6FCAA1B918B1600B51E5E /* UnreadParam.swift */,
 				09F6FCAC1B919E3600B51E5E /* UnreadResultParam.swift */,
@@ -444,6 +450,7 @@
 				093F63DA1B7B919D009C8660 /* CustomSearchBar.swift in Sources */,
 				09481C6C1B771E3700F2006E /* CustomTabBar.swift in Sources */,
 				09858F9B1B89A96800C445FB /* Photo.swift in Sources */,
+				092878441B9736F50068A41B /* StringConvertTool.swift in Sources */,
 				099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */,
 				09DEC9061B80F995007B440C /* BaseNavigationController.swift in Sources */,
 				09F6FCAB1B918B1600B51E5E /* UnreadParam.swift in Sources */,
@@ -461,6 +468,7 @@
 				09858F901B89883600C445FB /* OauthTool.swift in Sources */,
 				09F6FCA21B9098FC00B51E5E /* StatusTool.swift in Sources */,
 				09EE4D471B7E4AA200B77A1A /* ExtensionColor.swift in Sources */,
+				092878461B973FDE0068A41B /* StatusCell.swift in Sources */,
 				0953E3501B80B9F7007AF200 /* CustomOverlay.swift in Sources */,
 				09D659C01B76F1C200184962 /* Constant.swift in Sources */,
 				09F6FCB11B91A01A00B51E5E /* UserTool.swift in Sources */,

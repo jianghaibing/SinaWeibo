@@ -11,37 +11,7 @@ import UIKit
 class Status: NSObject {
     
     /// 微博创建时间,换换时间格式，新浪微博日期格式：EEE MMM dd HH:mm:ss zzz yyyy
-    var created_at:String?{
-        didSet{
-            let df = NSDateFormatter()
-            df.dateFormat = "EEE MMM dd HH:mm:ss zzz yyyy"
-            df.locale = NSLocale(localeIdentifier: "en_US")
-            let date = df.dateFromString(created_at!)
-            let now = NSDate()
-            
-            let createdYear = NSCalendar.currentCalendar().component(NSCalendarUnit.Year, fromDate: date!)
-            let thisYear = NSCalendar.currentCalendar().component(NSCalendarUnit.Year, fromDate: now)
-            
-            let deltaTimeInterval = Int(now.timeIntervalSinceDate(date!))
-           
-            if createdYear != thisYear {
-                df.dateFormat = "yyyy-MM-dd HH:mm"
-            }else if deltaTimeInterval >= 3600*24*2 {
-                df.dateFormat = "MM-dd HH:mm"
-            }else if deltaTimeInterval >= 3600*24 && deltaTimeInterval < 3600*24*2 {
-                df.dateFormat = "昨天 HH:mm"
-            }else if deltaTimeInterval >= 3600 && deltaTimeInterval < 3600*24 {
-                df.dateFormat = "\(deltaTimeInterval/3600)小时之前"
-            }else if deltaTimeInterval >= 60 && deltaTimeInterval < 3600 {
-                df.dateFormat = "\(deltaTimeInterval/60)分钟之前"
-            }else if deltaTimeInterval < 60 {
-                df.dateFormat = "刚刚"
-            }
-            self.created_at = df.stringFromDate(date!)
-            
-            
-        }
-    }
+    var created_at:String?
     /// 字符串型的微博ID
     var idstr:String?
     /// 微博信息内容

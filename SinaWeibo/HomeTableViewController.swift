@@ -224,30 +224,28 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> StatusCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-        let status = statuses[indexPath.row] as? Status
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! StatusCell
         
-        let imageView = cell.viewWithTag(50) as! UIImageView
-        let name = cell.viewWithTag(51) as! UILabel
-        let text = cell.viewWithTag(52) as! UITextView
-        let retweet = cell.viewWithTag(53) as! UILabel
-        let timeLable = cell.viewWithTag(54) as! UILabel
-        let sourceLable = cell.viewWithTag(56) as! UILabel
-//        let view = cell.viewWithTag(63)
-                
-        name.text = status?.user?.name
+        guard let status = statuses[indexPath.row] as? Status else {
+            fatalError("微博为空")
+        }
+        
+        cell.name.text = status.user?.name
         //用SDwebimage加载图片
-        imageView.sd_setImageWithURL(status?.user?.profile_image_url, placeholderImage: UIImage(named: "timeline_image_placeholder"))
+        cell.avatar.sd_setImageWithURL(status.user?.profile_image_url, placeholderImage: UIImage(named: "timeline_image_placeholder"))
                 
-        text.text = status?.text
-        retweet.text = status?.retweeted_status?.text
-        timeLable.text = status?.created_at
-        sourceLable.text = status?.source
+        cell.statusText.text = status.text
+        if status.retweeted_status != nil {
+        let retweetName = status.retweeted_status?.user?.name
+        cell.retweetText.text = "@" + retweetName! + "：" + (status.retweeted_status?.text)!
+        }
+        let createdDate = StringConvertTool.dateStringConverter(status.created_at!)
+        cell.createdDate.text = createdDate
+        let sourceString = StringConvertTool.sourceStringConverter(status.source!)
+        cell.source.text = sourceString
         
-        
-
         return cell
     }
     
