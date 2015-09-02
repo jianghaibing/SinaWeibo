@@ -26,24 +26,18 @@ class Status: NSObject {
            
             if createdYear != thisYear {
                 df.dateFormat = "yyyy-MM-dd HH:mm"
-                self.created_at = df.stringFromDate(date!)
             }else if deltaTimeInterval >= 3600*24*2 {
                 df.dateFormat = "MM-dd HH:mm"
-                self.created_at = df.stringFromDate(date!)
             }else if deltaTimeInterval >= 3600*24 && deltaTimeInterval < 3600*24*2 {
                 df.dateFormat = "昨天 HH:mm"
-                self.created_at = df.stringFromDate(date!)
             }else if deltaTimeInterval >= 3600 && deltaTimeInterval < 3600*24 {
                 df.dateFormat = "\(deltaTimeInterval/3600)小时之前"
-                self.created_at = df.stringFromDate(date!)
             }else if deltaTimeInterval >= 60 && deltaTimeInterval < 3600 {
                 df.dateFormat = "\(deltaTimeInterval/60)分钟之前"
-                self.created_at = df.stringFromDate(date!)
             }else if deltaTimeInterval < 60 {
                 df.dateFormat = "刚刚"
-                self.created_at = df.stringFromDate(date!)
             }
-
+            self.created_at = df.stringFromDate(date!)
             
             
         }
