@@ -25,6 +25,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        
         setupNavagationBar()
         /**
         *  下拉刷新取最新微博
@@ -263,15 +264,42 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         }
         
         if status.user!.isVip() {
-            cell.vipIcon.image = UIImage(named: "common_icon_membership")
+            switch status.user!.mbrank! {
+            case "1":
+                cell.vipIcon.image = UIImage(named: "common_icon_membership_level1")
+            case "2":
+                cell.vipIcon.image = UIImage(named: "common_icon_membership_level2")
+            case "3":
+                cell.vipIcon.image = UIImage(named: "common_icon_membership_level3")
+            case "4":
+                cell.vipIcon.image = UIImage(named: "common_icon_membership_level4")
+            case "5":
+                cell.vipIcon.image = UIImage(named: "common_icon_membership_level5")
+            case "6":
+                cell.vipIcon.image = UIImage(named: "common_icon_membership_level6")
+            default:
+                cell.vipIcon.image = UIImage(named: "common_icon_membership")
+            }
             cell.name.textColor = UIColor.orangeColor()
         }else{
             cell.vipIcon.image = nil
             cell.name.textColor = UIColor.blackColor()
         }
         
+        
+        let urls = status.pic_urls!
+        let photos = Photo.objectArrayWithKeyValuesArray(urls)
+        for imageView in cell.statusImage {
+            imageView.image = nil
+        }
+        for (index,photo) in photos.enumerate() {
+            let imageView = cell.statusImage![index]
+            imageView.sd_setImageWithURL((photo as! Photo).thumbnail_pic)
+        }
+        
         return cell
     }
+    
     
 
     /*

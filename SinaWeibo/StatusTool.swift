@@ -29,6 +29,7 @@ class StatusTool: NSObject {
         HTTPRequestTool.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params.keyValues(), success: { (result) -> Void in
             
             let dictArry = result["statuses"]//取到最新微博数组
+            
             let newStatus = Status.objectArrayWithKeyValuesArray(dictArry)//数组字典转模型
             
             sucess(newStatus)

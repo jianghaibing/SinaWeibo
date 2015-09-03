@@ -29,6 +29,7 @@ class Status: NSObject {
     /// 表态数
     var attitudes_count:String?
     /// 微博配图url数组
-    var pic_urls:[Photo]?
+    var pic_urls:[AnyObject]?
+    
 
 }

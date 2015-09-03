@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StatusCell: UITableViewCell {
+class StatusCell: UITableViewCell{
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var createdDate: UILabel!
@@ -24,11 +24,32 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     
+    
+    @IBOutlet var statusImage: [UIImageView]!
+    @IBOutlet weak var imgHeight1: NSLayoutConstraint!
+    @IBOutlet weak var imgWidth1: NSLayoutConstraint!
+    @IBOutlet weak var imgHeight4: NSLayoutConstraint!
+    @IBOutlet weak var imgWidth4: NSLayoutConstraint!
+    @IBOutlet weak var imgHeight7: NSLayoutConstraint!
+    @IBOutlet weak var imgWidth7: NSLayoutConstraint!
+    var imgWH:CGFloat!
+   
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         lineLeading.constant = kScreenWith / 3
         lineLeading1.constant = kScreenWith / 3
+        
+        imgWH = (kScreenWith - 30) / 3
+
+//        imgHeight1.constant = imgWH
+        imgWidth1.constant = imgWH
+        
+//        imgHeight4.constant = imgWH
+        imgWidth4.constant = imgWH
+        
+//        imgHeight7.constant = imgWH
+        imgWidth7.constant = imgWH
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -36,5 +57,8 @@ class StatusCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+  
 
 }
