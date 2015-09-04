@@ -242,6 +242,8 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
             if let retweetName = status.retweeted_status?.user?.name {
                 cell.retweetText.text = "@" + retweetName + "：" + (status.retweeted_status!.text)!
             }
+        }else{
+            cell.retweetText.text = nil
         }
         if let created_at = status.created_at {
             let createdDate = StringConvertTool.dateStringConverter(created_at)
@@ -289,6 +291,8 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         
         let urls = status.pic_urls!
         let photos = Photo.objectArrayWithKeyValuesArray(urls)
+        
+      
         for imageView in cell.statusImage {
             imageView.image = nil
         }
