@@ -26,13 +26,23 @@ class StatusCell: UITableViewCell{
     
     
     @IBOutlet var statusImage: [UIImageView]!
-    @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
+    var imgHeight: NSLayoutConstraint!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         lineLeading.constant = kScreenWith / 3
         lineLeading1.constant = kScreenWith / 3
-
+        
+        for imageView in statusImage {
+            imgHeight = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: (kScreenWith - 30) / 3)
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imgHeight.active = true
+            imageView.fd_autoCollapse = true
+            imageView.fd_collapsibleConstraints.append(imgHeight)
+        }
+        
+        
         
     }
 

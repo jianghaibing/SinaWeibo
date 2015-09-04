@@ -18,14 +18,15 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
     lazy var popMenuVC:PopMenuTableViewController = PopMenuTableViewController()
     
     var statuses:NSMutableArray!
+    
+    var cellHeightCacheEnabled:Bool!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = 100.0
+        tableView.estimatedRowHeight = 200.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        
+
         setupNavagationBar()
         /**
         *  下拉刷新取最新微博
@@ -229,14 +230,20 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! StatusCell
         
+        configureCell(cell, indexPath:indexPath)
+        
+        return cell
+    }
+    
+    func configureCell(cell:AnyObject, indexPath:NSIndexPath){
         guard let status = statuses[indexPath.row] as? Status else {
             fatalError("微博为空")
         }
-        
+        let cell = cell as! StatusCell
         cell.name.text = status.user?.name
         //用SDwebimage加载图片
         cell.avatar.sd_setImageWithURL(status.user?.profile_image_url, placeholderImage: UIImage(named: "timeline_image_placeholder"))
-                
+        
         cell.statusText.text = status.text
         if status.retweeted_status != nil {
             if let retweetName = status.retweeted_status?.user?.name {
@@ -292,18 +299,18 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         let urls = status.pic_urls!
         let photos = Photo.objectArrayWithKeyValuesArray(urls)
         
-      
+        
         for imageView in cell.statusImage {
             imageView.image = nil
         }
-        for (index,photo) in photos.enumerate() {
-            let imageView = cell.statusImage![index]
-            imageView.sd_setImageWithURL((photo as! Photo).thumbnail_pic)
+        if photos.count > 0 {
+            for (index,photo) in photos.enumerate() {
+                let imageView = cell.statusImage![index]
+                imageView.sd_setImageWithURL((photo as! Photo).thumbnail_pic, placeholderImage: UIImage(named: "timeline_image_placeholder"))
+            }
         }
         
-        return cell
     }
-    
     
 
     /*

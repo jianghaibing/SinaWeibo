@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2141D55B47A808A39B78C293"
+               BlueprintIdentifier = "2E0B54F0FA251F697802D090"
                BuildableName = "libNyaruDB.a"
                BlueprintName = "NyaruDB"
                ReferencedContainer = "container:Pods.xcodeproj">
