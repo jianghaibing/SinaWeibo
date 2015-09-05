@@ -23,7 +23,6 @@ PODS:
   - MBProgressHUD (0.9.1)
   - MJExtension (2.5.9)
   - MJRefresh (2.4.7)
-  - NyaruDB (1.4.2)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -34,7 +33,6 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJExtension
   - MJRefresh
-  - NyaruDB
   - SDWebImage
   - UIView+FDCollapsibleConstraints
 
@@ -43,7 +41,6 @@ SPEC CHECKSUMS:
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJExtension: 2330aeb6c83428c820749290bf766e81827cda65
   MJRefresh: 6eb2f61338f89f64fd628fd43debcf479381ff59
-  NyaruDB: 2abbcd1fb90e91e324a81b2b504a409224671ea0
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   UIView+FDCollapsibleConstraints: 9357eaf03b4e088263ab74a3b86a382a64ce38dd
 

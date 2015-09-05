@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+
 let kScreenWith = UIScreen.mainScreen().bounds.width
 let kScreenHeight = UIScreen.mainScreen().bounds.height
 let kKeyWindow = UIApplication.sharedApplication().keyWindow

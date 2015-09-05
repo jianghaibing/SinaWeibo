@@ -13,8 +13,15 @@ class UserTool: NSObject {
     class func getUnreadCount(sucess:(UnreadResultParam) -> Void, failure:(NSError) -> Void){
         
         let params = UnreadParam()
-        params.access_token = Account.shareInstance.access_token ?? Account.fetchData().access_token
-        params.uid = Account.shareInstance.uid ?? Account.fetchData().uid
+        
+        let fetchRequst = NSFetchRequest(entityName: "AccountDB")
+        
+        let results = try! managedObjectContext.executeFetchRequest(fetchRequst)
+        if results.count > 0 {
+            let account = results[0] as! AccountDB
+            params.access_token = account.access_token
+            params.uid = account.uid
+        }
         
         HTTPRequestTool.GET("https://rm.api.weibo.com/2/remind/unread_count.json", parameters: params.keyValues(), success: { (result) -> Void in
         
@@ -36,8 +43,15 @@ class UserTool: NSObject {
     class func getUserName(sucess:(User) -> Void, failure:(NSError) -> Void){
         
         let params = UnreadParam()
-        params.access_token = Account.shareInstance.access_token ?? Account.fetchData().access_token
-        params.uid = Account.shareInstance.uid ?? Account.fetchData().uid
+        
+        let fetchRequst = NSFetchRequest(entityName: "AccountDB")
+        
+        let results = try! managedObjectContext.executeFetchRequest(fetchRequst)
+        if results.count > 0 {
+            let account = results[0] as! AccountDB
+            params.access_token = account.access_token
+            params.uid = account.uid
+        }
         
         HTTPRequestTool.GET("https://api.weibo.com/2/users/show.json", parameters: params.keyValues(), success: { (result) -> Void in
             

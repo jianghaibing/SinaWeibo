@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091A916B1B9B21FF001371E7 /* SinaWeibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 091A91691B9B21FF001371E7 /* SinaWeibo.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		091A916E1B9B250D001371E7 /* AccountDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A916C1B9B250D001371E7 /* AccountDB+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		091A916F1B9B250D001371E7 /* AccountDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A916D1B9B250D001371E7 /* AccountDB.swift */; settings = {ASSET_TAGS = (); }; };
 		092878441B9736F50068A41B /* StringConvertTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092878431B9736F50068A41B /* StringConvertTool.swift */; settings = {ASSET_TAGS = (); }; };
 		092878461B973FDE0068A41B /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092878451B973FDE0068A41B /* StatusCell.swift */; settings = {ASSET_TAGS = (); }; };
 		093F63DA1B7B919D009C8660 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F63D91B7B919D009C8660 /* CustomSearchBar.swift */; };
@@ -22,7 +25,6 @@
 		0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E3511B80BDF1007AF200 /* PopMenuTableViewController.swift */; };
 		09643A251B81F0EF003643A8 /* NewFeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09643A241B81F0EF003643A8 /* NewFeatureCollectionViewController.swift */; };
 		09858F901B89883600C445FB /* OauthTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F8F1B89883600C445FB /* OauthTool.swift */; };
-		09858F941B89960900C445FB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F931B89960900C445FB /* Account.swift */; };
 		09858F971B89A94100C445FB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F961B89A94100C445FB /* Status.swift */; };
 		09858F991B89A95400C445FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F981B89A95400C445FB /* User.swift */; };
 		09858F9B1B89A96800C445FB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F9A1B89A96800C445FB /* Photo.swift */; };
@@ -50,6 +52,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		091A916A1B9B21FF001371E7 /* SinaWeibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SinaWeibo.xcdatamodel; sourceTree = "<group>"; };
+		091A916C1B9B250D001371E7 /* AccountDB+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountDB+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		091A916D1B9B250D001371E7 /* AccountDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDB.swift; sourceTree = "<group>"; };
 		092878431B9736F50068A41B /* StringConvertTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConvertTool.swift; sourceTree = "<group>"; };
 		092878451B973FDE0068A41B /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		093F63D91B7B919D009C8660 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
@@ -66,7 +71,6 @@
 		095DFD0F1B775F5B00BE8F1C /* SinaWeibo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SinaWeibo-Bridging-Header.h"; sourceTree = "<group>"; };
 		09643A241B81F0EF003643A8 /* NewFeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureCollectionViewController.swift; sourceTree = "<group>"; };
 		09858F8F1B89883600C445FB /* OauthTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OauthTool.swift; sourceTree = "<group>"; };
-		09858F931B89960900C445FB /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		09858F961B89A94100C445FB /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		09858F981B89A95400C445FB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09858F9A1B89A96800C445FB /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -225,8 +229,8 @@
 		09858F921B8995F000C445FB /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				09858F931B89960900C445FB /* Account.swift */,
-				092878431B9736F50068A41B /* StringConvertTool.swift */,
+				091A916C1B9B250D001371E7 /* AccountDB+CoreDataProperties.swift */,
+				091A916D1B9B250D001371E7 /* AccountDB.swift */,
 				09F6FCA81B9181B600B51E5E /* AccountParam.swift */,
 				09F6FCAA1B918B1600B51E5E /* UnreadParam.swift */,
 				09F6FCAC1B919E3600B51E5E /* UnreadResultParam.swift */,
@@ -274,6 +278,7 @@
 				099C7B771B762D7C0011BF10 /* Main.storyboard */,
 				099C7B7A1B762D7C0011BF10 /* Assets.xcassets */,
 				099C7B731B762D7C0011BF10 /* AppDelegate.swift */,
+				091A91691B9B21FF001371E7 /* SinaWeibo.xcdatamodeld */,
 				095DFD0F1B775F5B00BE8F1C /* SinaWeibo-Bridging-Header.h */,
 				095DFD101B77610600BE8F1C /* Source */,
 				099C7B7F1B762D7C0011BF10 /* Info.plist */,
@@ -302,6 +307,7 @@
 		09F6FCAF1B919FEF00B51E5E /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				092878431B9736F50068A41B /* StringConvertTool.swift */,
 				09D659BF1B76F1C200184962 /* Constant.swift */,
 				09F6FCB01B91A01A00B51E5E /* UserTool.swift */,
 				09858F8F1B89883600C445FB /* OauthTool.swift */,
@@ -449,6 +455,7 @@
 				09858F991B89A95400C445FB /* User.swift in Sources */,
 				093F63DA1B7B919D009C8660 /* CustomSearchBar.swift in Sources */,
 				09481C6C1B771E3700F2006E /* CustomTabBar.swift in Sources */,
+				091A916E1B9B250D001371E7 /* AccountDB+CoreDataProperties.swift in Sources */,
 				09858F9B1B89A96800C445FB /* Photo.swift in Sources */,
 				092878441B9736F50068A41B /* StringConvertTool.swift in Sources */,
 				099C7B881B7646B50011BF10 /* MainTabBarController.swift in Sources */,
@@ -456,7 +463,6 @@
 				09F6FCAB1B918B1600B51E5E /* UnreadParam.swift in Sources */,
 				09DEC9031B80EDC1007B440C /* SettingTableViewController.swift in Sources */,
 				09F6FCA41B90B70700B51E5E /* StatusParam.swift in Sources */,
-				09858F941B89960900C445FB /* Account.swift in Sources */,
 				09643A251B81F0EF003643A8 /* NewFeatureCollectionViewController.swift in Sources */,
 				0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */,
 				09858F971B89A94100C445FB /* Status.swift in Sources */,
@@ -471,8 +477,10 @@
 				092878461B973FDE0068A41B /* StatusCell.swift in Sources */,
 				0953E3501B80B9F7007AF200 /* CustomOverlay.swift in Sources */,
 				09D659C01B76F1C200184962 /* Constant.swift in Sources */,
+				091A916B1B9B21FF001371E7 /* SinaWeibo.xcdatamodeld in Sources */,
 				09F6FCB11B91A01A00B51E5E /* UserTool.swift in Sources */,
 				094D87061B772DBA0039BCF9 /* MessageTableViewController.swift in Sources */,
+				091A916F1B9B250D001371E7 /* AccountDB.swift in Sources */,
 				094D870A1B772DD40039BCF9 /* ProfileTableViewController.swift in Sources */,
 				094D87041B772DA70039BCF9 /* HomeTableViewController.swift in Sources */,
 			);
@@ -636,6 +644,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		091A91691B9B21FF001371E7 /* SinaWeibo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				091A916A1B9B21FF001371E7 /* SinaWeibo.xcdatamodel */,
+			);
+			currentVersion = 091A916A1B9B21FF001371E7 /* SinaWeibo.xcdatamodel */;
+			path = SinaWeibo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 099C7B681B762D7C0011BF10 /* Project object */;
 }

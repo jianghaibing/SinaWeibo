@@ -46,8 +46,8 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="54" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyF-dM-38V">
-                                                    <rect key="frame" x="59" y="31" width="272" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="54" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyF-dM-38V">
+                                                    <rect key="frame" x="59" y="31" width="24" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="7RW-3f-cgQ"/>
                                                         <constraint firstAttribute="width" constant="42" id="MGg-r5-ZPC"/>
@@ -72,8 +72,8 @@
                                                         <outletCollection property="fd_collapsibleConstraints" destination="jXY-kn-wBY" id="xKd-g5-B9w"/>
                                                     </connections>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="56" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="来源" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8X-NR-yXw">
-                                                    <rect key="frame" x="341" y="31" width="24" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="56" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来源" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8X-NR-yXw">
+                                                    <rect key="frame" x="93" y="31" width="24" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -155,7 +155,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="Hwx-H8-KE3" secondAttribute="trailing" constant="10" id="C63-GV-eEt"/>
                                                 <constraint firstItem="gyF-dM-38V" firstAttribute="top" secondItem="usW-MF-SFm" secondAttribute="bottom" constant="4" id="Er2-nr-9IG"/>
                                                 <constraint firstItem="C8X-NR-yXw" firstAttribute="leading" secondItem="gyF-dM-38V" secondAttribute="trailing" constant="10" id="FQL-Ds-ZR2"/>
-                                                <constraint firstAttribute="trailing" secondItem="C8X-NR-yXw" secondAttribute="trailing" priority="750" constant="10" id="GJZ-tO-fCG"/>
                                                 <constraint firstItem="trT-L7-iGF" firstAttribute="leading" secondItem="zTT-gq-hSS" secondAttribute="leading" constant="15" id="H9h-Do-zRK"/>
                                                 <constraint firstItem="usW-MF-SFm" firstAttribute="top" secondItem="zTT-gq-hSS" secondAttribute="top" constant="10" id="LdG-xo-Wq5"/>
                                                 <constraint firstAttribute="trailing" secondItem="JI6-7z-oxC" secondAttribute="trailing" constant="10" id="OHj-CC-aSs"/>

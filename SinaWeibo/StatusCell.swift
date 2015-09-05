@@ -31,9 +31,11 @@ class StatusCell: UITableViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //工具栏分割限布局
         lineLeading.constant = kScreenWith / 3
         lineLeading1.constant = kScreenWith / 3
         
+        //设置图标的高度
         for imageView in statusImage {
             imgHeight = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: (kScreenWith - 30) / 3)
             imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,8 +43,6 @@ class StatusCell: UITableViewCell{
             imageView.fd_autoCollapse = true
             imageView.fd_collapsibleConstraints.append(imgHeight)
         }
-        
-        
         
     }
 

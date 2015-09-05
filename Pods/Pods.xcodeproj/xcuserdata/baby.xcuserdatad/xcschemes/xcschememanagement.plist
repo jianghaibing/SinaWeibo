@@ -24,11 +24,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>NyaruDB.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,7 +42,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2C059A69E4B8AABF6F54F15DE6F89028</key>
+		<key>3F638EEE75BD1BAFCE80B44F44D788BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,27 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>864435C9D19BE636C88CE59BBD9A8D26</key>
+		<key>6099ECD138D67A03D372D0E2976C4F40</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DC444DE131235DFE0580C7EED331A335</key>
+		<key>676B5A7A41F1F61EA18760B2C3E72E9F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF5BC076FFE0CA4C00D5A8C7E0D3FE4E</key>
+		<key>C1C001AA92AB1DF20054908036D6F4C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E203F4B49ED18D673ACDEEE1360FD409</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E657BA18AA507EA3288E86491E7DEC11</key>
+		<key>D0A42BF0400F3B542B832E8ED5D97CF5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

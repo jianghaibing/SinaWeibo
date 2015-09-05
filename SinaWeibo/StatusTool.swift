@@ -19,8 +19,14 @@ class StatusTool: NSObject {
         
         let params = StatusParam()
         
-        params.access_token = Account.shareInstance.access_token ?? Account.fetchData().access_token
-
+        let fetchRequst = NSFetchRequest(entityName: "AccountDB")
+        let results = try! managedObjectContext.executeFetchRequest(fetchRequst)
+        if results.count > 0 {
+            let account = results[0] as! AccountDB
+            params.access_token = account.access_token
+        }
+        
+        
         if ((sinceID) != nil){
             params.since_id = sinceID
         }
@@ -46,7 +52,12 @@ class StatusTool: NSObject {
         
         let params = StatusParam()
         
-        params.access_token = Account.shareInstance.access_token ?? Account.fetchData().access_token
+        let fetchRequst = NSFetchRequest(entityName: "AccountDB")
+        let results = try! managedObjectContext.executeFetchRequest(fetchRequst)
+        if results.count > 0 {
+            let account = results[0] as! AccountDB
+            params.access_token = account.access_token
+        }
 
         if ((maxID) != nil){
             params.max_id = maxID

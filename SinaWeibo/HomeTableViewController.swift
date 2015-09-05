@@ -23,7 +23,9 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /**
+        *  设置自动布局后，cell的高度自适应
+        */
         tableView.estimatedRowHeight = 200.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
@@ -169,7 +171,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
     /**
     点击title时显示弹出菜单
     */
-    func showTitlePopmenu(){
+    private func showTitlePopmenu(){
         titleView.selected = !titleView.selected
         
         let overlay = CustomOverlay.show()
@@ -235,15 +237,17 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         return cell
     }
     
-    func configureCell(cell:AnyObject, indexPath:NSIndexPath){
+    private func configureCell(cell:AnyObject, indexPath:NSIndexPath){
         guard let status = statuses[indexPath.row] as? Status else {
             fatalError("微博为空")
         }
         let cell = cell as! StatusCell
+        //设置名称
         cell.name.text = status.user?.name
-        //用SDwebimage加载图片
+        //用SDwebimage加载图片，设置头像
         cell.avatar.sd_setImageWithURL(status.user?.profile_image_url, placeholderImage: UIImage(named: "timeline_image_placeholder"))
         
+        //设置正文内容
         cell.statusText.text = status.text
         if status.retweeted_status != nil {
             if let retweetName = status.retweeted_status?.user?.name {
@@ -252,26 +256,31 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         }else{
             cell.retweetText.text = nil
         }
+        
         if let created_at = status.created_at {
             let createdDate = StringConvertTool.dateStringConverter(created_at)
             cell.createdDate.text = createdDate
         }
         
+        //设置来源
         if let source = status.source {
             let sourceString = StringConvertTool.sourceStringConverter(source)
             cell.source.text = sourceString
         }
+        //设置转发数
         if let reposts_count = status.reposts_count where reposts_count != "0"{
             cell.retweetButton.setTitle(reposts_count, forState: UIControlState.Normal)
         }
-        
+        //设置评论数
         if let comments_count = status.comments_count where comments_count != "0"{
             cell.commentButton.setTitle(comments_count, forState: UIControlState.Normal)
         }
+        //设置点赞数
         if let attitudes_count = status.attitudes_count where attitudes_count != "0"{
             cell.likeButton.setTitle(attitudes_count, forState: UIControlState.Normal)
         }
         
+        //设置会员标识
         if status.user!.isVip() {
             switch status.user!.mbrank! {
             case "1":
@@ -295,11 +304,9 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
             cell.name.textColor = UIColor.blackColor()
         }
         
-        
+        //设置微博图片
         let urls = status.pic_urls!
         let photos = Photo.objectArrayWithKeyValuesArray(urls)
-        
-        
         for imageView in cell.statusImage {
             imageView.image = nil
         }
