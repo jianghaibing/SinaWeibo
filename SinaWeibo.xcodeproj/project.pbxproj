@@ -12,6 +12,7 @@
 		091A916F1B9B250D001371E7 /* AccountDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A916D1B9B250D001371E7 /* AccountDB.swift */; settings = {ASSET_TAGS = (); }; };
 		092878441B9736F50068A41B /* StringConvertTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092878431B9736F50068A41B /* StringConvertTool.swift */; settings = {ASSET_TAGS = (); }; };
 		092878461B973FDE0068A41B /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092878451B973FDE0068A41B /* StatusCell.swift */; settings = {ASSET_TAGS = (); }; };
+		0936F5571BA0812C00422821 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936F5561BA0812C00422821 /* PhotoCollectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		093F63DA1B7B919D009C8660 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F63D91B7B919D009C8660 /* CustomSearchBar.swift */; };
 		09481C6C1B771E3700F2006E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09481C6B1B771E3700F2006E /* CustomTabBar.swift */; };
 		094D87041B772DA70039BCF9 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D87031B772DA70039BCF9 /* HomeTableViewController.swift */; };
@@ -57,6 +58,7 @@
 		091A916D1B9B250D001371E7 /* AccountDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDB.swift; sourceTree = "<group>"; };
 		092878431B9736F50068A41B /* StringConvertTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConvertTool.swift; sourceTree = "<group>"; };
 		092878451B973FDE0068A41B /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
+		0936F5561BA0812C00422821 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		093F63D91B7B919D009C8660 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		09481C6B1B771E3700F2006E /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		094D87031B772DA70039BCF9 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				094D87031B772DA70039BCF9 /* HomeTableViewController.swift */,
 				0953E3511B80BDF1007AF200 /* PopMenuTableViewController.swift */,
+				0936F5561BA0812C00422821 /* PhotoCollectionViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				09D659C01B76F1C200184962 /* Constant.swift in Sources */,
 				091A916B1B9B21FF001371E7 /* SinaWeibo.xcdatamodeld in Sources */,
 				09F6FCB11B91A01A00B51E5E /* UserTool.swift in Sources */,
+				0936F5571BA0812C00422821 /* PhotoCollectionViewController.swift in Sources */,
 				094D87061B772DBA0039BCF9 /* MessageTableViewController.swift in Sources */,
 				091A916F1B9B250D001371E7 /* AccountDB.swift in Sources */,
 				094D870A1B772DD40039BCF9 /* ProfileTableViewController.swift in Sources */,

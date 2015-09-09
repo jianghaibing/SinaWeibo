@@ -304,6 +304,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
             cell.name.textColor = UIColor.blackColor()
         }
         
+        
         //设置微博图片
         let urls = status.pic_urls!
         let photos = Photo.objectArrayWithKeyValuesArray(urls)
@@ -317,9 +318,13 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
             }
         }
         
+        
     }
     
 
+//    @IBAction func tap(sender: UITapGestureRecognizer) {
+//        print("1")
+//    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

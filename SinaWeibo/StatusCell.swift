@@ -35,6 +35,13 @@ class StatusCell: UITableViewCell{
         lineLeading.constant = kScreenWith / 3
         lineLeading1.constant = kScreenWith / 3
         
+        for imageView in statusImage {
+            
+            let tap = UITapGestureRecognizer(target:self, action: "tapPhoto:")
+            imageView.userInteractionEnabled = true
+            imageView.addGestureRecognizer(tap)
+        }
+        
         //设置图标的高度
         for imageView in statusImage {
             imgHeight = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: (kScreenWith - 30) / 3)
@@ -53,6 +60,28 @@ class StatusCell: UITableViewCell{
     }
     
     
-  
+    func tapPhoto(tap:UITapGestureRecognizer){
+        let view = tap.view as! UIImageView
+        let url = view.sd_imageURL()
+        let tag = view.tag
+        var totalcount = tag
+      
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let photoBrowser = storyBoard.instantiateViewControllerWithIdentifier("photo") as! PhotoCollectionViewController
+    
+        photoBrowser.imgUrls.append(url)
+        
+        var anyOB = self.nextResponder()
+        while !(anyOB!.isKindOfClass(HomeTableViewController))  {
+            anyOB = anyOB?.nextResponder()
+        }
+        
+        let vc = anyOB as! HomeTableViewController
+        
+        vc.presentViewController(photoBrowser, animated: true, completion: nil)
+    }
+    
+    
+
 
 }
