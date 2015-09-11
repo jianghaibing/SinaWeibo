@@ -309,7 +309,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         let urls = status.pic_urls!
         let photos = Photo.objectArrayWithKeyValuesArray(urls)
         for imageView in cell.statusImage {
-            imageView.image = nil
+            imageView.sd_setImageWithURL(nil)
         }
         if photos.count > 0 {
             for (index,photo) in photos.enumerate() {

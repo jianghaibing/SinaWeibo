@@ -8,42 +8,39 @@
 
 import UIKit
 
-//private let reuseIdentifier = "Cell"
 
 class PhotoCollectionViewController: UICollectionViewController {
 
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    var currentImage:Int!
     var imgUrls:[NSURL] = []
+    var lable:UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        flowLayout.itemSize = UIScreen.mainScreen().bounds.size
-//        flowLayout.minimumLineSpacing = 0
+        flowLayout.itemSize = UIScreen.mainScreen().bounds.size
+        flowLayout.minimumLineSpacing = 0
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        lable = UILabel(frame: CGRectMake((kScreenWith - 60)/2, 20, 60, 30))
+        lable.textColor = UIColor.whiteColor()
+        lable.text = "\(currentImage)/\(imgUrls.count)"
+        lable.backgroundColor = UIColor.colorWithRGB(240, green: 240, blue: 240, alpha: 0.2)
+        lable.textAlignment = .Center
+        lable.layer.cornerRadius = 15.0
+        lable.layer.masksToBounds = true
 
-        // Register cell classes
-//        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        view.addSubview(lable)
+        
+        let offset = CGPointMake(kScreenWith * CGFloat(currentImage - 1), 0)
+        collectionView!.setContentOffset(offset, animated: false)
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -61,11 +58,20 @@ class PhotoCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
         let imgView = cell.viewWithTag(99) as! UIImageView
-       imgView.sd_setImageWithURL(imgUrls[indexPath.row])
-//        imgView.image = UIImage(named: "timeline_icon_comment")
-        // Configure the cell
-    
+        
+        imgView.sd_setImageWithURL(imgUrls[indexPath.row], placeholderImage: nil, options: SDWebImageOptions(rawValue: 0), progress: { (_, _) -> Void in
+            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            }) { (_, _, _, _) -> Void in
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        }
+        
         return cell
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        let currentPage:Int = Int(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) + 1
+        lable.text = "\(currentPage)/\(imgUrls.count)"
     }
 
     // MARK: UICollectionViewDelegate
@@ -80,7 +86,8 @@ class PhotoCollectionViewController: UICollectionViewController {
     
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(false, completion: nil)
+        imgUrls = []
         return true
     }
 

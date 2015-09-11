@@ -35,20 +35,23 @@ class StatusCell: UITableViewCell{
         lineLeading.constant = kScreenWith / 3
         lineLeading1.constant = kScreenWith / 3
         
+        
+        //给所有图片添加手势
         for imageView in statusImage {
-            
             let tap = UITapGestureRecognizer(target:self, action: "tapPhoto:")
             imageView.userInteractionEnabled = true
             imageView.addGestureRecognizer(tap)
         }
         
         //设置图标的高度
-        for imageView in statusImage {
-            imgHeight = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: (kScreenWith - 30) / 3)
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            imgHeight.active = true
-            imageView.fd_autoCollapse = true
-            imageView.fd_collapsibleConstraints.append(imgHeight)
+        for (index,imageView) in statusImage.enumerate() {
+            if index % 3 == 0 {
+                imgHeight = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: (kScreenWith - 30) / 3)
+                imageView.translatesAutoresizingMaskIntoConstraints = false
+                imgHeight.active = true
+                imageView.fd_autoCollapse = true
+                imageView.fd_collapsibleConstraints.append(imgHeight)
+            }
         }
         
     }
@@ -61,24 +64,33 @@ class StatusCell: UITableViewCell{
     
     
     func tapPhoto(tap:UITapGestureRecognizer){
-        let view = tap.view as! UIImageView
-        let url = view.sd_imageURL()
+        let view = tap.view as! UIImageView//点击取得View
         let tag = view.tag
-        var totalcount = tag
-      
+        var urls:[NSURL] = []
+        for index in 1...9 {
+            let imgV = self.viewWithTag(index) as! UIImageView //用tag取得点击后这个cell的所有图片
+            let url = imgV.sd_imageURL()
+            if url != nil {
+                let urlStr = String(url).stringByReplacingOccurrencesOfString("thumbnail", withString: "bmiddle")//替换小图为中图
+                let URL = NSURL(string: urlStr)
+                urls.append(URL!)
+            }
+        }
+        
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let photoBrowser = storyBoard.instantiateViewControllerWithIdentifier("photo") as! PhotoCollectionViewController
-    
-        photoBrowser.imgUrls.append(url)
         
+        photoBrowser.imgUrls = urls
+        photoBrowser.currentImage = tag
+        
+        //用响应链取得controller
         var anyOB = self.nextResponder()
         while !(anyOB!.isKindOfClass(HomeTableViewController))  {
             anyOB = anyOB?.nextResponder()
         }
-        
         let vc = anyOB as! HomeTableViewController
         
-        vc.presentViewController(photoBrowser, animated: true, completion: nil)
+        vc.presentViewController(photoBrowser, animated: false, completion: nil)
     }
     
     
