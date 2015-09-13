@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vgo-4S-wzg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vgo-4S-wzg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Photo Collection View Controller-->
@@ -12,6 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="88c-RK-gg5">
                             <size key="itemSize" width="320" height="407"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -28,6 +29,7 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="99" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aZ3-UR-5tG">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="407"/>
+                                            <gestureRecognizers/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -434,7 +436,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQX-I2-V7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="556" y="1404"/>
+            <point key="canvasLocation" x="1368" y="1404"/>
         </scene>
         <!--我-->
         <scene sceneID="YE4-R5-kvn">
@@ -470,7 +472,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vog-05-Hb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="556" y="2080"/>
+            <point key="canvasLocation" x="1368" y="2080"/>
         </scene>
         <!--设置-->
         <scene sceneID="kcd-wC-Ccv">
@@ -501,7 +503,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cz8-KA-pen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1247" y="2080"/>
+            <point key="canvasLocation" x="2059" y="2080"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="6uC-o9-nfF">
@@ -518,11 +520,125 @@
                         <segue destination="fxW-s3-Hpd" kind="relationship" relationship="viewControllers" id="app-1h-zqK"/>
                         <segue destination="ey7-BT-xNy" kind="relationship" relationship="viewControllers" id="GpZ-aa-yut"/>
                         <segue destination="nqP-4P-oXn" kind="relationship" relationship="viewControllers" id="eEI-rv-c6c"/>
+                        <segue destination="Rfz-DQ-kc8" kind="presentation" identifier="publish" id="giO-dD-W0q"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjM-gS-t0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-918" y="1007"/>
+        </scene>
+        <!--发微博-->
+        <scene sceneID="UJJ-gb-hnY">
+            <objects>
+                <viewController id="tfM-7L-Dtw" customClass="PublishViewController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u29-5A-CWp"/>
+                        <viewControllerLayoutGuide type="bottom" id="U8g-AY-17s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EzP-Iw-r9i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入微博内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt3-Xp-s7u">
+                                <rect key="frame" x="7" y="77" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="fp9-jH-NzB">
+                                <rect key="frame" x="0.0" y="69" width="600" height="531"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="8VZ-Bq-0fo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tfM-7L-Dtw" id="2Ck-qg-RrH"/>
+                                </connections>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="J8s-HJ-qnf">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2c-Ho-pZv">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="44"/>
+                                        <state key="normal" image="compose_toolbar_picture" backgroundImage="compose_toolbar_background"/>
+                                        <state key="highlighted" image="compose_toolbar_picture_highlighted" backgroundImage="compose_toolbar_background"/>
+                                        <connections>
+                                            <action selector="composeImage:" destination="tfM-7L-Dtw" eventType="touchUpInside" id="aWW-J6-aMZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXS-f0-OkM">
+                                        <rect key="frame" x="120" y="0.0" width="120" height="44"/>
+                                        <state key="normal" image="compose_mentionbutton_background" backgroundImage="compose_toolbar_background"/>
+                                        <state key="highlighted" image="compose_mentionbutton_background_highlighted" backgroundImage="compose_toolbar_background"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aon-J2-BX1">
+                                        <rect key="frame" x="240" y="0.0" width="120" height="44"/>
+                                        <state key="normal" image="compose_trendbutton_background" backgroundImage="compose_toolbar_background"/>
+                                        <state key="highlighted" image="compose_trendbutton_background_highlighted" backgroundImage="compose_toolbar_background"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="167-g4-hXZ">
+                                        <rect key="frame" x="360" y="0.0" width="120" height="44"/>
+                                        <state key="normal" image="compose_emoticonbutton_background" backgroundImage="compose_toolbar_background"/>
+                                        <state key="highlighted" image="compose_emoticonbutton_background_highlighted" backgroundImage="compose_toolbar_background"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYs-tf-mJc">
+                                        <rect key="frame" x="480" y="0.0" width="120" height="44"/>
+                                        <state key="normal" image="compose_keyboardbutton_background" backgroundImage="compose_toolbar_background"/>
+                                        <state key="highlighted" image="compose_keyboardbutton_background_highlighted" backgroundImage="compose_toolbar_background"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WPh-gb-mCW"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pt3-Xp-s7u" firstAttribute="leading" secondItem="fp9-jH-NzB" secondAttribute="leading" constant="7" id="4Gq-P3-k6J"/>
+                            <constraint firstItem="J8s-HJ-qnf" firstAttribute="leading" secondItem="EzP-Iw-r9i" secondAttribute="leading" id="60E-OU-IAf"/>
+                            <constraint firstAttribute="bottom" secondItem="fp9-jH-NzB" secondAttribute="bottom" id="Fph-KG-nkf"/>
+                            <constraint firstItem="U8g-AY-17s" firstAttribute="top" secondItem="J8s-HJ-qnf" secondAttribute="bottom" id="H7n-iN-z5I"/>
+                            <constraint firstItem="fp9-jH-NzB" firstAttribute="leading" secondItem="EzP-Iw-r9i" secondAttribute="leading" id="UCU-hJ-pMs"/>
+                            <constraint firstAttribute="trailing" secondItem="J8s-HJ-qnf" secondAttribute="trailing" id="qKq-Ec-OmT"/>
+                            <constraint firstItem="fp9-jH-NzB" firstAttribute="top" secondItem="u29-5A-CWp" secondAttribute="bottom" constant="5" id="qSV-Ih-RWH"/>
+                            <constraint firstAttribute="trailing" secondItem="fp9-jH-NzB" secondAttribute="trailing" id="ves-w0-tUD"/>
+                            <constraint firstItem="pt3-Xp-s7u" firstAttribute="top" secondItem="fp9-jH-NzB" secondAttribute="top" constant="8" id="xdY-hr-aXD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="发微博" id="O9M-z6-xsf">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="ZzS-ug-kMf">
+                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="dismiss:" destination="tfM-7L-Dtw" id="8uB-FG-Tur"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="rhn-Mw-X8M">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="33R-qo-nm0">
+                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="发送">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled" title="发送">
+                                    <color key="titleColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="publishWeibo:" destination="tfM-7L-Dtw" eventType="touchUpInside" id="w9S-TJ-Jwj"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="composeTextView" destination="fp9-jH-NzB" id="a5H-g6-37T"/>
+                        <outlet property="placeholder" destination="pt3-Xp-s7u" id="yJl-ES-Ldv"/>
+                        <outlet property="publishButton" destination="33R-qo-nm0" id="KKo-0K-arW"/>
+                        <outlet property="toolBarBottomConstraint" destination="H7n-iN-z5I" id="B29-dW-qHp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dv4-Og-m9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-252" y="1857"/>
         </scene>
         <!--New Feature Collection View Controller-->
         <scene sceneID="Qmw-ul-psw">
@@ -649,7 +765,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDV-pK-e0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-161" y="1411"/>
+            <point key="canvasLocation" x="651" y="1411"/>
         </scene>
         <!--我-->
         <scene sceneID="lBb-4S-C8a">
@@ -668,11 +784,40 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5E-lv-AbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-161" y="2091"/>
+            <point key="canvasLocation" x="651" y="2091"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="psg-cI-JxP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rfz-DQ-kc8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="frg-vM-qLN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tfM-7L-Dtw" kind="relationship" relationship="rootViewController" id="ehQ-r0-Gyr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CVT-be-GLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-910" y="1857"/>
         </scene>
     </scenes>
     <resources>
         <image name="avatar_default" width="50" height="50"/>
+        <image name="compose_emoticonbutton_background" width="24" height="24"/>
+        <image name="compose_emoticonbutton_background_highlighted" width="24" height="24"/>
+        <image name="compose_keyboardbutton_background" width="24" height="24"/>
+        <image name="compose_keyboardbutton_background_highlighted" width="24" height="24"/>
+        <image name="compose_mentionbutton_background" width="24" height="24"/>
+        <image name="compose_mentionbutton_background_highlighted" width="24" height="24"/>
+        <image name="compose_toolbar_background" width="1" height="44"/>
+        <image name="compose_toolbar_picture" width="24" height="24"/>
+        <image name="compose_toolbar_picture_highlighted" width="24" height="24"/>
+        <image name="compose_trendbutton_background" width="24" height="24"/>
+        <image name="compose_trendbutton_background_highlighted" width="24" height="24"/>
         <image name="tabbar_background" width="1" height="44"/>
         <image name="tabbar_discover" width="30" height="30"/>
         <image name="tabbar_discover_selected" width="30" height="30"/>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0906CF881BA321C400FDD4B0 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906CF871BA321C400FDD4B0 /* PublishViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		091069271BA5530C005F1AB5 /* ComposeParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091069261BA5530C005F1AB5 /* ComposeParam.swift */; settings = {ASSET_TAGS = (); }; };
+		0910692A1BA5535D005F1AB5 /* ComposeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091069291BA5535D005F1AB5 /* ComposeTool.swift */; settings = {ASSET_TAGS = (); }; };
+		0910692C1BA57901005F1AB5 /* UploadParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910692B1BA57901005F1AB5 /* UploadParam.swift */; settings = {ASSET_TAGS = (); }; };
 		091A916B1B9B21FF001371E7 /* SinaWeibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 091A91691B9B21FF001371E7 /* SinaWeibo.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		091A916E1B9B250D001371E7 /* AccountDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A916C1B9B250D001371E7 /* AccountDB+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		091A916F1B9B250D001371E7 /* AccountDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A916D1B9B250D001371E7 /* AccountDB.swift */; settings = {ASSET_TAGS = (); }; };
@@ -40,6 +44,7 @@
 		09D659C01B76F1C200184962 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D659BF1B76F1C200184962 /* Constant.swift */; };
 		09DEC9031B80EDC1007B440C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEC9021B80EDC1007B440C /* SettingTableViewController.swift */; };
 		09DEC9061B80F995007B440C /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEC9051B80F995007B440C /* BaseNavigationController.swift */; };
+		09DF56621BA5475600E49908 /* ComposePhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF56611BA5475600E49908 /* ComposePhotosView.swift */; settings = {ASSET_TAGS = (); }; };
 		09EE4D471B7E4AA200B77A1A /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */; };
 		09F6FCA21B9098FC00B51E5E /* StatusTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCA11B9098FC00B51E5E /* StatusTool.swift */; settings = {ASSET_TAGS = (); }; };
 		09F6FCA41B90B70700B51E5E /* StatusParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6FCA31B90B70700B51E5E /* StatusParam.swift */; settings = {ASSET_TAGS = (); }; };
@@ -53,6 +58,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0906CF871BA321C400FDD4B0 /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
+		091069261BA5530C005F1AB5 /* ComposeParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeParam.swift; sourceTree = "<group>"; };
+		091069291BA5535D005F1AB5 /* ComposeTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTool.swift; sourceTree = "<group>"; };
+		0910692B1BA57901005F1AB5 /* UploadParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadParam.swift; sourceTree = "<group>"; };
 		091A916A1B9B21FF001371E7 /* SinaWeibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SinaWeibo.xcdatamodel; sourceTree = "<group>"; };
 		091A916C1B9B250D001371E7 /* AccountDB+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountDB+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		091A916D1B9B250D001371E7 /* AccountDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDB.swift; sourceTree = "<group>"; };
@@ -89,6 +98,7 @@
 		09D659BF1B76F1C200184962 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		09DEC9021B80EDC1007B440C /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		09DEC9051B80F995007B440C /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		09DF56611BA5475600E49908 /* ComposePhotosView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposePhotosView.swift; sourceTree = "<group>"; };
 		09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
 		09F6FCA11B9098FC00B51E5E /* StatusTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTool.swift; sourceTree = "<group>"; };
 		09F6FCA31B90B70700B51E5E /* StatusParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusParam.swift; sourceTree = "<group>"; };
@@ -116,9 +126,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091069231BA55221005F1AB5 /* ComposeVC */ = {
+			isa = PBXGroup;
+			children = (
+				0906CF871BA321C400FDD4B0 /* PublishViewController.swift */,
+			);
+			name = ComposeVC;
+			sourceTree = "<group>";
+		};
+		091069241BA55251005F1AB5 /* ComposeView */ = {
+			isa = PBXGroup;
+			children = (
+				09DF56611BA5475600E49908 /* ComposePhotosView.swift */,
+			);
+			name = ComposeView;
+			sourceTree = "<group>";
+		};
+		091069251BA552E8005F1AB5 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				091069261BA5530C005F1AB5 /* ComposeParam.swift */,
+				0910692B1BA57901005F1AB5 /* UploadParam.swift */,
+			);
+			name = Compose;
+			sourceTree = "<group>";
+		};
+		091069281BA55347005F1AB5 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				091069291BA5535D005F1AB5 /* ComposeTool.swift */,
+			);
+			name = Compose;
+			sourceTree = "<group>";
+		};
 		094D87021B772BE80039BCF9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				091069231BA55221005F1AB5 /* ComposeVC */,
 				09516A5B1B81AB560008BD3A /* PublicVC */,
 				0953E3531B80BDF9007AF200 /* Home */,
 				0950CC3E1B83909D007080B2 /* Message */,
@@ -133,6 +177,7 @@
 			children = (
 				094F24921B80CFFF00A28EF6 /* Discover */,
 				094F24901B80CF9100A28EF6 /* Home */,
+				091069241BA55251005F1AB5 /* ComposeView */,
 				09516A5A1B81AB2A0008BD3A /* PublicView */,
 			);
 			name = CustomView;
@@ -152,6 +197,7 @@
 		094F24911B80CFD200A28EF6 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				091069281BA55347005F1AB5 /* Compose */,
 				09F6FCAE1B919FD700B51E5E /* Home */,
 				09F6FCAF1B919FEF00B51E5E /* Public */,
 			);
@@ -185,8 +231,8 @@
 		09516A5A1B81AB2A0008BD3A /* PublicView */ = {
 			isa = PBXGroup;
 			children = (
-				09481C6B1B771E3700F2006E /* CustomTabBar.swift */,
 				094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */,
+				09481C6B1B771E3700F2006E /* CustomTabBar.swift */,
 			);
 			name = PublicView;
 			sourceTree = "<group>";
@@ -223,6 +269,7 @@
 		09858F911B8995D800C445FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				091069251BA552E8005F1AB5 /* Compose */,
 				09858F951B89A8FF00C445FB /* Home */,
 				09858F921B8995F000C445FB /* Public */,
 			);
@@ -452,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				094D870F1B7744160039BCF9 /* CustomTitleView.swift in Sources */,
+				0906CF881BA321C400FDD4B0 /* PublishViewController.swift in Sources */,
 				09F6FCAD1B919E3600B51E5E /* UnreadResultParam.swift in Sources */,
 				094D87081B772DC80039BCF9 /* DiscoverTableViewController.swift in Sources */,
 				09F6FCA91B9181B600B51E5E /* AccountParam.swift in Sources */,
@@ -466,6 +514,7 @@
 				09F6FCAB1B918B1600B51E5E /* UnreadParam.swift in Sources */,
 				09DEC9031B80EDC1007B440C /* SettingTableViewController.swift in Sources */,
 				09F6FCA41B90B70700B51E5E /* StatusParam.swift in Sources */,
+				09DF56621BA5475600E49908 /* ComposePhotosView.swift in Sources */,
 				09643A251B81F0EF003643A8 /* NewFeatureCollectionViewController.swift in Sources */,
 				0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */,
 				09858F971B89A94100C445FB /* Status.swift in Sources */,
@@ -475,17 +524,20 @@
 				099392D11B84DCB30086116B /* OauthViewController.swift in Sources */,
 				0953E34E1B80B3EC007AF200 /* CustomPopMenu.swift in Sources */,
 				09858F901B89883600C445FB /* OauthTool.swift in Sources */,
+				0910692C1BA57901005F1AB5 /* UploadParam.swift in Sources */,
 				09F6FCA21B9098FC00B51E5E /* StatusTool.swift in Sources */,
 				09EE4D471B7E4AA200B77A1A /* ExtensionColor.swift in Sources */,
 				092878461B973FDE0068A41B /* StatusCell.swift in Sources */,
 				0953E3501B80B9F7007AF200 /* CustomOverlay.swift in Sources */,
 				09D659C01B76F1C200184962 /* Constant.swift in Sources */,
 				091A916B1B9B21FF001371E7 /* SinaWeibo.xcdatamodeld in Sources */,
+				0910692A1BA5535D005F1AB5 /* ComposeTool.swift in Sources */,
 				09F6FCB11B91A01A00B51E5E /* UserTool.swift in Sources */,
 				0936F5571BA0812C00422821 /* PhotoCollectionViewController.swift in Sources */,
 				094D87061B772DBA0039BCF9 /* MessageTableViewController.swift in Sources */,
 				091A916F1B9B250D001371E7 /* AccountDB.swift in Sources */,
 				094D870A1B772DD40039BCF9 /* ProfileTableViewController.swift in Sources */,
+				091069271BA5530C005F1AB5 /* ComposeParam.swift in Sources */,
 				094D87041B772DA70039BCF9 /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,7 +20,7 @@ class HTTPRequestTool: NSObject {
         manager.POST(URLString, parameters: parameters, success: { (_, response) -> Void in
             success(response)
             }) { (_, error) -> Void in
-                print(error)
+                failure(error)
         }
         
     }
@@ -30,11 +30,24 @@ class HTTPRequestTool: NSObject {
         manager.GET(URLString, parameters: parameters, success: { (_, response) -> Void in
             success(response)
             }) { (_, error) -> Void in
-                print(error)
+                failure(error)
         }
 
     }
     
+    //上传图片
+    class func Upload(URLString: String, parameters: AnyObject?, uploadParam:UploadParam, success: (AnyObject) -> Void, failure: (NSError) -> Void){
+        
+        let manager = AFHTTPRequestOperationManager()
+        manager.POST(URLString, parameters: parameters, constructingBodyWithBlock: { (formData:AFMultipartFormData) -> Void in
+            formData.appendPartWithFileData(uploadParam.data, name: uploadParam.name, fileName: uploadParam.fileName, mimeType: uploadParam.mimeType)
+            }, success: { (_, response) -> Void in
+                success(response)
+            }) { (_, error) -> Void in
+                failure(error)
+        }
+    }
+
     
     
 }

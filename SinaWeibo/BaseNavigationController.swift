@@ -33,19 +33,10 @@ class BaseNavigationController: UINavigationController,UINavigationControllerDel
     show出来的控制器设置左右barButtonItem
     */
     override func showViewController(vc: UIViewController, sender: AnyObject?) {
-        if #available(iOS 8.0, *) {
             super.showViewController(vc, sender: sender)
             vc.navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_more", highlightedImageName: "navigationbar_more_highlighted", target: self, action: "clickMoreButton", controllEvent: UIControlEvents.TouchUpInside)
             
             vc.navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_back", highlightedImageName: "navigationbar_back_highlighted", target: self, action: "clickBackButton", controllEvent: UIControlEvents.TouchUpInside)
-            
-        } else {
-            // Fallback on earlier versions
-            super.pushViewController(vc, animated: true)
-            vc.navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_more", highlightedImageName: "navigationbar_more_highlighted", target: self, action: "clickMoreButton", controllEvent: UIControlEvents.TouchUpInside)
-            
-            vc.navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_back", highlightedImageName: "navigationbar_back_highlighted", target: self, action: "clickBackButton", controllEvent: UIControlEvents.TouchUpInside)
-        }
     }
     
     func clickMoreButton(){

@@ -21,12 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /**
         *  Icon的badgevalue
         */
-        if #available(iOS 8.0, *) {
-            let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Badge, categories: nil)
-            application.registerUserNotificationSettings(settings)
-        } else {
-            // Fallback on earlier versions
-        }
+        let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Badge, categories: nil)
+        application.registerUserNotificationSettings(settings)
         
         
         chooseRootViewController()

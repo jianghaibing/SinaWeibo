@@ -270,14 +270,20 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         //设置转发数
         if let reposts_count = status.reposts_count where reposts_count != "0"{
             cell.retweetButton.setTitle(reposts_count, forState: UIControlState.Normal)
+        }else{
+            cell.retweetButton.setTitle("转发", forState: .Normal)
         }
         //设置评论数
         if let comments_count = status.comments_count where comments_count != "0"{
             cell.commentButton.setTitle(comments_count, forState: UIControlState.Normal)
+        }else{
+            cell.commentButton.setTitle("评论", forState: .Normal)
         }
         //设置点赞数
         if let attitudes_count = status.attitudes_count where attitudes_count != "0"{
             cell.likeButton.setTitle(attitudes_count, forState: UIControlState.Normal)
+        }else{
+            cell.likeButton.setTitle("赞", forState: .Normal)
         }
         
         //设置会员标识

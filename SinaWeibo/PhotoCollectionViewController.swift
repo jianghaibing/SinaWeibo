@@ -68,6 +68,7 @@ class PhotoCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         
         let currentPage:Int = Int(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) + 1
