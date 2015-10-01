@@ -60,7 +60,6 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         self.titleView.setTitle(user.name!, forState: UIControlState.Normal)
             
             }) { (error) -> Void in
-                fatalError()
         }
     }
     
@@ -171,7 +170,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
     /**
     点击title时显示弹出菜单
     */
-    private func showTitlePopmenu(){
+    func showTitlePopmenu(){
         titleView.selected = !titleView.selected
         
         let overlay = CustomOverlay.show()

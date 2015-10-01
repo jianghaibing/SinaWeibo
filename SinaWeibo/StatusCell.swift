@@ -81,7 +81,7 @@ class StatusCell: UITableViewCell{
         let photoBrowser = storyBoard.instantiateViewControllerWithIdentifier("photo") as! PhotoCollectionViewController
         
         photoBrowser.imgUrls = urls
-        photoBrowser.currentImage = tag
+        photoBrowser.currentImageIndex = tag
         
         //用响应链取得controller
         var anyOB = self.nextResponder()

@@ -20,27 +20,15 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="d5H-U7-A9C">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="d5H-U7-A9C" customClass="PhotoCell" customModule="SinaWeibo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="130" width="320" height="407"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="407"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="99" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aZ3-UR-5tG">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="407"/>
-                                            <gestureRecognizers/>
-                                        </imageView>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="aZ3-UR-5tG" secondAttribute="bottom" id="0S0-7Q-Qt3"/>
-                                    <constraint firstItem="aZ3-UR-5tG" firstAttribute="top" secondItem="d5H-U7-A9C" secondAttribute="top" id="53I-xR-rWV"/>
-                                    <constraint firstAttribute="trailing" secondItem="aZ3-UR-5tG" secondAttribute="trailing" id="7YC-N2-HRC"/>
-                                    <constraint firstItem="aZ3-UR-5tG" firstAttribute="leading" secondItem="d5H-U7-A9C" secondAttribute="leading" id="yjn-Gl-zX0"/>
-                                </constraints>
                             </collectionViewCell>
                         </cells>
                         <connections>

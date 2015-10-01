@@ -12,9 +12,11 @@ import UIKit
 class PhotoCollectionViewController: UICollectionViewController {
 
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-    var currentImage:Int!
+    //当前照片索引
+    var currentImageIndex:Int!
+    //照片url数组
     var imgUrls:[NSURL] = []
-    var lable:UILabel!
+    private var lable:UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,7 @@ class PhotoCollectionViewController: UICollectionViewController {
         
         lable = UILabel(frame: CGRectMake((kScreenWith - 60)/2, 20, 60, 30))
         lable.textColor = UIColor.whiteColor()
-        lable.text = "\(currentImage)/\(imgUrls.count)"
+        lable.text = "\(currentImageIndex)/\(imgUrls.count)"
         lable.backgroundColor = UIColor.colorWithRGB(240, green: 240, blue: 240, alpha: 0.2)
         lable.textAlignment = .Center
         lable.layer.cornerRadius = 15.0
@@ -32,9 +34,14 @@ class PhotoCollectionViewController: UICollectionViewController {
 
         view.addSubview(lable)
         
-        let offset = CGPointMake(kScreenWith * CGFloat(currentImage - 1), 0)
+        let deletePhotoBtn = UIButton(frame: CGRectMake(kScreenWith - 80, kScreenHeight - 60, 50, 35))
+        deletePhotoBtn.setTitle("删除", forState: UIControlState.Normal)
+        deletePhotoBtn.backgroundColor = UIColor.colorWithRGB(240, green: 240, blue: 240, alpha: 0.5)
+        deletePhotoBtn.addTarget(self, action: "deletePhoto:", forControlEvents: UIControlEvents.TouchUpInside)
+        view.addSubview(deletePhotoBtn)
+        
+        let offset = CGPointMake(kScreenWith * CGFloat(currentImageIndex - 1), 0)
         collectionView!.setContentOffset(offset, animated: false)
-
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -56,56 +63,42 @@ class PhotoCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
-        let imgView = cell.viewWithTag(99) as! UIImageView
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! PhotoCell
         
-        imgView.sd_setImageWithURL(imgUrls[indexPath.row], placeholderImage: nil, options: SDWebImageOptions(rawValue: 0), progress: { (_, _) -> Void in
-            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            }) { (_, _, _, _) -> Void in
-                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-        }
+        cell.setupImageView(imgUrls[indexPath.row])
         
         return cell
     }
     
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
+        currentImageIndex = Int(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) + 1
+        lable.text = "\(currentImageIndex)/\(imgUrls.count)"
+    }
+    
+    
+    func deletePhoto(sender: UIButton) {
+        let indexPath = NSIndexPath(forRow:currentImageIndex-1, inSection: 0)
+       
+        if imgUrls.count == 1 {
+            self.dismissViewControllerAnimated(true, completion: nil)
+            imgUrls.removeAtIndex(currentImageIndex-1)
+            collectionView?.deleteItemsAtIndexPaths([indexPath])
+            currentImageIndex = currentImageIndex - 1
+            lable.text = "\(currentImageIndex)/\(imgUrls.count)"
+        }else  if currentImageIndex == imgUrls.count {
+            imgUrls.removeAtIndex(currentImageIndex-1)
+            collectionView?.deleteItemsAtIndexPaths([indexPath])
+            currentImageIndex = currentImageIndex - 1
+            lable.text = "\(currentImageIndex)/\(imgUrls.count)"
+        }else{
+            imgUrls.removeAtIndex(currentImageIndex-1)
+            collectionView?.deleteItemsAtIndexPaths([indexPath])
+            lable.text = "\(currentImageIndex)/\(imgUrls.count)"
+        }
         
-        let currentPage:Int = Int(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) + 1
-        lable.text = "\(currentPage)/\(imgUrls.count)"
+
     }
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        self.dismissViewControllerAnimated(false, completion: nil)
-        imgUrls = []
-        return true
-    }
-
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
-    
-    }
-    */
 
 }
