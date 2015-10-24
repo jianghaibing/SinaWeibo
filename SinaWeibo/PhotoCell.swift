@@ -35,10 +35,12 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
     
     func setupImageView(url: NSURL) {
         //  将 scrollView 的滚动参数重置
-        scrollView?.contentOffset = CGPointZero
-        scrollView?.contentSize = CGSizeZero
-        scrollView?.contentInset = UIEdgeInsetsZero
-        
+//        scrollView?.contentOffset = CGPointZero
+//        scrollView?.contentSize = CGSizeZero
+//        scrollView?.contentInset = UIEdgeInsetsZero
+        scrollView?.zoomScale = 1
+        print(contentView.frame,scrollView?.frame)
+
         imageView!.sd_setImageWithURL(url, placeholderImage: nil, options: SDWebImageOptions(rawValue: 0), progress: { (_, _) -> Void in
             MBProgressHUD.showHUDAddedTo(self, animated: true)
             }) { (_, _, _, _) -> Void in
@@ -62,13 +64,15 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
         // 区分长图和短图
         if rect.size.height > screenSize.height {
             // 设置滚动区域
+            self.scrollView!.frame = self.bounds
             self.scrollView!.contentSize = rect.size
         } else {
             // 需要垂直居中
             self.scrollView!.frame = self.bounds
             self.imageView!.center = CGPointMake(self.scrollView!.bounds.width/2, self.scrollView!.bounds.height/2)
         }
-
+        
+        
     }
     
     override func awakeFromNib() {
@@ -78,7 +82,7 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
         self.addGestureRecognizer(tap)
         // 创建界面元素
         scrollView = UIScrollView()
-        self.addSubview(scrollView!)
+        contentView.addSubview(scrollView!)
         scrollView!.delegate = self
         scrollView!.maximumZoomScale = 2.0
         scrollView!.minimumZoomScale = 0.5
@@ -88,11 +92,11 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
         scrollView!.addSubview(imageView!)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        // 设置滚动视图的大小
-        scrollView!.frame = self.bounds
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        // 设置滚动视图的大小
+//        scrollView!.frame = self.bounds
+//    }
     
     //MARK: UIScrollViewDelegate
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
@@ -101,11 +105,12 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
     
 
     func scrollViewDidZoom(scrollView: UIScrollView) {
+       
         // 居中缩放
         let x = scrollView.bounds.size.width > scrollView.contentSize.width ? (scrollView.bounds.size.width - scrollView.contentSize.width)/2 : 0.0
         let y = scrollView.bounds.size.height > scrollView.contentSize.height ? (scrollView.bounds.size.height - scrollView.contentSize.height)/2 : 0.0
         imageView!.center = CGPointMake(scrollView.contentSize.width / 2 + x, scrollView.contentSize.height/2 + y)
-
+        
     }
     
     

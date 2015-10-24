@@ -34,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         try! avSession.setActive(true)
        
-        
         return true
     }
     
@@ -51,14 +50,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         * 否则进入主界面
         */
         if OauthTool.tokenIsExpire() {
-            let vc3 = story.instantiateViewControllerWithIdentifier("oauth")
-            window?.rootViewController = vc3
+            let oauth = story.instantiateViewControllerWithIdentifier("oauth")
+            window?.rootViewController = oauth
         }else if currentVersion != lastVersion || OauthTool.tokenIsNotExist() {
-            let vc1 = story.instantiateViewControllerWithIdentifier("newfeature")
-            window?.rootViewController = vc1
+            let newfeature = story.instantiateViewControllerWithIdentifier("newfeature")
+            window?.rootViewController = newfeature
         }else{
-            let vc2 = story.instantiateViewControllerWithIdentifier("maintabbar")
-            window?.rootViewController = vc2
+            let maintabbar = story.instantiateViewControllerWithIdentifier("maintabbar")
+            window?.rootViewController = maintabbar
         }
         /**
         保存当前的版本号
@@ -66,6 +65,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSUserDefaults.standardUserDefaults().setObject(currentVersion, forKey: "Version")
 
     }
+    
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        handleShortcutItem(shortcutItem)
+        completionHandler(true)
+    }
+    
+    func handleShortcutItem(shortcutItem:UIApplicationShortcutItem){
+        switch shortcutItem.type {
+        case "composeWeibo":
+            presentCompseWeiboController()
+        default:
+            break
+        }
+    }
+    
+    func presentCompseWeiboController(){
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let composeVC = story.instantiateViewControllerWithIdentifier("composeWebo")
+        window?.rootViewController?.presentViewController(composeVC, animated: true, completion: nil)
+    }
+    
     
     
     func applicationDidReceiveMemoryWarning(application: UIApplication) {
