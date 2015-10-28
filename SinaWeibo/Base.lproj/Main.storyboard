@@ -297,6 +297,7 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="avatar" destination="trT-L7-iGF" id="yuh-De-MQV"/>
+                                    <outlet property="collectionTrailing" destination="d9V-iB-wV4" id="fjj-9O-QBR"/>
                                     <outlet property="commentButton" destination="fN7-Hm-V5O" id="ppi-Ck-652"/>
                                     <outlet property="createdDate" destination="gyF-dM-38V" id="V7t-uE-Ams"/>
                                     <outlet property="flowLayout" destination="Ztz-PH-eJ8" id="f1W-N7-OWx"/>

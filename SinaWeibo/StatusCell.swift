@@ -34,15 +34,13 @@ class StatusCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataS
     
     var collectionHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var collectionTrailing: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         photoCollection.delegate = self
         photoCollection.dataSource = self
-        
-        let itemWH = (kScreenWith - 30) / 3
-        flowLayout.itemSize = CGSizeMake(itemWH, itemWH)
         
         collectionHeight = photoCollection.heightAnchor.constraintEqualToConstant(0)
         collectionHeight.active = true
