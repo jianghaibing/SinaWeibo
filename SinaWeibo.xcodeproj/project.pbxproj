@@ -166,10 +166,10 @@
 			children = (
 				091069231BA55221005F1AB5 /* ComposeVC */,
 				09516A5B1B81AB560008BD3A /* PublicVC */,
+				09DEC9041B80EDC6007B440C /* Profile */,
 				0953E3531B80BDF9007AF200 /* Home */,
 				0950CC3E1B83909D007080B2 /* Message */,
 				0950CC3F1B8390AC007080B2 /* Discover */,
-				09DEC9041B80EDC6007B440C /* Profile */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

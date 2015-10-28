@@ -134,128 +134,61 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Hwx-H8-KE3">
-                                                    <rect key="frame" x="10" y="80" width="355" height="337"/>
-                                                    <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="B6z-bV-xeb">
-                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="109"/>
-                                                            <subviews>
-                                                                <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wP7-X5-UPJ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="115" height="109"/>
-                                                                    <animations/>
-                                                                    <gestureRecognizers/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoCollapse" value="YES"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </imageView>
-                                                                <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fXD-6F-mY2">
-                                                                    <rect key="frame" x="120" y="0.0" width="115" height="109"/>
-                                                                    <animations/>
-                                                                    <gestureRecognizers/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoCollapse" value="NO"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </imageView>
-                                                                <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="txD-nn-bAh">
-                                                                    <rect key="frame" x="240" y="0.0" width="115" height="109"/>
-                                                                    <animations/>
-                                                                    <gestureRecognizers/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoCollapse" value="NO"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </imageView>
-                                                            </subviews>
-                                                            <animations/>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Sx6-if-a0N">
-                                                            <rect key="frame" x="0.0" y="114" width="355" height="109"/>
-                                                            <subviews>
-                                                                <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ia0-cZ-5Ph">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="115" height="109"/>
-                                                                    <animations/>
-                                                                    <gestureRecognizers/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoCollapse" value="YES"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </imageView>
-                                                                <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UH8-yo-OPx">
-                                                                    <rect key="frame" x="120" y="0.0" width="115" height="109"/>
-                                                                    <animations/>
-                                                                    <gestureRecognizers/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoCollapse" value="NO"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </imageView>
-                                                                <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="skA-3O-UWq">
-                                                                    <rect key="frame" x="240" y="0.0" width="115" height="109"/>
-                                                                    <animations/>
-                                                                    <gestureRecognizers/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoCollapse" value="NO"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </imageView>
-                                                            </subviews>
-                                                            <animations/>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xGx-EY-wIW">
-                                                            <rect key="frame" x="0.0" y="228" width="355" height="109"/>
-                                                            <subviews>
-                                                                <imageView clipsSubviews="YES" tag="7" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jAT-GR-0jf">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="115" height="109"/>
-                                                                    <animations/>
-                                                                    <gestureRecognizers/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoCollapse" value="YES"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </imageView>
-                                                                <imageView clipsSubviews="YES" tag="8" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vid-Gs-8NB">
-                                                                    <rect key="frame" x="120" y="0.0" width="115" height="109"/>
-                                                                    <animations/>
-                                                                    <gestureRecognizers/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoCollapse" value="NO"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </imageView>
-                                                                <imageView clipsSubviews="YES" tag="9" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ixf-fY-MGu">
-                                                                    <rect key="frame" x="240" y="0.0" width="115" height="109"/>
-                                                                    <animations/>
-                                                                    <gestureRecognizers/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoCollapse" value="NO"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </imageView>
-                                                            </subviews>
-                                                            <animations/>
-                                                        </stackView>
-                                                    </subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o8p-nk-UHz">
+                                                    <rect key="frame" x="10" y="70" width="355" height="347"/>
                                                     <animations/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoCollapse" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <outletCollection property="fd_collapsibleConstraints" destination="i2V-g2-582" id="yBO-PF-g6u"/>
-                                                        <outletCollection property="fd_collapsibleConstraints" destination="gUJ-hS-b3L" id="ehH-Ff-O6h"/>
-                                                    </connections>
-                                                </stackView>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Ztz-PH-eJ8">
+                                                        <size key="itemSize" width="164" height="159"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="photoItem" id="TUs-Pt-SU6">
+                                                            <rect key="frame" x="0.0" y="10" width="164" height="159"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="164" height="159"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" tag="88" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dE4-Uo-9e7">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="164" height="159"/>
+                                                                        <animations/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <animations/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                            <animations/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="dE4-Uo-9e7" secondAttribute="bottom" id="1hp-jJ-J9u"/>
+                                                                <constraint firstItem="dE4-Uo-9e7" firstAttribute="leading" secondItem="TUs-Pt-SU6" secondAttribute="leading" id="A7x-Qo-10Y"/>
+                                                                <constraint firstItem="dE4-Uo-9e7" firstAttribute="top" secondItem="TUs-Pt-SU6" secondAttribute="top" id="pXo-z8-qd2"/>
+                                                                <constraint firstAttribute="trailing" secondItem="dE4-Uo-9e7" secondAttribute="trailing" id="sHK-z8-RWe"/>
+                                                            </constraints>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="gyF-dM-38V" firstAttribute="leading" secondItem="trT-L7-iGF" secondAttribute="trailing" constant="10" id="5OL-9H-wG6"/>
+                                                <constraint firstAttribute="bottom" secondItem="o8p-nk-UHz" secondAttribute="bottom" constant="10" id="9tu-FX-IXv"/>
                                                 <constraint firstItem="IfW-HL-AfR" firstAttribute="top" secondItem="zTT-gq-hSS" secondAttribute="top" constant="10" id="AfS-7J-zn2"/>
-                                                <constraint firstAttribute="trailing" secondItem="Hwx-H8-KE3" secondAttribute="trailing" constant="10" id="C63-GV-eEt"/>
                                                 <constraint firstItem="gyF-dM-38V" firstAttribute="top" secondItem="usW-MF-SFm" secondAttribute="bottom" constant="4" id="Er2-nr-9IG"/>
                                                 <constraint firstItem="C8X-NR-yXw" firstAttribute="leading" secondItem="gyF-dM-38V" secondAttribute="trailing" constant="10" id="FQL-Ds-ZR2"/>
+                                                <constraint firstItem="o8p-nk-UHz" firstAttribute="leading" secondItem="zTT-gq-hSS" secondAttribute="leading" constant="10" id="GVW-JH-hmt"/>
                                                 <constraint firstItem="trT-L7-iGF" firstAttribute="leading" secondItem="zTT-gq-hSS" secondAttribute="leading" constant="15" id="H9h-Do-zRK"/>
                                                 <constraint firstItem="usW-MF-SFm" firstAttribute="top" secondItem="zTT-gq-hSS" secondAttribute="top" constant="10" id="LdG-xo-Wq5"/>
                                                 <constraint firstAttribute="trailing" secondItem="JI6-7z-oxC" secondAttribute="trailing" constant="10" id="OHj-CC-aSs"/>
+                                                <constraint firstItem="o8p-nk-UHz" firstAttribute="top" secondItem="JI6-7z-oxC" secondAttribute="bottom" id="PAc-fn-rTP"/>
                                                 <constraint firstItem="JI6-7z-oxC" firstAttribute="leading" secondItem="zTT-gq-hSS" secondAttribute="leading" constant="10" id="Tyo-0Q-GzJ"/>
                                                 <constraint firstItem="JI6-7z-oxC" firstAttribute="top" secondItem="trT-L7-iGF" secondAttribute="bottom" constant="10" id="bWr-JD-Hlv"/>
+                                                <constraint firstAttribute="trailing" secondItem="o8p-nk-UHz" secondAttribute="trailing" constant="10" id="d9V-iB-wV4"/>
                                                 <constraint firstItem="IfW-HL-AfR" firstAttribute="leading" secondItem="usW-MF-SFm" secondAttribute="trailing" constant="10" id="eSm-N3-y3B"/>
-                                                <constraint firstAttribute="bottom" secondItem="Hwx-H8-KE3" secondAttribute="bottom" constant="10" id="gUJ-hS-b3L"/>
-                                                <constraint firstItem="Hwx-H8-KE3" firstAttribute="top" secondItem="JI6-7z-oxC" secondAttribute="bottom" constant="10" id="i2V-g2-582"/>
                                                 <constraint firstItem="usW-MF-SFm" firstAttribute="leading" secondItem="trT-L7-iGF" secondAttribute="trailing" constant="10" id="iwF-ME-RhT"/>
-                                                <constraint firstItem="Hwx-H8-KE3" firstAttribute="leading" secondItem="zTT-gq-hSS" secondAttribute="leading" constant="10" id="jjh-H1-Wm2"/>
                                                 <constraint firstItem="C8X-NR-yXw" firstAttribute="centerY" secondItem="gyF-dM-38V" secondAttribute="centerY" id="rnc-cA-buq"/>
                                                 <constraint firstItem="trT-L7-iGF" firstAttribute="top" secondItem="zTT-gq-hSS" secondAttribute="top" constant="10" id="uR8-bE-H5f"/>
                                             </constraints>
@@ -325,13 +258,21 @@
                                                 <constraint firstAttribute="height" constant="36" id="bTd-9T-PPQ"/>
                                             </constraints>
                                         </stackView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeline_card_bottom_line" translatesAutoresizingMaskIntoConstraints="NO" id="yel-Jp-t2e">
-                                            <rect key="frame" x="126" y="491" width="1" height="1"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="timeline_card_bottom_line" translatesAutoresizingMaskIntoConstraints="NO" id="yel-Jp-t2e">
+                                            <rect key="frame" x="126" y="456" width="1" height="72"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="1" id="J6y-vw-mCI"/>
+                                                <constraint firstAttribute="height" constant="36" id="O6a-c7-dbD"/>
+                                            </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeline_card_bottom_line" translatesAutoresizingMaskIntoConstraints="NO" id="Q3s-Gb-JnI">
-                                            <rect key="frame" x="199" y="491" width="1" height="1"/>
+                                            <rect key="frame" x="199" y="473" width="1" height="36"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="1" id="XWn-do-27X"/>
+                                                <constraint firstAttribute="height" constant="36" id="oOD-8L-1OJ"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <animations/>
@@ -344,7 +285,6 @@
                                         <constraint firstAttribute="trailing" secondItem="3XG-TU-3WS" secondAttribute="trailing" id="N8i-Bt-IO7"/>
                                         <constraint firstAttribute="trailing" secondItem="xXm-7k-tvp" secondAttribute="trailing" id="Vg6-EO-hfJ"/>
                                         <constraint firstItem="xXm-7k-tvp" firstAttribute="top" secondItem="zTT-gq-hSS" secondAttribute="bottom" id="blC-9P-2qo"/>
-                                        <constraint firstItem="Q3s-Gb-JnI" firstAttribute="centerY" secondItem="yel-Jp-t2e" secondAttribute="centerY" id="cmf-fV-KJE"/>
                                         <constraint firstItem="zTT-gq-hSS" firstAttribute="leading" secondItem="OXQ-Pw-a8G" secondAttribute="leading" id="gc5-JC-3FB"/>
                                         <constraint firstItem="3XG-TU-3WS" firstAttribute="leading" secondItem="OXQ-Pw-a8G" secondAttribute="leading" id="jKW-zf-tQQ"/>
                                         <constraint firstItem="Q3s-Gb-JnI" firstAttribute="leading" secondItem="yel-Jp-t2e" secondAttribute="trailing" constant="72" id="jwI-KH-7sg"/>
@@ -359,24 +299,17 @@
                                     <outlet property="avatar" destination="trT-L7-iGF" id="yuh-De-MQV"/>
                                     <outlet property="commentButton" destination="fN7-Hm-V5O" id="ppi-Ck-652"/>
                                     <outlet property="createdDate" destination="gyF-dM-38V" id="V7t-uE-Ams"/>
+                                    <outlet property="flowLayout" destination="Ztz-PH-eJ8" id="f1W-N7-OWx"/>
                                     <outlet property="likeButton" destination="7gP-R9-0w8" id="z8E-zm-XQg"/>
                                     <outlet property="lineLeading" destination="JJW-Qm-3NE" id="1p4-Kh-erG"/>
                                     <outlet property="lineLeading1" destination="jwI-KH-7sg" id="Jat-hk-KBw"/>
                                     <outlet property="name" destination="usW-MF-SFm" id="DCQ-nA-mul"/>
+                                    <outlet property="photoCollection" destination="o8p-nk-UHz" id="mI8-6l-MXe"/>
                                     <outlet property="retweetButton" destination="f6t-Kw-Xc3" id="HBY-Uf-Edi"/>
                                     <outlet property="retweetText" destination="4Mk-ff-4rd" id="CwX-Dg-yve"/>
                                     <outlet property="source" destination="C8X-NR-yXw" id="voK-RY-A9S"/>
                                     <outlet property="statusText" destination="JI6-7z-oxC" id="H7G-Xk-tYp"/>
                                     <outlet property="vipIcon" destination="IfW-HL-AfR" id="R9z-BZ-Nqs"/>
-                                    <outletCollection property="statusImage" destination="wP7-X5-UPJ" collectionClass="NSMutableArray" id="r7w-XB-h43"/>
-                                    <outletCollection property="statusImage" destination="fXD-6F-mY2" collectionClass="NSMutableArray" id="cdy-kK-tIY"/>
-                                    <outletCollection property="statusImage" destination="txD-nn-bAh" collectionClass="NSMutableArray" id="XGe-FC-caU"/>
-                                    <outletCollection property="statusImage" destination="Ia0-cZ-5Ph" collectionClass="NSMutableArray" id="xSn-cT-Xb3"/>
-                                    <outletCollection property="statusImage" destination="UH8-yo-OPx" collectionClass="NSMutableArray" id="X7e-L0-WWj"/>
-                                    <outletCollection property="statusImage" destination="skA-3O-UWq" collectionClass="NSMutableArray" id="8sv-RA-olb"/>
-                                    <outletCollection property="statusImage" destination="jAT-GR-0jf" collectionClass="NSMutableArray" id="Dwe-01-v12"/>
-                                    <outletCollection property="statusImage" destination="vid-Gs-8NB" collectionClass="NSMutableArray" id="IJv-0q-wsS"/>
-                                    <outletCollection property="statusImage" destination="ixf-fY-MGu" collectionClass="NSMutableArray" id="mZc-F1-9io"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -8,10 +8,7 @@
 
 import UIKit
 
-class HomeTableViewController: UITableViewController,OverlayDelegate{
-    
-   
-    
+class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDelegate{
  
     private var titleView:CustomTitleView!
     
@@ -311,19 +308,42 @@ class HomeTableViewController: UITableViewController,OverlayDelegate{
         
         
         //设置微博图片
+        cell.delegate = self
         let urls = status.pic_urls!
-        let photos = Photo.objectArrayWithKeyValuesArray(urls)
-        for imageView in cell.statusImage {
-            imageView.sd_setImageWithURL(nil)
+        cell.photos = Photo.objectArrayWithKeyValuesArray(urls)
+        //设置图片布局
+        let photoNum = cell.photos?.count ?? 0
+        let itemWH = (kScreenWith - 30) / 3
+        switch photoNum {
+        case 1...3:
+            cell.collectionHeight.constant = (itemWH + 5) * CGFloat(1)
+        case 4...6:
+            cell.collectionHeight.constant = (itemWH + 5) * CGFloat(2)
+        case 7...9:
+            cell.collectionHeight.constant = (itemWH + 5) * CGFloat(3)
+        default:
+            cell.collectionHeight.constant = 0
         }
-        if photos.count > 0 {
-            for (index,photo) in photos.enumerate() {
-                let imageView = cell.statusImage![index]
-                imageView.sd_setImageWithURL((photo as! Photo).thumbnail_pic, placeholderImage: UIImage(named: "timeline_image_placeholder"))
+        
+        cell.photoCollection.reloadData()
+    }
+    
+    func photoDidClicked(photos:NSMutableArray, indexPath: NSIndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let photoBrowser = storyBoard.instantiateViewControllerWithIdentifier("photo") as! PhotoCollectionViewController
+        var urls:[NSURL] = []
+        for photo in photos {
+            if let url = (photo as! Photo).thumbnail_pic {
+                let urlStr = String(url).stringByReplacingOccurrencesOfString("thumbnail", withString: "bmiddle")//替换小图为中图
+                let URL = NSURL(string: urlStr)
+                urls.append(URL!)
             }
         }
+        photoBrowser.imgUrls = urls
+        photoBrowser.currentImageIndex = indexPath.item + 1
         
-        
+        self.presentViewController(photoBrowser, animated: false, completion: nil )
+
     }
     
 
