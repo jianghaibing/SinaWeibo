@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "967DC4A664D4ACAF8217F85E2B1BB4B01A2FBC0C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "967DC4A664D4ACAF8217F85E2B1BB4B01A2FBC0C" : 0,
+    "E0708382C77AB662DD72EB06E755C20804388628" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8BEA2B74-6A1B-4FAC-A757-BF0D79E9A6BF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "967DC4A664D4ACAF8217F85E2B1BB4B01A2FBC0C" : "SinaWeibo\/",
+    "E0708382C77AB662DD72EB06E755C20804388628" : "SinaWeibo\/SinaWeibo\/Source\/HZPhotoBrowser\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SinaWeibo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SinaWeibo.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jianghaibing\/SinaWeibo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "967DC4A664D4ACAF8217F85E2B1BB4B01A2FBC0C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/chennyhuang\/HZPhotoBrowser.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E0708382C77AB662DD72EB06E755C20804388628"
+    }
+  ]
+}

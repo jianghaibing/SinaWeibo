@@ -15,9 +15,12 @@ class OauthTool: NSObject {
     class func tokenIsExpire() -> Bool{
         
         var expireDate:NSDate?
-        if Account.fetchData().expires_in != nil {
-            // 获取过期时间
-            expireDate = NSDate(timeInterval: Account.fetchData().expires_in! , sinceDate: Account.fetchData().date!)
+
+        let fetchRequst = NSFetchRequest(entityName: "AccountDB")
+        let results = try! managedObjectContext.executeFetchRequest(fetchRequst)
+        if results.count > 0 {
+            let account = results[0] as! AccountDB
+            expireDate = NSDate(timeInterval:account.expires_in!.doubleValue, sinceDate: account.date!)
         }else{
             expireDate = NSDate(timeIntervalSinceNow: 100)
         }
@@ -31,7 +34,9 @@ class OauthTool: NSObject {
     
     /// 验证token是否存在，是表示不存在，否表示存在
     class func tokenIsNotExist() -> Bool {
-        if Account.fetchData().access_token == nil {
+        let fetchRequst = NSFetchRequest(entityName: "AccountDB")
+        let countFetched = managedObjectContext.countForFetchRequest(fetchRequst, error: nil)
+        if countFetched == 0 {
             return true
         }else{
             return false
@@ -50,30 +55,19 @@ class OauthTool: NSObject {
         
         HTTPRequestTool.POST("https://api.weibo.com/oauth2/access_token", parameters: params.keyValues(), success: { (responseObject) -> Void in
             
+            let entity = NSEntityDescription.entityForName("AccountDB", inManagedObjectContext: managedObjectContext)
+            let account = AccountDB(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
             // 添加当前时间到字典，即在数据库写入创建时间
-            let dict = NSMutableDictionary(dictionary: responseObject as! [NSObject : AnyObject])
-            dict["date"] = NSDate()
-            let account = Account.shareInstance
-            account.access_token = dict["access_token"] as? String
-            account.uid = dict["uid"] as? String
-            account.expires_in = dict["expires_in"] as? NSTimeInterval
-            account.date = dict["date"] as? NSDate
-            
-            // 存储数据
-            let db = NyaruDB.instance()
-            let collection = db.collection("User")
-            collection.createIndex("uid")//创建uid作为数据库索引
-            let documents = collection.all().fetch()//查询所有数据
-            /**
-            *  当数据库已有用户数据时，清除数据
-            */
-            if documents.count > 0 {
-                collection.removeAll()
+            account.access_token = responseObject["access_token"] as? String
+            account.uid = responseObject["uid"] as? String
+            account.expires_in = responseObject["expires_in"] as? NSNumber
+            account.date = NSDate()
+            do {
+                try managedObjectContext.save()
+            }catch{
+                fatalError()
             }
-            /**
-            *  添加最新数据到数据库
-            */
-            collection.put(dict as [NSObject : AnyObject])
+            
             /**
             *  成功登录时获取万数据跳转界面
             */

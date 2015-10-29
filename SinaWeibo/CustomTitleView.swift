@@ -28,7 +28,6 @@ class CustomTitleView: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-//        self.setBackgroundImage(UIImage.imageWithStretchableName("navigationbar_filter_background_highlighted"), forState: UIControlState.Highlighted)
         self.setBackgroundImage(UIImage(named: "navigationbar_filter_background_highlighted"), forState: UIControlState.Highlighted)
         
     }

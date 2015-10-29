@@ -15,7 +15,7 @@ class CustomTabBar: UITabBar {
     override func layoutSubviews() {
         super.layoutSubviews()
         ///设置item的选中颜色
-        self.selectedImageTintColor = UIColor.colorWithRGB(235, green: 107, blue: 38, alpha: 1)
+        self.tintColor = UIColor.colorWithRGB(235, green: 107, blue: 38, alpha: 1)
         /// 设置Item的位置
         var i = 0
         let itemWith = kScreenWith/CGFloat(self.items!.count + 1)

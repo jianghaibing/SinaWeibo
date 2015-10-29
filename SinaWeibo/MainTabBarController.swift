@@ -66,7 +66,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     
     func publishWeibo(){
-        print("发布微博")
+        self.performSegueWithIdentifier("publish", sender: self)
     }
     
     

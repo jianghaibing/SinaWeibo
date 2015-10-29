@@ -9,8 +9,8 @@
 
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <AFNetworking/AFNetworking.h>
-#import <NyaruDB/NyaruDB.h>
 #import <MJExtension/MJExtension.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <MJRefresh/MJRefresh.h>
 #import <UIView+FDCollapsibleConstraints/UIView+FDCollapsibleConstraints.h>
+
