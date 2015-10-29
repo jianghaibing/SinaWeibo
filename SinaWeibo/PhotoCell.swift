@@ -40,11 +40,13 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
 //        scrollView?.contentInset = UIEdgeInsetsZero
         scrollView?.zoomScale = 1
         print(contentView.frame,scrollView?.frame)
-
+        var hud:MBProgressHUD?
         imageView!.sd_setImageWithURL(url, placeholderImage: nil, options: SDWebImageOptions(rawValue: 0), progress: { (_, _) -> Void in
-            MBProgressHUD.showHUDAddedTo(self, animated: true)
+        if hud == nil {
+            hud = MBProgressHUD.showHUDAddedTo(self, animated: true)
+        }
             }) { (_, _, _, _) -> Void in
-                MBProgressHUD.hideAllHUDsForView(self, animated: true)
+            hud?.hide(true)
                 self.configPhotoFrame()
         }
     }
