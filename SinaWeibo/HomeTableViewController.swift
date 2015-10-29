@@ -14,7 +14,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     
     lazy var popMenuVC:PopMenuTableViewController = PopMenuTableViewController()
     
-    var statuses:NSMutableArray!
+    var statuses:NSMutableArray?
     
     var cellHeightCacheEnabled:Bool!
 
@@ -68,7 +68,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
         
         var sinceID:String?
         
-        if (statuses != nil) {
+        if let statuses = statuses {
             sinceID  = (statuses[0] as! Status).idstr!
         }
         
@@ -78,13 +78,17 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
                 self.statuses = statuses
             }else if statuses.count != 0{
                 let indexSet = NSIndexSet(indexesInRange: NSRange(location: 0, length: statuses.count))//插入的数量
-                self.statuses.insertObjects(statuses as [AnyObject], atIndexes: indexSet)//插入新微博在第0个位置
+                self.statuses!.insertObjects(statuses as [AnyObject], atIndexes: indexSet)//插入新微博在第0个位置
             }
             self.showNewCountLable(statuses.count)
             self.tableView.reloadData()
             
             }) { (error) -> Void in
-                print(error)
+                let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                hud.mode = .Text
+                hud.labelText = "当前无网络连接，请检查"
+                hud.hide(true, afterDelay: 2)
+                self.tableView.header.endRefreshing()//结束刷新
         }
         
     }
@@ -94,8 +98,12 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     */
     private func getMoreWeibo(){
         
-        guard (statuses != nil) else{
-            fatalError()
+        guard let statuses =  statuses else{
+           let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+            hud.mode = .Text
+            hud.labelText = "当前无可用网络，请检查"
+            hud.hide(true, afterDelay: 2)
+            return
         }
         
         let maxID = UInt64((statuses.lastObject as! Status).idstr!)! - UInt64(1)//最大的微博ID转化成UINT64后减1
@@ -103,10 +111,14 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
         
         StatusTool.moreStatuses(maxIDStr, sucess: { (Statuses) -> Void in
             self.tableView.footer.endRefreshing()//结束刷新
-            self.statuses.addObjectsFromArray(Statuses as [AnyObject])
+            statuses.addObjectsFromArray(Statuses as [AnyObject])
             self.tableView.reloadData()
             }, failure: { (error) -> Void in
-                print(error)
+                let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                hud.mode = .Text
+                hud.labelText = "没有更多微博了"
+                hud.hide(true, afterDelay: 2)
+                self.tableView.header.endRefreshing()//结束刷新
         })
         
     }
@@ -216,11 +228,8 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if statuses == nil {
-            return 0
-        }else{
-            return statuses.count
-        }
+        return statuses?.count ?? 0
+      
     }
 
     
@@ -234,9 +243,15 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     }
     
     private func configureCell(cell:AnyObject, indexPath:NSIndexPath){
-        guard let status = statuses[indexPath.row] as? Status else {
-            fatalError("微博为空")
+        guard let statuses = statuses else{
+            let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+            hud.mode = .Text
+            hud.labelText = "当前无可用网络，请检查"
+            hud.hide(true, afterDelay: 2)
+            return
         }
+        let status = statuses[indexPath.item] as! Status
+        
         let cell = cell as! StatusCell
         //设置名称
         cell.name.text = status.user?.name
@@ -284,22 +299,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
         
         //设置会员标识
         if status.user!.isVip() {
-            switch status.user!.mbrank! {
-            case "1":
-                cell.vipIcon.image = UIImage(named: "common_icon_membership_level1")
-            case "2":
-                cell.vipIcon.image = UIImage(named: "common_icon_membership_level2")
-            case "3":
-                cell.vipIcon.image = UIImage(named: "common_icon_membership_level3")
-            case "4":
-                cell.vipIcon.image = UIImage(named: "common_icon_membership_level4")
-            case "5":
-                cell.vipIcon.image = UIImage(named: "common_icon_membership_level5")
-            case "6":
-                cell.vipIcon.image = UIImage(named: "common_icon_membership_level6")
-            default:
-                cell.vipIcon.image = UIImage(named: "common_icon_membership")
-            }
+            cell.vipIcon.image = UIImage(named: "common_icon_membership_level\(status.user!.mbrank!)")
             cell.name.textColor = UIColor.orangeColor()
         }else{
             cell.vipIcon.image = nil

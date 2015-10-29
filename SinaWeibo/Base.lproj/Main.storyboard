@@ -138,6 +138,9 @@
                                                     <rect key="frame" x="10" y="70" width="355" height="347"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="347" id="MoF-qK-XAo"/>
+                                                    </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Ztz-PH-eJ8">
                                                         <size key="itemSize" width="164" height="159"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -297,6 +300,7 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="avatar" destination="trT-L7-iGF" id="yuh-De-MQV"/>
+                                    <outlet property="collectionHeight" destination="MoF-qK-XAo" id="fvu-S1-l8p"/>
                                     <outlet property="collectionTrailing" destination="d9V-iB-wV4" id="fjj-9O-QBR"/>
                                     <outlet property="commentButton" destination="fN7-Hm-V5O" id="ppi-Ck-652"/>
                                     <outlet property="createdDate" destination="gyF-dM-38V" id="V7t-uE-Ams"/>

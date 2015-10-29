@@ -64,7 +64,7 @@ class PhotoCollectionViewController: UICollectionViewController,PhotoCellDelegat
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! PhotoCell
-        cell.setupImageView(imgUrls[indexPath.row])
+        cell.setupImageView(imgUrls[indexPath.item])
         cell.delegate = self
         return cell
     }

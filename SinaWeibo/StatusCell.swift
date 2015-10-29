@@ -32,7 +32,7 @@ class StatusCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataS
     var photos:NSMutableArray?
     
     
-    var collectionHeight: NSLayoutConstraint!
+    @IBOutlet var collectionHeight: NSLayoutConstraint!
     
     @IBOutlet weak var collectionTrailing: NSLayoutConstraint!
     
@@ -41,10 +41,6 @@ class StatusCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataS
         
         photoCollection.delegate = self
         photoCollection.dataSource = self
-        
-        collectionHeight = photoCollection.heightAnchor.constraintEqualToConstant(0)
-        collectionHeight.active = true
-        photoCollection.translatesAutoresizingMaskIntoConstraints = false
         
         //工具栏分割限布局
         lineLeading.constant = kScreenWith / 3
