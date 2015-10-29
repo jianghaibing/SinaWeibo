@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PhotoCollectionViewController: UICollectionViewController {
+class PhotoCollectionViewController: UICollectionViewController,PhotoCellDelegate {
 
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     //当前照片索引
@@ -64,9 +64,8 @@ class PhotoCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! PhotoCell
-        
         cell.setupImageView(imgUrls[indexPath.row])
-        
+        cell.delegate = self
         return cell
     }
     
@@ -79,7 +78,6 @@ class PhotoCollectionViewController: UICollectionViewController {
     
     func deletePhoto(sender: UIButton) {
         let indexPath = NSIndexPath(forRow:currentImageIndex-1, inSection: 0)
-       
         if imgUrls.count == 1 {
             self.dismissViewControllerAnimated(true, completion: nil)
             imgUrls.removeAtIndex(currentImageIndex-1)
@@ -96,8 +94,12 @@ class PhotoCollectionViewController: UICollectionViewController {
             collectionView?.deleteItemsAtIndexPaths([indexPath])
             lable.text = "\(currentImageIndex)/\(imgUrls.count)"
         }
-        
-
+    }
+    
+    
+    //MARK: 点击照片的代理方法
+    func colsePhoto() {
+        dismissViewControllerAnimated(false, completion: nil)
     }
 
 

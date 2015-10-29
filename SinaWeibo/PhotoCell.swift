@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PhotoCellDelegate{
+    func colsePhoto()
+}
+
 ///  照片浏览的 cell
 class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
     
@@ -15,7 +19,7 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
     var scrollView: UIScrollView?
     /// 显示图像的图像视图
     var imageView: UIImageView?
-    
+    var delegate:PhotoCellDelegate!
     
     ///  根据图像设置图像视图
     /**
@@ -35,11 +39,7 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
     
     func setupImageView(url: NSURL) {
         //  将 scrollView 的滚动参数重置
-//        scrollView?.contentOffset = CGPointZero
-//        scrollView?.contentSize = CGSizeZero
-//        scrollView?.contentInset = UIEdgeInsetsZero
         scrollView?.zoomScale = 1
-        print(contentView.frame,scrollView?.frame)
         var hud:MBProgressHUD?
         imageView!.sd_setImageWithURL(url, placeholderImage: nil, options: SDWebImageOptions(rawValue: 0), progress: { (_, _) -> Void in
         if hud == nil {
@@ -73,8 +73,6 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
             self.scrollView!.frame = self.bounds
             self.imageView!.center = CGPointMake(self.scrollView!.bounds.width/2, self.scrollView!.bounds.height/2)
         }
-        
-        
     }
     
     override func awakeFromNib() {
@@ -94,12 +92,6 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
         scrollView!.addSubview(imageView!)
     }
     
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        // 设置滚动视图的大小
-//        scrollView!.frame = self.bounds
-//    }
-    
     //MARK: UIScrollViewDelegate
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return imageView!
@@ -107,7 +99,6 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
     
 
     func scrollViewDidZoom(scrollView: UIScrollView) {
-       
         // 居中缩放
         let x = scrollView.bounds.size.width > scrollView.contentSize.width ? (scrollView.bounds.size.width - scrollView.contentSize.width)/2 : 0.0
         let y = scrollView.bounds.size.height > scrollView.contentSize.height ? (scrollView.bounds.size.height - scrollView.contentSize.height)/2 : 0.0
@@ -115,14 +106,9 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
         
     }
     
-    
+    //MARK: 点击照片的代理方法
     func colsePhoto(gesture:UIPinchGestureRecognizer){
-        var anyOB = self.nextResponder()
-        while !(anyOB!.isKindOfClass(PhotoCollectionViewController))  {
-            anyOB = anyOB?.nextResponder()
-        }
-        let vc = anyOB as! PhotoCollectionViewController
-        vc.dismissViewControllerAnimated(false, completion: nil)
+       delegate.colsePhoto()
     }
 
 }

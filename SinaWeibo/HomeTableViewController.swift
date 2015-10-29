@@ -354,8 +354,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
             }
         }
         photoBrowser.imgUrls = urls
-        photoBrowser.currentImageIndex = indexPath.item + 1
-        
+        photoBrowser.currentImageIndex = indexPath.item + 1//当前照片的索引从1开始
         self.presentViewController(photoBrowser, animated: false, completion: nil )
 
     }
