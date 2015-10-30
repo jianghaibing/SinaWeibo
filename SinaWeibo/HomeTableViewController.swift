@@ -236,113 +236,21 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> StatusCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! StatusCell
-        
-        configureCell(cell, indexPath:indexPath)
-        
-        return cell
-    }
-    
-    private func configureCell(cell:AnyObject, indexPath:NSIndexPath){
         guard let statuses = statuses else{
             let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
             hud.mode = .Text
             hud.labelText = "当前无可用网络，请检查"
             hud.hide(true, afterDelay: 2)
-            return
+            return cell
         }
         let status = statuses[indexPath.item] as! Status
-        
-        let cell = cell as! StatusCell
-        //设置名称
-        cell.name.text = status.user?.name
-        //用SDwebimage加载图片，设置头像
-        cell.avatar.sd_setImageWithURL(status.user?.profile_image_url, placeholderImage: UIImage(named: "timeline_image_placeholder"))
-        
-        //设置正文内容
-        cell.statusText.text = status.text
-        if status.retweeted_status != nil {
-            if let retweetName = status.retweeted_status?.user?.name {
-                cell.retweetText.text = "@" + retweetName + "：" + (status.retweeted_status!.text)!
-            }
-        }else{
-            cell.retweetText.text = nil
-        }
-        
-        if let created_at = status.created_at {
-            let createdDate = StringConvertTool.dateStringConverter(created_at)
-            cell.createdDate.text = createdDate
-        }
-        
-        //设置来源
-        if let source = status.source {
-            let sourceString = StringConvertTool.sourceStringConverter(source)
-            cell.source.text = sourceString
-        }
-        //设置转发数
-        if let reposts_count = status.reposts_count where reposts_count != "0"{
-            cell.retweetButton.setTitle(reposts_count, forState: UIControlState.Normal)
-        }else{
-            cell.retweetButton.setTitle("转发", forState: .Normal)
-        }
-        //设置评论数
-        if let comments_count = status.comments_count where comments_count != "0"{
-            cell.commentButton.setTitle(comments_count, forState: UIControlState.Normal)
-        }else{
-            cell.commentButton.setTitle("评论", forState: .Normal)
-        }
-        //设置点赞数
-        if let attitudes_count = status.attitudes_count where attitudes_count != "0"{
-            cell.likeButton.setTitle(attitudes_count, forState: UIControlState.Normal)
-        }else{
-            cell.likeButton.setTitle("赞", forState: .Normal)
-        }
-        
-        //设置会员标识
-        if status.user!.isVip() {
-            cell.vipIcon.image = UIImage(named: "common_icon_membership_level\(status.user!.mbrank!)")
-            cell.name.textColor = UIColor.orangeColor()
-        }else{
-            cell.vipIcon.image = nil
-            cell.name.textColor = UIColor.blackColor()
-        }
-        
-        
-        //设置微博图片
+        cell.status = status
         cell.delegate = self
-        let urls = status.pic_urls!
-        cell.photos = Photo.objectArrayWithKeyValuesArray(urls)
-        //设置图片布局
-        let photoNum = cell.photos?.count ?? 0
-        let itemWH = (kScreenWith - 30) / 3
-        switch photoNum {
-        case 1:
-            cell.collectionHeight.constant = itemWH * 1.3
-            cell.collectionTrailing.constant = 10
-            cell.flowLayout.itemSize = CGSizeMake(itemWH * 1.3, itemWH * 1.3)
-        case 2...3:
-            cell.collectionHeight.constant = itemWH + 5
-            cell.collectionTrailing.constant = 10
-            cell.flowLayout.itemSize = CGSizeMake(itemWH, itemWH)
-        case 4:
-            cell.collectionHeight.constant = (itemWH + 5) * CGFloat(2)
-            cell.collectionTrailing.constant = itemWH + 15
-            cell.flowLayout.itemSize = CGSizeMake(itemWH, itemWH)
-        case 5...6:
-            cell.collectionHeight.constant = (itemWH + 5) * CGFloat(2)
-            cell.collectionTrailing.constant = 10
-            cell.flowLayout.itemSize = CGSizeMake(itemWH, itemWH)
-        case 7...9:
-            cell.collectionHeight.constant = (itemWH + 5) * CGFloat(3)
-            cell.collectionTrailing.constant = 10
-            cell.flowLayout.itemSize = CGSizeMake(itemWH, itemWH)
-        default:
-            cell.collectionHeight.constant = 0
-        }
-        
-        cell.photoCollection.reloadData()
+        return cell
     }
     
-    func photoDidClicked(photos:NSMutableArray, indexPath: NSIndexPath) {
+    
+    func photoDidClicked(photos:[AnyObject], indexPath: NSIndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let photoBrowser = storyBoard.instantiateViewControllerWithIdentifier("photo") as! PhotoCollectionViewController
         var urls:[NSURL] = []
