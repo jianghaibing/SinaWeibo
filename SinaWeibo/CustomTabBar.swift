@@ -20,7 +20,7 @@ class CustomTabBar: UITabBar {
         var i = 0
         let itemWith = kScreenWith/CGFloat(self.items!.count + 1)
         for tabbarButton in self.subviews {
-            if tabbarButton.isKindOfClass(NSClassFromString("UITabBarButton")!){
+            if tabbarButton.isKindOfClass(NSClassFromString("UITabBarButton")!){//用字符串转化成类获取类
                 if i == 2 {
                     i = 3
                 }

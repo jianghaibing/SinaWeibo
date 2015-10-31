@@ -17,7 +17,6 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
         /// 用自定义的tabbar替换系统的tabbar
         let customTabBar = CustomTabBar()
         /**

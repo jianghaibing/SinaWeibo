@@ -72,23 +72,27 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
         }
         
         StatusTool.newStatuses(sinceID, sucess: { (statuses) -> Void in
-            self.tableView.header.endRefreshing()//结束刷新
             if self.statuses == nil {
                 self.statuses = statuses
             }else if statuses.count != 0{
                 let indexSet = NSIndexSet(indexesInRange: NSRange(location: 0, length: statuses.count))//插入的数量
                 self.statuses!.insertObjects(statuses as [AnyObject], atIndexes: indexSet)//插入新微博在第0个位置
             }
-            self.showNewCountLable(statuses.count)
-            self.tableView.reloadData()
-            (self.tabBarController as! MainTabBarController).requestUnreadCount()
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                self.tableView.header.endRefreshing()//结束刷新
+                self.showNewCountLable(statuses.count)
+                self.tableView.reloadData()
+                (self.tabBarController as! MainTabBarController).requestUnreadCount()
+            })
             
             }) { (error) -> Void in
-                let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-                hud.mode = .Text
-                hud.labelText = "当前无网络连接，请检查"
-                hud.hide(true, afterDelay: 2)
-                self.tableView.header.endRefreshing()//结束刷新
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                    let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                    hud.mode = .Text
+                    hud.labelText = "当前无网络连接，请检查"
+                    hud.hide(true, afterDelay: 2)
+                    self.tableView.header.endRefreshing()//结束刷新
+                })
         }
         
     }
@@ -110,15 +114,19 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
         let maxIDStr = String(maxID)
         
         StatusTool.moreStatuses(maxIDStr, sucess: { (Statuses) -> Void in
-            self.tableView.footer.endRefreshing()//结束刷新
             statuses.addObjectsFromArray(Statuses as [AnyObject])
-            self.tableView.reloadData()
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                self.tableView.footer.endRefreshing()//结束刷新
+                self.tableView.reloadData()
+            })
             }, failure: { (error) -> Void in
-                let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-                hud.mode = .Text
-                hud.labelText = "没有更多微博了"
-                hud.hide(true, afterDelay: 2)
-                self.tableView.header.endRefreshing()//结束刷新
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                    let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                    hud.mode = .Text
+                    hud.labelText = "没有更多微博了"
+                    hud.hide(true, afterDelay: 2)
+                    self.tableView.header.endRefreshing()//结束刷新
+                })
         })
         
     }

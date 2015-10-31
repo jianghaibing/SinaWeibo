@@ -31,7 +31,7 @@ class CustomPopMenu: UIImageView {
     
     /// 隐藏popMenu
     class func hide(){
-        for popMenu in (kKeyWindow?.subviews)! where popMenu.isKindOfClass(self){
+        for popMenu in (kKeyWindow?.subviews)! where popMenu is CustomPopMenu{
             popMenu.removeFromSuperview()
         }
     }
@@ -46,5 +46,4 @@ class CustomPopMenu: UIImageView {
         let h = self.bounds.size.height - y - margin
         contentView!.frame = CGRectMake(x, y, w, h)
     }
-    
 }
