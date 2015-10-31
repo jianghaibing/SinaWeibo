@@ -32,7 +32,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         delegate = self
         lastSelectVC = self.childViewControllers[0] as? BaseNavigationController//记录上次选中的控制器
-        NSTimer.scheduledTimerWithTimeInterval(300, target: self, selector: "requestUnreadCount", userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "requestUnreadCount", userInfo: nil, repeats: true)
         
     }
     

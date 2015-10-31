@@ -32,7 +32,6 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
         */
         self.tableView.header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
             self.getNewestWeibo()
-            (self.tabBarController as! MainTabBarController).requestUnreadCount()
             
         })
         self.tableView.header.beginRefreshing()//自动刷新
@@ -82,6 +81,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
             }
             self.showNewCountLable(statuses.count)
             self.tableView.reloadData()
+            (self.tabBarController as! MainTabBarController).requestUnreadCount()
             
             }) { (error) -> Void in
                 let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
