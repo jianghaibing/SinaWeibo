@@ -45,7 +45,7 @@ class PublishViewController: UIViewController ,UITextViewDelegate,UIImagePickerC
     
     
     func keyboardShow(info:NSNotification){
-        let height = info.userInfo![UIKeyboardFrameBeginUserInfoKey]?.CGRectValue.height
+        let height = info.userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue.height
         let duration = NSTimeInterval((info.userInfo![UIKeyboardAnimationDurationUserInfoKey]?.doubleValue)!)
         UIView.animateWithDuration(duration) { () -> Void in
             self.toolBarBottomConstraint.constant = height!
@@ -90,11 +90,20 @@ class PublishViewController: UIViewController ,UITextViewDelegate,UIImagePickerC
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        photos.append(image)
-        self.dismissViewControllerAnimated(true) { () -> Void in
-            self.composePhotosView.image = image
-            self.publishButton.enabled = true
+        if photos.count < 1 {
+            photos.append(image)
+            self.dismissViewControllerAnimated(true) { () -> Void in
+                self.composePhotosView.image = image
+                self.publishButton.enabled = true
+            }
+        }else{
+            let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+            hud.mode = .Text
+            hud.labelText = "当前仅允许添加一张照片"
+            hud.hide(true, afterDelay: 2)
+            dismissViewControllerAnimated(true, completion: nil)
         }
+     
     }
     
     
