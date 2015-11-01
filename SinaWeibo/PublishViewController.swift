@@ -15,6 +15,7 @@ class PublishViewController: UIViewController ,UITextViewDelegate,UIImagePickerC
     @IBOutlet weak var placeholder: UILabel!
     @IBOutlet weak var publishButton: UIButton!
     lazy var photos:[UIImage] = []
+    @IBOutlet weak var chooseImageButton: UIButton!
     
     lazy var composePhotosView:ComposePhotosView = ComposePhotosView()
     
@@ -95,13 +96,8 @@ class PublishViewController: UIViewController ,UITextViewDelegate,UIImagePickerC
             self.dismissViewControllerAnimated(true) { () -> Void in
                 self.composePhotosView.image = image
                 self.publishButton.enabled = true
+                self.chooseImageButton.enabled = false
             }
-        }else{
-            let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-            hud.mode = .Text
-            hud.labelText = "当前仅允许添加一张照片"
-            hud.hide(true, afterDelay: 2)
-            dismissViewControllerAnimated(true, completion: nil)
         }
      
     }

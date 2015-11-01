@@ -544,6 +544,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="44"/>
                                         <animations/>
                                         <state key="normal" image="compose_toolbar_picture" backgroundImage="compose_toolbar_background"/>
+                                        <state key="disabled" backgroundImage="compose_toolbar_background"/>
                                         <state key="highlighted" image="compose_toolbar_picture_highlighted" backgroundImage="compose_toolbar_background"/>
                                         <connections>
                                             <action selector="composeImage:" destination="tfM-7L-Dtw" eventType="touchUpInside" id="aWW-J6-aMZ"/>
@@ -619,6 +620,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="chooseImageButton" destination="J2c-Ho-pZv" id="8zZ-E5-17s"/>
                         <outlet property="composeTextView" destination="fp9-jH-NzB" id="a5H-g6-37T"/>
                         <outlet property="placeholder" destination="pt3-Xp-s7u" id="yJl-ES-Ldv"/>
                         <outlet property="publishButton" destination="33R-qo-nm0" id="KKo-0K-arW"/>
