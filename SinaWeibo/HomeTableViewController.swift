@@ -17,6 +17,8 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     var statuses:NSMutableArray?
     
     var cellHeightCacheEnabled:Bool!
+    
+    let popTranstion = PopTransitionAnimator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -261,6 +263,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     func photoDidClicked(photos:[AnyObject], indexPath: NSIndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let photoBrowser = storyBoard.instantiateViewControllerWithIdentifier("photo") as! PhotoCollectionViewController
+        photoBrowser.transitioningDelegate = popTranstion
         var urls:[NSURL] = []
         for photo in photos {
             if let url = (photo as! Photo).thumbnail_pic {
@@ -271,7 +274,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
         }
         photoBrowser.imgUrls = urls
         photoBrowser.currentImageIndex = indexPath.item + 1//当前照片的索引从1开始
-        self.presentViewController(photoBrowser, animated: false, completion: nil )
+        self.presentViewController(photoBrowser, animated: true, completion: nil )
 
     }
     

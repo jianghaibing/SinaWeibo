@@ -11,6 +11,8 @@ import UIKit
 
 class PhotoCollectionViewController: UICollectionViewController,PhotoCellDelegate {
 
+    let popTranstion = PopTransitionAnimator()
+    
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     //当前照片索引
     var currentImageIndex:Int!
@@ -99,7 +101,7 @@ class PhotoCollectionViewController: UICollectionViewController,PhotoCellDelegat
     
     //MARK: 点击照片的代理方法
     func colsePhoto() {
-        dismissViewControllerAnimated(false, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
 

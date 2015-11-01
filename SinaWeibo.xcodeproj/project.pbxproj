@@ -25,6 +25,7 @@
 		094D870A1B772DD40039BCF9 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D87091B772DD40039BCF9 /* ProfileTableViewController.swift */; };
 		094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */; };
 		094D870F1B7744160039BCF9 /* CustomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D870E1B7744160039BCF9 /* CustomTitleView.swift */; };
+		09504CD61BE64E040060D53A /* PopTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09504CD51BE64E040060D53A /* PopTransitionAnimator.swift */; };
 		0953E34E1B80B3EC007AF200 /* CustomPopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E34D1B80B3EC007AF200 /* CustomPopMenu.swift */; };
 		0953E3501B80B9F7007AF200 /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E34F1B80B9F7007AF200 /* CustomOverlay.swift */; };
 		0953E3521B80BDF1007AF200 /* PopMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E3511B80BDF1007AF200 /* PopMenuTableViewController.swift */; };
@@ -77,6 +78,7 @@
 		094D87091B772DD40039BCF9 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		094D870B1B7736AE0039BCF9 /* ExtensionBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionBarButton.swift; sourceTree = "<group>"; };
 		094D870E1B7744160039BCF9 /* CustomTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTitleView.swift; sourceTree = "<group>"; };
+		09504CD51BE64E040060D53A /* PopTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopTransitionAnimator.swift; sourceTree = "<group>"; };
 		0953E34D1B80B3EC007AF200 /* CustomPopMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopMenu.swift; sourceTree = "<group>"; };
 		0953E34F1B80B9F7007AF200 /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
 		0953E3511B80BDF1007AF200 /* PopMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuTableViewController.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				09858F8F1B89883600C445FB /* OauthTool.swift */,
 				09EE4D461B7E4AA200B77A1A /* ExtensionColor.swift */,
 				09CA54291B8F4C0300D38B28 /* HTTPRequestTool.swift */,
+				09504CD51BE64E040060D53A /* PopTransitionAnimator.swift */,
 			);
 			name = Public;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				09CA542A1B8F4C0300D38B28 /* HTTPRequestTool.swift in Sources */,
 				099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */,
 				094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */,
+				09504CD61BE64E040060D53A /* PopTransitionAnimator.swift in Sources */,
 				099392D11B84DCB30086116B /* OauthViewController.swift in Sources */,
 				0953E34E1B80B3EC007AF200 /* CustomPopMenu.swift in Sources */,
 				09858F901B89883600C445FB /* OauthTool.swift in Sources */,
