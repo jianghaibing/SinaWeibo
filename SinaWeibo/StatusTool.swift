@@ -6,11 +6,12 @@
 //  Copyright © 2015年 Beijing Gold Finger Education Technology LLC. All rights reserved.
 //
 /*
-    封装微博数据类
+封装微博数据类
 */
 
 
 import UIKit
+import RealmSwift
 
 class StatusTool: NSObject {
     
@@ -34,12 +35,14 @@ class StatusTool: NSObject {
         
         HTTPRequestTool.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params.keyValues(), success: { (result) -> Void in
             
-            let dictArry = result["statuses"]//取到最新微博数组
+            let dictArry = (result as! NSDictionary)["statuses"]//取到最新微博数组
             
             let newStatus = Status.objectArrayWithKeyValuesArray(dictArry)//数组字典转模型
             
             sucess(newStatus)
-        
+            
+            
+            
             }) { (error) -> Void in
                 failure(error)
         }
@@ -58,14 +61,14 @@ class StatusTool: NSObject {
             let account = results[0] as! AccountDB
             params.access_token = account.access_token
         }
-
+        
         if ((maxID) != nil){
             params.max_id = maxID
         }
         
         HTTPRequestTool.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params.keyValues(), success: { (result) -> Void in
             
-            let dictArry = result["statuses"]//取到最新微博数组
+            let dictArry = (result as! NSDictionary)["statuses"]//取到最新微博数组
             let moreStatus = Status.objectArrayWithKeyValuesArray(dictArry)//数组字典转模型
             
             sucess(moreStatus)
@@ -77,5 +80,5 @@ class StatusTool: NSObject {
     }
     
     
-
+    
 }

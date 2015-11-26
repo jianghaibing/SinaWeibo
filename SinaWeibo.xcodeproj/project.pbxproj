@@ -18,6 +18,14 @@
 		092878461B973FDE0068A41B /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092878451B973FDE0068A41B /* StatusCell.swift */; };
 		0936F5571BA0812C00422821 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936F5561BA0812C00422821 /* PhotoCollectionViewController.swift */; };
 		093F63DA1B7B919D009C8660 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F63D91B7B919D009C8660 /* CustomSearchBar.swift */; };
+		093FB9681C05FCF2005A6976 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093FB9661C05FCF2005A6976 /* Realm.framework */; };
+		093FB9691C05FCF2005A6976 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 093FB9661C05FCF2005A6976 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		093FB96A1C05FCF2005A6976 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093FB9671C05FCF2005A6976 /* RealmSwift.framework */; };
+		093FB96B1C05FCF2005A6976 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 093FB9671C05FCF2005A6976 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		093FB96F1C05FF67005A6976 /* StatusLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093FB96E1C05FF67005A6976 /* StatusLocal.swift */; };
+		093FB9711C060090005A6976 /* PhotoLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093FB9701C060090005A6976 /* PhotoLocal.swift */; };
+		093FB9731C0600D5005A6976 /* UserLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093FB9721C0600D5005A6976 /* UserLocal.swift */; };
+		093FB9751C061A73005A6976 /* RetweetStatusLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093FB9741C061A73005A6976 /* RetweetStatusLocal.swift */; };
 		09481C6C1B771E3700F2006E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09481C6B1B771E3700F2006E /* CustomTabBar.swift */; };
 		094D87041B772DA70039BCF9 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D87031B772DA70039BCF9 /* HomeTableViewController.swift */; };
 		094D87061B772DBA0039BCF9 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D87051B772DBA0039BCF9 /* MessageTableViewController.swift */; };
@@ -34,6 +42,7 @@
 		09858F971B89A94100C445FB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F961B89A94100C445FB /* Status.swift */; };
 		09858F991B89A95400C445FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F981B89A95400C445FB /* User.swift */; };
 		09858F9B1B89A96800C445FB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09858F9A1B89A96800C445FB /* Photo.swift */; };
+		099172571C074F9800E6C463 /* RetweetUserLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099172561C074F9800E6C463 /* RetweetUserLocal.swift */; };
 		099392CF1B84D2670086116B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 099392CE1B84D2670086116B /* Podfile */; };
 		099392D11B84DCB30086116B /* OauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099392D01B84DCB20086116B /* OauthViewController.swift */; };
 		099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C7B731B762D7C0011BF10 /* AppDelegate.swift */; };
@@ -59,6 +68,21 @@
 		6B3148E91AD123E220151F1F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12810358413F15C271008DBF /* libPods.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		093FB96C1C05FCF2005A6976 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				093FB96B1C05FCF2005A6976 /* RealmSwift.framework in Embed Frameworks */,
+				093FB9691C05FCF2005A6976 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0906CF871BA321C400FDD4B0 /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		091069261BA5530C005F1AB5 /* ComposeParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeParam.swift; sourceTree = "<group>"; };
@@ -71,6 +95,14 @@
 		092878451B973FDE0068A41B /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		0936F5561BA0812C00422821 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		093F63D91B7B919D009C8660 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		093FB9621C05FC3C005A6976 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Downloads/realm-swift-0.96.2/ios/swift-2.1/Realm.framework"; sourceTree = "<group>"; };
+		093FB9631C05FC3C005A6976 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Downloads/realm-swift-0.96.2/ios/swift-2.1/RealmSwift.framework"; sourceTree = "<group>"; };
+		093FB9661C05FCF2005A6976 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		093FB9671C05FCF2005A6976 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		093FB96E1C05FF67005A6976 /* StatusLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusLocal.swift; sourceTree = "<group>"; };
+		093FB9701C060090005A6976 /* PhotoLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLocal.swift; sourceTree = "<group>"; };
+		093FB9721C0600D5005A6976 /* UserLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocal.swift; sourceTree = "<group>"; };
+		093FB9741C061A73005A6976 /* RetweetStatusLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetStatusLocal.swift; sourceTree = "<group>"; };
 		09481C6B1B771E3700F2006E /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		094D87031B772DA70039BCF9 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		094D87051B772DBA0039BCF9 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +120,7 @@
 		09858F961B89A94100C445FB /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		09858F981B89A95400C445FB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09858F9A1B89A96800C445FB /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		099172561C074F9800E6C463 /* RetweetUserLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetUserLocal.swift; sourceTree = "<group>"; };
 		099392CE1B84D2670086116B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		099392D01B84DCB20086116B /* OauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OauthViewController.swift; sourceTree = "<group>"; };
 		099C7B701B762D7C0011BF10 /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +155,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				093FB9681C05FCF2005A6976 /* Realm.framework in Frameworks */,
 				09F6FCB51B91FEA300B51E5E /* AVFoundation.framework in Frameworks */,
+				093FB96A1C05FCF2005A6976 /* RealmSwift.framework in Frameworks */,
 				6B3148E91AD123E220151F1F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,8 +332,13 @@
 			isa = PBXGroup;
 			children = (
 				09858F961B89A94100C445FB /* Status.swift */,
+				093FB96E1C05FF67005A6976 /* StatusLocal.swift */,
+				093FB9741C061A73005A6976 /* RetweetStatusLocal.swift */,
 				09858F981B89A95400C445FB /* User.swift */,
+				093FB9721C0600D5005A6976 /* UserLocal.swift */,
+				099172561C074F9800E6C463 /* RetweetUserLocal.swift */,
 				09858F9A1B89A96800C445FB /* Photo.swift */,
+				093FB9701C060090005A6976 /* PhotoLocal.swift */,
 				09F6FCA31B90B70700B51E5E /* StatusParam.swift */,
 			);
 			name = Home;
@@ -307,6 +347,8 @@
 		099C7B671B762D7C0011BF10 = {
 			isa = PBXGroup;
 			children = (
+				093FB9661C05FCF2005A6976 /* Realm.framework */,
+				093FB9671C05FCF2005A6976 /* RealmSwift.framework */,
 				099392CE1B84D2670086116B /* Podfile */,
 				099C7B721B762D7C0011BF10 /* SinaWeibo */,
 				099C7B711B762D7C0011BF10 /* Products */,
@@ -385,6 +427,8 @@
 		B45519BAA8B665607B643149 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				093FB9621C05FC3C005A6976 /* Realm.framework */,
+				093FB9631C05FC3C005A6976 /* RealmSwift.framework */,
 				09F6FCB41B91FEA300B51E5E /* AVFoundation.framework */,
 				12810358413F15C271008DBF /* libPods.a */,
 			);
@@ -403,6 +447,8 @@
 				099C7B6D1B762D7C0011BF10 /* Frameworks */,
 				099C7B6E1B762D7C0011BF10 /* Resources */,
 				B231BF70B4522A652BE84BB4 /* Copy Pods Resources */,
+				093FB96C1C05FCF2005A6976 /* Embed Frameworks */,
+				093FB96D1C05FDAD005A6976 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -468,6 +514,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		093FB96D1C05FDAD005A6976 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = " bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
 		5FCA8485A732B80922984037 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,12 +587,15 @@
 				09858F971B89A94100C445FB /* Status.swift in Sources */,
 				09CA542A1B8F4C0300D38B28 /* HTTPRequestTool.swift in Sources */,
 				099C7B741B762D7C0011BF10 /* AppDelegate.swift in Sources */,
+				093FB96F1C05FF67005A6976 /* StatusLocal.swift in Sources */,
 				094D870C1B7736AE0039BCF9 /* ExtensionBarButton.swift in Sources */,
 				09504CD61BE64E040060D53A /* PopTransitionAnimator.swift in Sources */,
 				099392D11B84DCB30086116B /* OauthViewController.swift in Sources */,
 				0953E34E1B80B3EC007AF200 /* CustomPopMenu.swift in Sources */,
 				09858F901B89883600C445FB /* OauthTool.swift in Sources */,
 				0910692C1BA57901005F1AB5 /* UploadParam.swift in Sources */,
+				093FB9731C0600D5005A6976 /* UserLocal.swift in Sources */,
+				093FB9751C061A73005A6976 /* RetweetStatusLocal.swift in Sources */,
 				09F6FCA21B9098FC00B51E5E /* StatusTool.swift in Sources */,
 				09EE4D471B7E4AA200B77A1A /* ExtensionColor.swift in Sources */,
 				092878461B973FDE0068A41B /* StatusCell.swift in Sources */,
@@ -545,9 +607,11 @@
 				0936F5571BA0812C00422821 /* PhotoCollectionViewController.swift in Sources */,
 				094D87061B772DBA0039BCF9 /* MessageTableViewController.swift in Sources */,
 				091A916F1B9B250D001371E7 /* AccountDB.swift in Sources */,
+				099172571C074F9800E6C463 /* RetweetUserLocal.swift in Sources */,
 				094D870A1B772DD40039BCF9 /* ProfileTableViewController.swift in Sources */,
 				091069271BA5530C005F1AB5 /* ComposeParam.swift in Sources */,
 				094D87041B772DA70039BCF9 /* HomeTableViewController.swift in Sources */,
+				093FB9711C060090005A6976 /* PhotoLocal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +727,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SinaWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -683,6 +751,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SinaWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

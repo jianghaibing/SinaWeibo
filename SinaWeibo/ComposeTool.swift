@@ -7,6 +7,7 @@
 //  发布微博的接口
 
 import UIKit
+import RealmSwift
 
 class ComposeTool: NSObject {
 

@@ -55,8 +55,9 @@ class OauthTool: NSObject {
         
         HTTPRequestTool.POST("https://api.weibo.com/oauth2/access_token", parameters: params.keyValues(), success: { (responseObject) -> Void in
             
-            let entity = NSEntityDescription.entityForName("AccountDB", inManagedObjectContext: managedObjectContext)
-            let account = AccountDB(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
+//            let entity = NSEntityDescription.entityForName("AccountDB", inManagedObjectContext: managedObjectContext)
+//            let account = AccountDB(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
+            let account = NSEntityDescription.insertNewObjectForEntityForName("AccountDB", inManagedObjectContext: managedObjectContext) as! AccountDB
             // 添加当前时间到字典，即在数据库写入创建时间
             account.access_token = responseObject["access_token"] as? String
             account.uid = responseObject["uid"] as? String

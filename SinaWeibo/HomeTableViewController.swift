@@ -7,27 +7,31 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDelegate{
- 
+    
     private var titleView:CustomTitleView!
     
     lazy var popMenuVC:PopMenuTableViewController = PopMenuTableViewController()
     
     var statuses:NSMutableArray?
+    var statusesLocal:Results<StatusLocal>?
     
     var cellHeightCacheEnabled:Bool!
     
     let popTranstion = PopTransitionAnimator()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         /**
         *  设置自动布局后，cell的高度自适应
         */
         tableView.estimatedRowHeight = 200.0
         tableView.rowHeight = UITableViewAutomaticDimension
-
+        
         setupNavagationBar()
         /**
         *  下拉刷新取最新微博
@@ -44,6 +48,8 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
             self.getMoreWeibo()
         })
         
+        
+        
     }
     
     func refresh(){
@@ -55,7 +61,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
         
         UserTool.getUserName({ (user:User) -> Void in
             
-        self.titleView.setTitle(user.name!, forState: UIControlState.Normal)
+            self.titleView.setTitle(user.name!, forState: UIControlState.Normal)
             
             }) { (error) -> Void in
         }
@@ -63,8 +69,8 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     
     
     /**
-    获取最新微博
-    */
+     获取最新微博
+     */
     private func getNewestWeibo(){
         
         var sinceID:String?
@@ -76,11 +82,82 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
         StatusTool.newStatuses(sinceID, sucess: { (statuses) -> Void in
             if self.statuses == nil {
                 self.statuses = statuses
+                
+                let realm = try! Realm()
+                try! realm.write({ () -> Void in
+                    realm.deleteAll()
+                })
+                
+                for status in self.statuses!{
+                    let status = status as! Status
+                    let statusLocal = StatusLocal()
+                    
+                    let userLocal = UserLocal()
+                    userLocal.name = (status.user?.name) ?? ""
+                    userLocal.profile_image_url = status.user?.profile_image_url?.description
+                    userLocal.mbtype = (status.user?.mbtype) ?? ""
+                    userLocal.mbrank = (status.user?.mbrank) ?? ""
+                    userLocal.isVip = (status.user?.isVip())!
+                    
+                    try! realm.write({ () -> Void in
+                        realm.add(userLocal)
+                    })
+                    
+                    
+                    let retweetUserLocal = RetweetUserLocal()
+                    retweetUserLocal.name = (status.retweeted_status?.user?.name) ?? ""
+                    retweetUserLocal.profile_image_url = status.retweeted_status?.user?.profile_image_url?.description
+                    retweetUserLocal.mbtype = (status.retweeted_status?.user?.mbtype) ?? ""
+                    retweetUserLocal.mbrank = (status.retweeted_status?.user?.mbrank) ?? ""
+                    retweetUserLocal.isVip = (status.retweeted_status?.user?.isVip()) ?? false
+                    try! realm.write({ () -> Void in
+                        realm.add(retweetUserLocal)
+                    })
+                    
+                    
+                    let retweetStatusLaocl = RetweetStatusLocal()
+                    retweetStatusLaocl.text = status.retweeted_status?.text
+                    retweetStatusLaocl.user = retweetUserLocal
+                    try! realm.write({ () -> Void in
+                        realm.add(retweetStatusLaocl)
+                    })
+                    
+                    if let pics = status.pic_urls{
+                        for pic in pics {
+                            let photoLocal = PhotoLocal()
+                            photoLocal.thumbnail_pic = (pic as! Photo).thumbnail_pic?.description
+                            try! realm.write({ () -> Void in
+                                realm.add(photoLocal)
+                                statusLocal.pic_urls.append(photoLocal)
+                            })
+                        }
+                    }
+                    
+                    statusLocal.created_at = status.created_at!
+                    statusLocal.idstr = status.idstr!
+                    statusLocal.text = status.text
+                    statusLocal.source = status.source
+                    statusLocal.retweeted_status = retweetStatusLaocl
+                    statusLocal.user = userLocal
+                    statusLocal.reposts_count = status.reposts_count
+                    statusLocal.comments_count = status.comments_count
+                    statusLocal.attitudes_count = status.attitudes_count
+                    
+                    
+                    try! realm.write({ () -> Void in
+                        realm.add(statusLocal)
+                    })
+                }
+                
             }else if statuses.count != 0{
                 let indexSet = NSIndexSet(indexesInRange: NSRange(location: 0, length: statuses.count))//插入的数量
                 self.statuses!.insertObjects(statuses as [AnyObject], atIndexes: indexSet)//插入新微博在第0个位置
+                
             }
-                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            
+            
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 self.tableView.header.endRefreshing()//结束刷新
                 self.showNewCountLable(statuses.count)
                 self.tableView.reloadData()
@@ -89,10 +166,10 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
             
             }) { (error) -> Void in
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                    let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-                    hud.mode = .Text
-                    hud.labelText = "当前无网络连接，请检查"
-                    hud.hide(true, afterDelay: 2)
+                    
+                    let realm = try! Realm()
+                    self.statusesLocal  = realm.objects(StatusLocal)
+                    self.tableView.reloadData()
                     self.tableView.header.endRefreshing()//结束刷新
                 })
         }
@@ -100,12 +177,12 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     }
     
     /**
-    获取更多微博
-    */
+     获取更多微博
+     */
     private func getMoreWeibo(){
         
         guard let statuses =  statuses else{
-           let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+            let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
             hud.mode = .Text
             hud.labelText = "当前无可用网络，请检查"
             hud.hide(true, afterDelay: 2)
@@ -135,9 +212,9 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     
     
     /**
-    获取最新微博时浮窗提醒
-    :param: count 获取的最新微博数
-    */
+     获取最新微博时浮窗提醒
+     :param: count 获取的最新微博数
+     */
     private func showNewCountLable(count:Int){
         
         if count == 0 {
@@ -169,8 +246,8 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     }
     
     /**
-    配置导航栏按钮和title
-    */
+     配置导航栏按钮和title
+     */
     private func setupNavagationBar(){
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", highlightedImageName: "navigationbar_pop_highlighted", target: self, action: "pop", controllEvent: UIControlEvents.TouchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_friendsearch", highlightedImageName: "navigationbar_friendsearch_highlighted", target: self, action: "friendSearch", controllEvent: UIControlEvents.TouchUpInside)
@@ -187,8 +264,8 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     }
     
     /**
-    点击title时显示弹出菜单
-    */
+     点击title时显示弹出菜单
+     */
     func showTitlePopmenu(){
         titleView.selected = !titleView.selected
         
@@ -211,46 +288,54 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     }
     
     /**
-    右边按钮动作
-    */
+     右边按钮动作
+     */
     func pop(){
         print("pop")
     }
     
     
     /**
-    左边按钮动作
-    */
+     左边按钮动作
+     */
     func friendSearch(){
         print("frinedSearch")
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statuses?.count ?? 0
-      
+        guard let statuses = statuses else{
+            return statusesLocal?.count ?? 0
+        }
+        return statuses.count
+        
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> StatusCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! StatusCell
         guard let statuses = statuses else{
-            let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-            hud.mode = .Text
-            hud.labelText = "当前无可用网络，请检查"
-            hud.hide(true, afterDelay: 2)
+//            let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+//            hud.mode = .Text
+//            hud.labelText = "当前无可用网络，请检查"
+//            hud.hide(true, afterDelay: 2)
+            if let statusesLocal = statusesLocal {
+                let statusLocal = statusesLocal[indexPath.item]
+                cell.statusesLocal = statusLocal
+                cell.delegate = self
+            }
             return cell
         }
         let status = statuses[indexPath.item] as! Status
@@ -275,8 +360,8 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
         photoBrowser.imgUrls = urls
         photoBrowser.currentImageIndex = indexPath.item + 1//当前照片的索引从1开始
         self.presentViewController(photoBrowser, animated: true, completion: nil )
-
+        
     }
     
-
+    
 }
