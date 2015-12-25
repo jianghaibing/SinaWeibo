@@ -59,6 +59,7 @@ class OauthTool: NSObject {
 //            let account = AccountDB(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
             let account = NSEntityDescription.insertNewObjectForEntityForName("AccountDB", inManagedObjectContext: managedObjectContext) as! AccountDB
             // 添加当前时间到字典，即在数据库写入创建时间
+            let responseObject = responseObject as! NSDictionary
             account.access_token = responseObject["access_token"] as? String
             account.uid = responseObject["uid"] as? String
             account.expires_in = responseObject["expires_in"] as? NSNumber

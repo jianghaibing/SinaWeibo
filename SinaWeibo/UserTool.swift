@@ -26,6 +26,7 @@ class UserTool: NSObject {
         HTTPRequestTool.GET("https://rm.api.weibo.com/2/remind/unread_count.json", parameters: params.keyValues(), success: { (result) -> Void in
         
             let unreadResult = UnreadResultParam()
+            let result = result as! NSDictionary
             unreadResult.status = result["status"] as? Int
             unreadResult.follower = result["follower"] as? Int
             unreadResult.cmt = result["cmt"] as? Int
@@ -56,6 +57,7 @@ class UserTool: NSObject {
         HTTPRequestTool.GET("https://api.weibo.com/2/users/show.json", parameters: params.keyValues(), success: { (result) -> Void in
             
             let user = User()
+            let result = result as! NSDictionary
             user.name = result["name"] as? String
             
             NSUserDefaults.standardUserDefaults().setObject(user.name, forKey: "name")

@@ -25,9 +25,10 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         */
         self.setValue(customTabBar, forKeyPath: "tabBar")
         
-        /// 创建发布按钮
-        let publishButton = customTabBar.createAddButton()
-        publishButton.addTarget(self, action: "publishWeibo", forControlEvents: UIControlEvents.TouchUpInside)
+        /// 发布按钮动作
+        customTabBar.buttonAction = {()->Void in
+            self.publishWeibo()
+        }
         
         delegate = self
         lastSelectVC = self.childViewControllers[0] as? BaseNavigationController//记录上次选中的控制器

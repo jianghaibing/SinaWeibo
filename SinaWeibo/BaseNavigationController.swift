@@ -11,9 +11,10 @@ import UIKit
 class BaseNavigationController: UINavigationController,UINavigationControllerDelegate{
     
     var navDelegate: UIGestureRecognizerDelegate?
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+     
         // Do any additional setup after loading the view.
         /**
         保存当前控制器的代理

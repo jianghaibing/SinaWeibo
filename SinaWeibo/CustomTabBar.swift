@@ -10,10 +10,14 @@ import UIKit
 
 class CustomTabBar: UITabBar {
     
-    
+    //中间按钮点击时回调
+    var buttonAction = {()->Void in
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        createAddButton()
+    
         ///设置item的选中颜色
         self.tintColor = UIColor.colorWithRGB(235, green: 107, blue: 38, alpha: 1)
         /// 设置Item的位置
@@ -71,7 +75,7 @@ class CustomTabBar: UITabBar {
     /**
     创建Tarbar中间的加号按钮
     */
-    func createAddButton() -> UIButton {
+    func createAddButton(){
         let addButton = UIButton(type: UIButtonType.Custom)
         addButton.setImage( UIImage(named: "tabbar_compose_icon_add"), forState: UIControlState.Normal)
         addButton.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
@@ -79,8 +83,13 @@ class CustomTabBar: UITabBar {
         addButton.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
         addButton.sizeToFit()
         addButton.center = CGPointMake(self.bounds.width / 2, self.bounds.height / 2)
+        addButton.addTarget(self, action: "buttonClick", forControlEvents: .TouchUpInside)
         self.addSubview(addButton)
-        return addButton
+       
+    }
+    
+    func buttonClick(){
+        buttonAction()
     }
     
     
