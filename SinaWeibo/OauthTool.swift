@@ -53,7 +53,7 @@ class OauthTool: NSObject {
         params.code = code
         params.redirect_uri = kRedirectURL
         
-        HTTPRequestTool.POST("https://api.weibo.com/oauth2/access_token", parameters: params.keyValues(), success: { (responseObject) -> Void in
+        HTTPRequestTool.POST("https://api.weibo.com/oauth2/access_token", parameters: params.mj_keyValues(), success: { (responseObject) -> Void in
             
 //            let entity = NSEntityDescription.entityForName("AccountDB", inManagedObjectContext: managedObjectContext)
 //            let account = AccountDB(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)

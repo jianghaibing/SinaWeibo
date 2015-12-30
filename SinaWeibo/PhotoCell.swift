@@ -40,15 +40,11 @@ class PhotoCell: UICollectionViewCell, UIScrollViewDelegate {
     func setupImageView(url: NSURL) {
         //  将 scrollView 的滚动参数重置
         scrollView?.zoomScale = 1
-        var hud:MBProgressHUD?
-        imageView!.sd_setImageWithURL(url, placeholderImage: nil, options: SDWebImageOptions(rawValue: 0), progress: { (_, _) -> Void in
-        if hud == nil {
-            hud = MBProgressHUD.showHUDAddedTo(self, animated: true)
-        }
-            }) { (_, _, _, _) -> Void in
-            hud?.hide(true)
-                self.configPhotoFrame()
-        }
+        let hud = MBProgressHUD.showHUDAddedTo(self, animated: true)
+        imageView?.sd_setImageWithURL(url, placeholderImage: nil, completed: { (_, _, _, _) -> Void in
+            self.configPhotoFrame()
+            hud.hidden = true
+        })
     }
     
     func configPhotoFrame(){

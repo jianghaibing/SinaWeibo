@@ -21,7 +21,7 @@ class ComposeTool: NSObject {
             let account = results[0] as! AccountDB
             params.access_token = account.access_token
         }
-        HTTPRequestTool.POST("https://api.weibo.com/2/statuses/update.json", parameters: params.keyValues(), success: { (_) -> Void in
+        HTTPRequestTool.POST("https://api.weibo.com/2/statuses/update.json", parameters: params.mj_keyValues(), success: { (_) -> Void in
             sucess()
             }) { (error) -> Void in
             failure(error)
@@ -47,7 +47,7 @@ class ComposeTool: NSObject {
         uploadParams.fileName = "myphoto.png"
         uploadParams.mimeType = "image/png"
         
-        HTTPRequestTool.Upload("https://upload.api.weibo.com/2/statuses/upload.json", parameters: params.keyValues(), uploadParam: uploadParams, success: { (_) -> Void in
+        HTTPRequestTool.Upload("https://upload.api.weibo.com/2/statuses/upload.json", parameters: params.mj_keyValues(), uploadParam: uploadParams, success: { (_) -> Void in
             sucess()
             }) { (error) -> Void in
                 failure(error)

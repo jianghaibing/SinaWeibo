@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "429E591FA8DEE5366285A19A"
+               BlueprintIdentifier = "88BBED5C81353E7A7E5242DB"
                BuildableName = "libUIView+FDCollapsibleConstraints.a"
                BlueprintName = "UIView+FDCollapsibleConstraints"
                ReferencedContainer = "container:Pods.xcodeproj">

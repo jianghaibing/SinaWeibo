@@ -36,15 +36,15 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
         /**
         *  下拉刷新取最新微博
         */
-        self.tableView.header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
             self.getNewestWeibo()
             
         })
-        self.tableView.header.beginRefreshing()//自动刷新
+        self.tableView.mj_header.beginRefreshing()//自动刷新
         /**
         *  获取更多微博
         */
-        self.tableView.footer = MJRefreshAutoFooter(refreshingBlock: { () -> Void in
+        self.tableView.mj_footer = MJRefreshAutoFooter(refreshingBlock: { () -> Void in
             self.getMoreWeibo()
         })
         
@@ -53,7 +53,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
     }
     
     func refresh(){
-        self.tableView.header.beginRefreshing()
+        self.tableView.mj_header.beginRefreshing()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -158,7 +158,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
             
             
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                self.tableView.header.endRefreshing()//结束刷新
+                self.tableView.mj_header.endRefreshing()//结束刷新
                 self.showNewCountLable(statuses.count)
                 self.tableView.reloadData()
                 (self.tabBarController as! MainTabBarController).requestUnreadCount()
@@ -170,7 +170,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
                     let realm = try! Realm()
                     self.statusesLocal  = realm.objects(StatusLocal)
                     self.tableView.reloadData()
-                    self.tableView.header.endRefreshing()//结束刷新
+                    self.tableView.mj_header.endRefreshing()//结束刷新
                 })
         }
         
@@ -195,7 +195,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
         StatusTool.moreStatuses(maxIDStr, sucess: { (Statuses) -> Void in
             statuses.addObjectsFromArray(Statuses as [AnyObject])
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                self.tableView.footer.endRefreshing()//结束刷新
+                self.tableView.mj_footer.endRefreshing()//结束刷新
                 self.tableView.reloadData()
             })
             }, failure: { (error) -> Void in
@@ -204,7 +204,7 @@ class HomeTableViewController: UITableViewController,OverlayDelegate,PhotoItemDe
                     hud.mode = .Text
                     hud.labelText = "没有更多微博了"
                     hud.hide(true, afterDelay: 2)
-                    self.tableView.header.endRefreshing()//结束刷新
+                    self.tableView.mj_header.endRefreshing()//结束刷新
                 })
         })
         

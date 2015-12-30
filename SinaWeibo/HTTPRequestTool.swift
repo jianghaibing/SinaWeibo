@@ -16,9 +16,10 @@ class HTTPRequestTool: NSObject {
 
     class func POST(URLString: String, parameters: AnyObject?, success: (AnyObject) -> Void, failure: (NSError) -> Void){
         
-        let manager = AFHTTPRequestOperationManager()
+        //let manager = AFHTTPRequestOperationManager()
+        let manager = AFHTTPSessionManager()
         manager.POST(URLString, parameters: parameters, success: { (_, response) -> Void in
-            success(response)
+            success(response!)
             }) { (_, error) -> Void in
                 failure(error)
         }
@@ -26,9 +27,9 @@ class HTTPRequestTool: NSObject {
     }
     
     class func GET(URLString: String, parameters: AnyObject?, success: (AnyObject) -> Void, failure: (NSError) -> Void){
-        let manager = AFHTTPRequestOperationManager()
+        let manager = AFHTTPSessionManager()
         manager.GET(URLString, parameters: parameters, success: { (_, response) -> Void in
-            success(response)
+            success(response!)
             }) { (_, error) -> Void in
                 failure(error)
         }
@@ -38,11 +39,11 @@ class HTTPRequestTool: NSObject {
     //上传图片
     class func Upload(URLString: String, parameters: AnyObject?, uploadParam:UploadParam, success: (AnyObject) -> Void, failure: (NSError) -> Void){
         
-        let manager = AFHTTPRequestOperationManager()
+        let manager = AFHTTPSessionManager()
         manager.POST(URLString, parameters: parameters, constructingBodyWithBlock: { (formData:AFMultipartFormData) -> Void in
             formData.appendPartWithFileData(uploadParam.data, name: uploadParam.name, fileName: uploadParam.fileName, mimeType: uploadParam.mimeType)
             }, success: { (_, response) -> Void in
-                success(response)
+                success(response!)
             }) { (_, error) -> Void in
                 failure(error)
         }

@@ -31,7 +31,7 @@ class Status: NSObject {
     /// 微博配图url数组
     var pic_urls:[AnyObject]?
     
-    override static func objectClassInArray() -> [NSObject : AnyObject]! {
+    override static func mj_objectClassInArray() -> [NSObject : AnyObject]! {
         return ["pic_urls":Photo.self]
     }
 }

@@ -33,11 +33,11 @@ class StatusTool: NSObject {
         }
         
         
-        HTTPRequestTool.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params.keyValues(), success: { (result) -> Void in
+        HTTPRequestTool.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params.mj_keyValues(), success: { (result) -> Void in
             
             let dictArry = (result as! NSDictionary)["statuses"]//取到最新微博数组
             
-            let newStatus = Status.objectArrayWithKeyValuesArray(dictArry)//数组字典转模型
+            let newStatus = Status.mj_objectArrayWithKeyValuesArray(dictArry)//数组字典转模型
             
             sucess(newStatus)
             
@@ -66,10 +66,10 @@ class StatusTool: NSObject {
             params.max_id = maxID
         }
         
-        HTTPRequestTool.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params.keyValues(), success: { (result) -> Void in
+        HTTPRequestTool.GET("https://api.weibo.com/2/statuses/friends_timeline.json", parameters: params.mj_keyValues(), success: { (result) -> Void in
             
             let dictArry = (result as! NSDictionary)["statuses"]//取到最新微博数组
-            let moreStatus = Status.objectArrayWithKeyValuesArray(dictArry)//数组字典转模型
+            let moreStatus = Status.mj_objectArrayWithKeyValuesArray(dictArry)//数组字典转模型
             
             sucess(moreStatus)
             
